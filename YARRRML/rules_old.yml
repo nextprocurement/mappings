@@ -1,0 +1,46 @@
+prefixes:
+  ex: http://www.example.com/
+  e: http://myontology.com/
+  dbo: http://dbpedia.org/ontology/
+  grel: http://users.ugent.be/~bjdmeest/function/grel.ttl#
+
+mappings:
+  people:
+    #Fuente de los datos para generar los mappings. Metodo 1
+    sources:
+      - access: people.csv
+        referenceFormulation: csv
+    # Metodo 2
+    # - [people.csv~csv]
+    #Sujetos. En este caso se obtendran de la columpa ID del csv
+    s: ex:$(id)
+    #Predicados y Objetos.
+    po:
+      - p: rdf:type # a
+        o: schema:Person  
+    # - [rdf:type, schema:Person]
+      - [schema:givenName, $(firstname)]
+      - [schema:lastName, $(lastname)]
+      - p: e:debutEpisode
+        o:
+          value: $(debut episode)
+          datatype: xsd:integer
+      - p: dbo:hairColor
+        o:
+          value: $(hair color)
+          language: en
+      - p: e:appearsIn
+        o:
+          mapping: episode
+          condition:
+            function: equal
+            parameters:
+              - [str1, $(debut episode), s]
+              - [str2, $(number), o]
+  episode:
+    sources:
+      - ['episodes.csv~csv']
+    s: ex:episode_$(number)
+    po:
+      - [a, schema:Episode]
+      - [schema:title, $(title)]

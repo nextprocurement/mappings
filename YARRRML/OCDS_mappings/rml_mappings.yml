@@ -1,0 +1,206 @@
+prefixes:
+  rr: 'http://www.w3.org/ns/r2rml#'
+  rml: 'http://semweb.mmlab.be/ns/rml#'
+  ql: 'http://semweb.mmlab.be/ns/ql#'
+  tbfy: 'http://data.tbfy.eu/ontology/tbfy#'
+  ocds: 'http://data.tbfy.eu/ontology/ocds#'
+  ocdsext: 'http://data.tbfy.eu/ontology/ocds_extension#'
+  dc: 'http://purl.org/dc/terms/'
+  org: 'http://www.w3.org/ns/org#'
+  schema: 'http://schema.org/'
+  skos: 'http://www.w3.org/2004/02/skos/core#'
+  xsd: 'http://www.w3.org/2001/XMLSchema#'
+mappings:
+  mapping0:
+    sources:
+      - [input.xml~xpath, /root/releases]
+    s: 'https://publiccontracting.linkeddata.es/contractingProcess/$(ocid}/release/{id)'
+    po:
+      - [a, 'http://data.tbfy.eu/ontology/tbfy#Release']
+      - ['tbfy:releaseURI', $(../uri), 'xsd:anyURI']
+      - ['tbfy:releasePublishedDate', $(../publishedDate), 'xsd:dateTime']
+      - ['tbfy:releasePublisherURI', $(../publisher/uri), 'xsd:anyURI']
+      - ['tbfy:releasePublisherName', $(../publisher/name), 'xsd:string']
+      - ['tbfy:releaseLicense', $(../license), 'xsd:string']
+      - ['tbfy:releaseId', $(id), 'xsd:string']
+      - ['tbfy:releaseDate', $(date), 'xsd:dateTime']
+      - ['tbfy:releaseTag', $(tag), 'xsd:string']
+      - ['dc:language', $(language), 'xsd:string']
+      - ['tbfy:releaseInitiationType', $(initiationType), 'xsd:string']
+  mapping1:
+    sources:
+      - [input.xml~xpath, /root/releases]
+    s: 'https://publiccontracting.linkeddata.es/contractingProcess/$(ocid)'
+    po:
+      - [a, 'http://data.tbfy.eu/ontology/ocds#ContractingProcess']
+      - ['ocds:ocid', $(ocid), 'xsd:string']
+      - ['ocds:hasAward', 'https://publiccontracting.linkeddata.es/award/$(awards/id)~iri']
+      - ['ocds:hasContract', 'https://publiccontracting.linkeddata.es/contract/$(contracts/id)~iri']
+      - ['ocds:hasPlan', 'https://publiccontracting.linkeddata.es/plan/$(planning/budget/id)~iri']
+      - ['ocds:hasTender', 'https://publiccontracting.linkeddata.es/tender/$(tender/id)~iri']
+      - ['ocds:hasRelease', 'https://publiccontracting.linkeddata.es/contractingProcess/$(ocid}/release/{id)~iri']
+  mapping2:
+    sources:
+      - [input.xml~xpath, /root/releases/awards]
+    s: 'https://publiccontracting.linkeddata.es/award/$(id)'
+    po:
+      - [a, 'http://data.tbfy.eu/ontology/ocds#Award']
+      - ['ocds:awardId', $(id), 'xsd:string']
+      - ['ocds:awardDate', $(date), 'xsd:dateTime']
+      - ['ocds:hasAwardValue', 'https://publiccontracting.linkeddata.es/award/$(value/../id)/value~iri']
+      - ['ocds:awardStatus', $(status), 'xsd:string']
+      - ['dc:description', $(description_es), 'xsd:string']
+      - ['ocds:isIssuedForTender', 'https://publiccontracting.linkeddata.es/tender/$(../tender/id)~iri']
+  mapping3:
+    sources:
+      - [input.xml~xpath, /root/releases/awards/value]
+    s: 'https://publiccontracting.linkeddata.es/award/$(../id)/value'
+    po:
+      - [a, 'http://data.tbfy.eu/ontology/ocds#Value']
+      - ['ocds:valueAmount', $(amount), 'xsd:decimal']
+      - ['ocds:valueCurrency', $(currency), 'xsd:string']
+  mapping4:
+    sources:
+      - [input.xml~xpath, /root/releases/awards/suppliers]
+    s: 'https://publiccontracting.linkeddata.es/award/$(../id)/supplier'
+    po:
+      - [a, 'http://data.tbfy.eu/ontology/ocds#Organisation']
+      - ['org:identifier', $(id), 'xsd:string']
+      - ['ocds:legalName', $(name), 'xsd:string']
+      - ['skos:notation', $(scheme), 'xsd:string']
+      - ['ocds:isSupplierFor', 'https://publiccontracting.linkeddata.es/award/$(../id)~iri']
+  mapping5:
+    sources:
+      - [input.xml~xpath, /root/releases/contracts]
+    s: 'https://publiccontracting.linkeddata.es/contract/$(id)'
+    po:
+      - [a, 'http://data.tbfy.eu/ontology/ocds#Contract']
+      - ['ocds:contractId', $(id), 'xsd:string']
+      - ['ocds:isIssuedForAward', 'https://publiccontracting.linkeddata.es/award/$(awardID)~iri']
+      - ['ocds:hasContractPeriod', 'https://publiccontracting.linkeddata.es/contract/$(period/../id)/contractPeriod~iri']
+  mapping6:
+    sources:
+      - [input.xml~xpath, /root/releases/contracts/period]
+    s: 'https://publiccontracting.linkeddata.es/contract/$(../id)/contractPeriod'
+    po:
+      - [a, 'http://data.tbfy.eu/ontology/ocds#Period']
+      - ['ocds:periodStartDate', $(startDate), 'xsd:dateTime']
+      - ['ocds:periodEndDate', $(endDate), 'xsd:dateTime']
+  mapping7:
+    sources:
+      - [input.xml~xpath, /root/releases/planning]
+    s: 'https://publiccontracting.linkeddata.es/plan/$(budget/id)'
+    po:
+      - [a, 'http://data.tbfy.eu/ontology/ocds#Plan']
+      - ['ocds:hasBudget', 'https://publiccontracting.linkeddata.es/plan/$(budget/id)/budget~iri']
+  mapping8:
+    sources:
+      - [input.xml~xpath, /root/releases/planning/budget]
+    s: 'https://publiccontracting.linkeddata.es/plan/$(id)/budget'
+    po:
+      - [a, 'http://data.tbfy.eu/ontology/ocds#Budget']
+      - ['ocds:budgetId', $(id), 'xsd:string']
+      - ['ocds:hasReservedValue', 'https://publiccontracting.linkeddata.es/plan/$(id)/budget/reservedValue~iri']
+  mapping9:
+    sources:
+      - [input.xml~xpath, /root/releases/planning/budget/amount]
+    s: 'https://publiccontracting.linkeddata.es/plan/$(../id)/budget/reservedValue'
+    po:
+      - [a, 'http://data.tbfy.eu/ontology/ocds#Value']
+      - ['ocds:valueAmount', $(amount), 'xsd:decimal']
+      - ['ocds:valueCurrency', $(currency), 'xsd:string']
+  mapping10:
+    sources:
+      - [input.xml~xpath, /root/releases/tender]
+    s: 'https://publiccontracting.linkeddata.es/tender/$(id)'
+    po:
+      - [a, 'http://data.tbfy.eu/ontology/ocds#Tender']
+      - ['ocds:tenderId', $(id), 'xsd:string']
+      - ['dc:title', $(title), 'xsd:string']
+      - ['ocds:mainProcurementCategory', $(mainProcurementCategory), 'xsd:string']
+      - ['ocds:numberOfTenderers', $(numberOfTenderers), 'xsd:integer']
+      - ['ocds:procurementMethod', $(procurementMethod), 'xsd:string']
+      - ['ocds:procurementMethodDetails', $(procurementMethodDetails_es), 'xsd:string']
+      - ['ocds:submissionMethod', $(submissionMethod), 'xsd:string']
+      - ['ocds:submissionMethodDetails', $(submissionMethodDetails), 'xsd:string']
+      - ['ocds:hasItemToBeProcured', 'https://publiccontracting.linkeddata.es/tender/$(id}/item/{items/id)~iri']
+      - ['ocds:hasMaxEstimatedValue', 'https://publiccontracting.linkeddata.es/tender/$(value/../id)/maxValue~iri']
+      - ['ocds:hasTenderPeriod', 'https://publiccontracting.linkeddata.es/tender/$(tenderPeriod/../id)/period~iri']
+  mapping11:
+    sources:
+      - [input.xml~xpath, /root/releases/tender/value]
+    s: 'https://publiccontracting.linkeddata.es/tender/$(../id)/maxValue'
+    po:
+      - [a, 'http://data.tbfy.eu/ontology/ocds#Value']
+      - ['ocds:valueAmount', $(amount), 'xsd:decimal']
+      - ['ocds:valueCurrency', $(currency), 'xsd:string']
+  mapping12:
+    sources:
+      - [input.xml~xpath, /root/releases/tender/tenderPeriod]
+    s: 'https://publiccontracting.linkeddata.es/tender/$(../id)/period'
+    po:
+      - [a, 'http://data.tbfy.eu/ontology/ocds#Period']
+      - ['ocds:periodStartDate', $(startDate), 'xsd:dateTime']
+      - ['ocds:periodEndDate', $(endDate), 'xsd:dateTime']
+      - ['ocds:periodDurationInDays', $(durationInDays), 'xsd:integer']
+  mapping13:
+    sources:
+      - [input.xml~xpath, /root/releases/tender/items]
+    s: 'https://publiccontracting.linkeddata.es/tender/$(../id}/item/{id)'
+    po:
+      - [a, 'http://data.tbfy.eu/ontology/ocds#Item']
+      - ['ocds:itemId', $(id), 'xsd:string']
+      - ['ocds:hasClassification', $(classification/id)]
+      - ['ocds:classificationScheme', $(classification/scheme)]
+      - ['dc:description', $(classification/description_es), 'xsd:string']
+      - ['ocdsext:relatedLot', 'https://publiccontracting.linkeddata.es/tender/$(../id}/lot/lot-{id)~iri']
+  mapping14:
+    sources:
+      - [input.xml~xpath, /root/releases/tender/lots]
+    s: 'https://publiccontracting.linkeddata.es/tender/$(../id}/lot/{id)'
+    po:
+      - [a, 'http://data.tbfy.eu/ontology/ocds_extension#Lot']
+      - ['ocdsext:lotId', $(id), 'xsd:string']
+      - ['dc:title', $(title), 'xsd:string']
+      - ['ocdsext:hasLotValue', 'https://publiccontracting.linkeddata.es/tender/$(../id}/lot/{id)/value~iri']
+  mapping15:
+    sources:
+      - [input.xml~xpath, /root/releases/tender/lots/value]
+    s: 'https://publiccontracting.linkeddata.es/tender/$(../../id}/lot/{../id)/value'
+    po:
+      - [a, 'http://data.tbfy.eu/ontology/ocds#Value']
+      - ['ocds:valueAmount', $(amount), 'xsd:decimal']
+      - ['ocds:valueCurrency', $(currency), 'xsd:string']
+  mapping16:
+    sources:
+      - [input.xml~xpath, /root/releases/parties]
+    s: 'https://publiccontracting.linkeddata.es/contractingProcess/$(../ocid}/party/{id)'
+    po:
+      - [a, 'http://data.tbfy.eu/ontology/ocds#Organisation']
+      - ['ocds:legalName', $(name), 'xsd:string']
+      - ['ocds:hasAddress', 'https://publiccontracting.linkeddata.es/contractingProcess/$(../ocid}/party/{id)/address~iri']
+      - ['ocds:hasContactPoint', 'https://publiccontracting.linkeddata.es/contractingProcess/$(../ocid}/party/{id)/contactPoint~iri']
+      - ['org:identifier', $(identifier/id), 'xsd:string']
+      - ['skos:notation', $(identifier/scheme), 'xsd:string']
+      - ['ocds:playsRoleIn', 'https://publiccontracting.linkeddata.es/contractingProcess/$(../ocid)~iri']
+  mapping17:
+    sources:
+      - [input.xml~xpath, /root/releases/parties/address]
+    s: 'https://publiccontracting.linkeddata.es/contractingProcess/$(../../ocid}/party/{../id)/address'
+    po:
+      - [a, 'http://data.tbfy.eu/ontology/ocds#Address']
+      - ['schema:addressCountry', $(countryName), 'xsd:string']
+      - ['schema:addressLocality', $(locality), 'xsd:string']
+      - ['schema:postalCode', $(postalCode), 'xsd:string']
+      - ['schema:streetAddress', $(streetAddress), 'xsd:string']
+  mapping18:
+    sources:
+      - [input.xml~xpath, /root/releases/parties/contactPoint]
+    s: 'https://publiccontracting.linkeddata.es/contractingProcess/$(../../ocid}/party/{../id)/contactPoint'
+    po:
+      - [a, 'http://data.tbfy.eu/ontology/ocds#ContactPoint']
+      - ['schema:email', $(email), 'xsd:string']
+      - ['schema:name', $(name), 'xsd:string']
+      - ['schema:faxNumber', $(faxNumber), 'xsd:string']
+      - ['schema:telephone', $(telephone), 'xsd:string']
+      - ['schema:URL', $(url), 'xsd:string']

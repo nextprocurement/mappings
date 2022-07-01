@@ -1,0 +1,501 @@
+prefixes:
+  rr: 'http://www.w3.org/ns/r2rml#'
+  rml: 'http://semweb.mmlab.be/ns/rml#'
+  ql: 'http://semweb.mmlab.be/ns/ql#'
+  tbfy: 'http://data.tbfy.eu/ontology/tbfy#'
+  ocds: 'http://data.tbfy.eu/ontology/ocds#'
+  dc: 'http://purl.org/dc/terms/'
+  foaf: 'http://xmlns.com/foaf/0.1/'
+  owl: 'http://www.w3.org/2002/07/owl#'
+  rdf: 'http://www.w3.org/1999/02/22-rdf-syntax-ns#'
+  schema: 'http://schema.org/'
+  skos: 'http://www.w3.org/2004/02/skos/core#'
+  xsd: 'http://www.w3.org/2001/XMLSchema#'
+mappings:
+  mapping0:
+    sources:
+      - [input.xml~xpath, /root]
+    s: 'http://data.tbfy.eu/contractingProcess/$(releases/ocid}/release/{releases/id)'
+    po:
+      - [a, 'http://data.tbfy.eu/ontology/tbfy#Release']
+      - ['tbfy:releaseURI', $(uri), 'xsd:anyURI']
+      - ['tbfy:releasePublishedDate', $(publishedDate), 'xsd:dateTime']
+      - ['tbfy:releasePublisherUID', $(publisher/uid), 'xsd:string']
+      - ['tbfy:releasePublisherURI', $(publisher/uri), 'xsd:anyURI']
+      - ['tbfy:releasePublisherName', $(publisher/name), 'xsd:string']
+      - ['tbfy:releasePublisherScheme', $(publisher/scheme), 'xsd:string']
+      - ['tbfy:releaseLicense', $(license), 'xsd:string']
+      - ['tbfy:releasePublicationPolicy', $(publicationPolicy), 'xsd:string']
+      - ['tbfy:releaseId', $(releases/id), 'xsd:string']
+      - ['tbfy:releaseDate', $(releases/date), 'xsd:dateTime']
+      - ['tbfy:releaseTag', $(releases/tag), 'xsd:string']
+      - ['dc:language', $(releases/language), 'xsd:string']
+      - ['tbfy:releaseInitiationType', $(releases/initiationType), 'xsd:string']
+  mapping1:
+    sources:
+      - [input.xml~xpath, /root/releases]
+    s: 'http://data.tbfy.eu/contractingProcess/$(ocid)'
+    po:
+      - [a, 'http://data.tbfy.eu/ontology/ocds#ContractingProcess']
+      - ['ocds:ocid', $(ocid), 'xsd:string']
+      - ['ocds:isFundedBy', 'http://data.tbfy.eu/plan/$(ocid}_{id}/project/{planning/budget/projectID)~iri']
+      - ['ocds:hasRelease', 'http://data.tbfy.eu/contractingProcess/$(ocid}/release/{id)~iri']
+      - ['ocds:hasPlan', 'http://data.tbfy.eu/plan/$(ocid}_{id)~iri']
+      - ['ocds:hasTender', 'http://data.tbfy.eu/tender/$(ocid}_{tender/id)~iri']
+      - ['ocds:hasAward', 'http://data.tbfy.eu/award/$(ocid}_{awards/id)~iri']
+      - ['ocds:hasContract', 'http://data.tbfy.eu/contract/$(ocid}_{contracts/id)~iri']
+  mapping2:
+    sources:
+      - [input.xml~xpath, /root/releases]
+    s: 'http://data.tbfy.eu/contractingProcess/$(ocid)/buyer'
+    po:
+      - [a, 'http://data.tbfy.eu/ontology/ocds#Organisation']
+      - ['ocds:legalName', $(name), 'xsd:string']
+      - ['ocds:hasContactPoint', 'http://data.tbfy.eu/contractingProcess/$(ocid)/buyer/contactPoint~iri']
+      - ['ocds:hasAddress', 'http://data.tbfy.eu/contractingProcess/$(ocid)/buyer/address~iri']
+      - ['ocds:isBuyerFor', 'http://data.tbfy.eu/contractingProcess/$(ocid)~iri']
+      - ['ocds:playsRoleIn', 'http://data.tbfy.eu/contractingProcess/$(ocid)~iri']
+  mapping3:
+    sources:
+      - [input.xml~xpath, /root/releases]
+    s: 'http://data.tbfy.eu/contractingProcess/$(ocid)/buyer/address'
+    po:
+      - [a, 'http://data.tbfy.eu/ontology/ocds#Address']
+      - ['schema:addressLocality', $(locality), 'xsd:string']
+      - ['schema:postalCode', $(postalCode), 'xsd:string']
+      - ['schema:addressCountry', $(countryName), 'xsd:string']
+      - ['schema:streetAddress', $(streetAddress), 'xsd:string']
+  mapping4:
+    sources:
+      - [input.xml~xpath, /root/releases]
+    s: 'http://data.tbfy.eu/contractingProcess/$(ocid)/buyer/contactPoint'
+    po:
+      - [a, 'http://data.tbfy.eu/ontology/ocds#ContactPoint']
+      - [a, 'http://data.tbfy.eu/ontology/ocds#Person']
+      - ['schema:email', $(email), 'xsd:string']
+      - ['schema:name', $(name), 'xsd:string']
+      - ['schema:faxNumber', $(faxNumber), 'xsd:string']
+      - ['schema:telephone', $(telephone), 'xsd:string']
+      - ['schema:URL', $(url), 'xsd:string']
+  mapping5:
+    sources:
+      - [input.xml~xpath, /root/releases]
+    s: 'http://data.tbfy.eu/plan/$(ocid}_{id)'
+    po:
+      - [a, 'http://data.tbfy.eu/ontology/ocds#Plan']
+      - ['ocds:hasBudget', 'http://data.tbfy.eu/plan/$(ocid}_{id}/budget/{planning/budget/id)~iri']
+      - ['ocds:procurementRationale', $(rationale), 'xsd:string']
+      - ['ocds:hasDocument', 'http://data.tbfy.eu/plan/$(ocid}_{id}/document/{planning/documents/id)~iri']
+  mapping6:
+    sources:
+      - [input.xml~xpath, /root/releases]
+    s: 'http://data.tbfy.eu/plan/$(ocid}_{id}/budget/{planning/budget/id)'
+    po:
+      - [a, 'http://data.tbfy.eu/ontology/ocds#Budget']
+      - ['ocds:budgetId', $(id), 'xsd:string']
+      - ['ocds:hasReservedValue', 'http://data.tbfy.eu/plan/$(ocid}_{id}/budget/{planning/budget/id)/reservedValue~iri']
+  mapping7:
+    sources:
+      - [input.xml~xpath, /root/releases]
+    s: 'http://data.tbfy.eu/plan/$(ocid}_{id}/budget/{planning/budget/id)/reservedValue'
+    po:
+      - [a, 'http://data.tbfy.eu/ontology/ocds#Value']
+      - ['ocds:valueAmount', $(amount), 'xsd:decimal']
+      - ['ocds:valueCurrency', $(currency), 'xsd:string']
+  mapping8:
+    sources:
+      - [input.xml~xpath, /root/releases]
+    s: 'http://data.tbfy.eu/plan/$(ocid}_{id}/project/{planning/budget/projectID)'
+    po:
+      - [a, 'http://data.tbfy.eu/ontology/ocds#Project']
+      - ['ocds:projectId', $(projectID), 'xsd:string']
+      - ['dc:title', $(project), 'xsd:string']
+  mapping9:
+    sources:
+      - [input.xml~xpath, /root/releases]
+    s: 'http://data.tbfy.eu/plan/$(ocid}_{id}/document/{planning/documents/id)'
+    po:
+      - [a, 'http://data.tbfy.eu/ontology/ocds#Document']
+      - ['ocds:documentId', $(id), 'xsd:string']
+      - ['schema:URL', $(url), 'xsd:string']
+      - ['dc:language', $(language), 'xsd:string']
+      - ['ocds:documentType', $(documentType)]
+  mapping10:
+    sources:
+      - [input.xml~xpath, /root/releases]
+    s: 'http://data.tbfy.eu/tender/$(ocid}_{tender/id)'
+    po:
+      - [a, 'http://data.tbfy.eu/ontology/ocds#Tender']
+      - ['ocds:tenderId', $(id), 'xsd:string']
+      - ['dc:title', $(title), 'xsd:string']
+      - ['dc:description', $(description), 'xsd:string']
+      - ['ocds:tenderStatus', $(status)]
+      - ['ocds:hasItemToBeProcured', 'http://data.tbfy.eu/tender/$(ocid}_{tender/id}/item/{tender/items/id)~iri']
+      - ['ocds:hasMinEstimatedValue', 'http://data.tbfy.eu/tender/$(ocid}_{tender/id)/minValue~iri']
+      - ['ocds:hasMaxEstimatedValue', 'http://data.tbfy.eu/tender/$(ocid}_{tender/id)/maxValue~iri']
+      - ['ocds:procurementMethod', $(procurementMethod)]
+      - ['ocds:procurementMethodDetails', $(procurementMethodDetails), 'xsd:string']
+      - ['ocds:procurementMethodRationale', $(procurementMethodRationale), 'xsd:string']
+      - ['ocds:awardCriteria', $(awardCriteria)]
+      - ['ocds:awardCriteriaDetails', $(awardCriteriaDetails), 'xsd:string']
+      - ['ocds:submissionMethod', $(submissionMethod)]
+      - ['ocds:submissionMethodDetails', $(submissionMethodDetails), 'xsd:string']
+      - ['ocds:hasTenderPeriod', 'http://data.tbfy.eu/tender/$(ocid}_{tender/id)/period~iri']
+      - ['ocds:hasEnquiryPeriod', 'http://data.tbfy.eu/tender/$(ocid}_{tender/id)/enquiryPeriod~iri']
+      - ['ocds:enquiry', $(hasEnquiries), 'xsd:boolean']
+      - ['ocds:eligibilityCriteria', $(eligibilityCriteria), 'xsd:string']
+      - ['ocds:hasAwardPeriod', 'http://data.tbfy.eu/tender/$(ocid}_{tender/id)/awardPeriod~iri']
+      - ['ocds:numberOfTenderers', $(numberOfTenderers), 'xsd:integer']
+      - ['ocds:hasDocument', 'http://data.tbfy.eu/tender/$(ocid}_{tender/id}/document/{tender/documents/id)~iri']
+      - ['ocds:hasMilestone', 'http://data.tbfy.eu/tender/$(ocid}_{tender/id}/milestone/{tender/milestones/id)~iri']
+      - ['ocds:hasAmendment', 'http://data.tbfy.eu/tender/$(ocid}_{tender/id)/amendment/~iri']
+  mapping11:
+    sources:
+      - [input.xml~xpath, /root/releases]
+    s: 'http://data.tbfy.eu/tender/$(ocid}_{tender/id}/item/{tender/items/id)'
+    po:
+      - [a, 'http://data.tbfy.eu/ontology/ocds#Item']
+      - ['ocds:itemId', $(id), 'xsd:string']
+      - ['dc:description', $(description), 'xsd:string']
+      - ['ocds:hasClassification', $(classification/id)]
+      - ['ocds:classificationScheme', $(classification/scheme)]
+      - ['ocds:hasAdditionalItemClassification', $(additionalClassifications/id)]
+      - ['ocds:additionalItemClassificationScheme', $(additionalClassifications/scheme)]
+  mapping12:
+    sources:
+      - [input.xml~xpath, /root/releases]
+    s: 'http://data.tbfy.eu/tender/$(ocid}_{tender/id)/minValue'
+    po:
+      - [a, 'http://data.tbfy.eu/ontology/ocds#Value']
+      - ['ocds:valueAmount', $(amount), 'xsd:decimal']
+      - ['ocds:valueCurrency', $(currency), 'xsd:string']
+  mapping13:
+    sources:
+      - [input.xml~xpath, /root/releases]
+    s: 'http://data.tbfy.eu/tender/$(ocid}_{tender/id)/maxValue'
+    po:
+      - [a, 'http://data.tbfy.eu/ontology/ocds#Value']
+      - ['ocds:valueAmount', $(amount), 'xsd:decimal']
+      - ['ocds:valueCurrency', $(currency), 'xsd:string']
+  mapping14:
+    sources:
+      - [input.xml~xpath, /root/releases]
+    s: 'http://data.tbfy.eu/tender/$(ocid}_{tender/id)/period'
+    po:
+      - [a, 'http://data.tbfy.eu/ontology/ocds#Period']
+      - ['ocds:periodStartDate', $(startDate), 'xsd:dateTime']
+      - ['ocds:periodEndDate', $(endDate), 'xsd:dateTime']
+  mapping15:
+    sources:
+      - [input.xml~xpath, /root/releases]
+    s: 'http://data.tbfy.eu/tender/$(ocid}_{tender/id)/awardPeriod'
+    po:
+      - [a, 'http://data.tbfy.eu/ontology/ocds#Period']
+      - ['ocds:periodStartDate', $(startDate), 'xsd:dateTime']
+      - ['ocds:periodEndDate', $(endDate), 'xsd:dateTime']
+  mapping16:
+    sources:
+      - [input.xml~xpath, /root/releases]
+    s: 'http://data.tbfy.eu/tender/$(ocid}_{tender/id}/document/{tender/documents/id)'
+    po:
+      - [a, 'http://data.tbfy.eu/ontology/ocds#Document']
+      - ['ocds:documentId', $(id), 'xsd:string']
+      - ['ocds:documentType', $(documentType)]
+      - ['dc:language', $(language), 'xsd:string']
+      - ['schema:URL', $(url), 'xsd:string']
+  mapping17:
+    sources:
+      - [input.xml~xpath, /root/releases]
+    s: 'http://data.tbfy.eu/tender/$(ocid}_{tender/id}/milestone/{tender/milestones/id)'
+    po:
+      - [a, 'http://data.tbfy.eu/ontology/ocds#Milestone']
+      - ['ocds:milestoneId', $(id), 'xsd:string']
+      - ['dc:title', $(title), 'xsd:string']
+      - ['ocds:milestoneDueDate', $(dueDate), 'xsd:dateTime']
+      - ['dc:description', $(description), 'xsd:string']
+  mapping18:
+    sources:
+      - [input.xml~xpath, /root/releases]
+    s: 'http://data.tbfy.eu/tender/$(ocid}_{tender/id}/milestone/{tender/milestones/id}/document/{tender/milestones/documents/id)'
+    po:
+      - [a, 'http://data.tbfy.eu/ontology/ocds#Document']
+      - ['ocds:documentId', $(id), 'xsd:string']
+      - ['ocds:documentType', $(documentType)]
+      - ['dc:language', $(language), 'xsd:string']
+      - ['schema:URL', $(url), 'xsd:string']
+  mapping19:
+    sources:
+      - [input.xml~xpath, /root/releases]
+    s: 'http://data.tbfy.eu/tender/$(ocid}_{tender/id)/amendment'
+    po:
+      - [a, 'http://data.tbfy.eu/ontology/ocds#Amendment']
+      - ['ocds:amendmentDate', $(date), 'xsd:dateTime']
+      - ['ocds:hasChange', 'http://data.tbfy.eu/tender/$(ocid}_{tender/id}/amendment/change/{tender/amendment/changes/property)~iri']
+      - ['ocds:amendmentRationale', $(rationale), 'xsd:string']
+  mapping20:
+    sources:
+      - [input.xml~xpath, /root/releases]
+    s: 'http://data.tbfy.eu/tender/$(ocid}_{tender/id}/amendment/change/{tender/amendment/changes/property)'
+    po:
+      - [a, 'http://data.tbfy.eu/ontology/ocds#Change']
+      - ['ocds:changeProperty', $(property), 'xsd:string']
+      - ['ocds:changeFormerValue', $(former_value), 'xsd:string']
+  mapping21:
+    sources:
+      - [input.xml~xpath, /root/releases]
+    s: 'http://data.tbfy.eu/award/$(ocid}_{awards/id)'
+    po:
+      - [a, 'http://data.tbfy.eu/ontology/ocds#Award']
+      - ['ocds:awardId', $(id), 'xsd:string']
+      - ['ocds:awardDate', $(date), 'xsd:dateTime']
+      - ['dc:title', $(title), 'xsd:string']
+      - ['ocds:hasAwardValue', 'http://data.tbfy.eu/award/$(ocid}_{awards/id)/value~iri']
+      - ['ocds:awardStatus', $(status)]
+      - ['dc:description', $(description), 'xsd:string']
+      - ['ocds:hasAwardedContractPeriod', 'http://data.tbfy.eu/award/$(ocid}_{awards/id)/contractPeriod~iri']
+      - ['ocds:hasAwardedItem', 'http://data.tbfy.eu/award/$(ocid}_{awards/id}/item/{awards/items/id)~iri']
+      - ['ocds:hasDocument', 'http://data.tbfy.eu/award/$(ocid}_{awards/id}/document/{awards/documents/id)~iri']
+      - ['ocds:hasAmendment', 'http://data.tbfy.eu/award/$(ocid}_{awards/id)/amendment/~iri']
+      - ['ocds:isIssuedForTender', 'http://data.tbfy.eu/tender/$(ocid}_{tender/id)~iri']
+  mapping22:
+    sources:
+      - [input.xml~xpath, /root/releases]
+    s: 'http://data.tbfy.eu/award/$(ocid}_{awards/id)/value'
+    po:
+      - [a, 'http://data.tbfy.eu/ontology/ocds#Value']
+      - ['ocds:valueAmount', $(amount), 'xsd:decimal']
+      - ['ocds:valueCurrency', $(currency), 'xsd:string']
+  mapping23:
+    sources:
+      - [input.xml~xpath, /root/releases]
+    s: 'http://data.tbfy.eu/award/$(ocid}_{awards/id}/supplier/{awards/suppliers/tbfy_id)'
+    po:
+      - [a, 'http://data.tbfy.eu/ontology/ocds#Organisation']
+      - ['ocds:legalName', $(name), 'xsd:string']
+      - ['ocds:hasAddress', 'http://data.tbfy.eu/award/$(ocid}_{awards/id}/supplier/{awards/suppliers/tbfy_id)/address~iri']
+      - ['ocds:hasContactPoint', 'http://data.tbfy.eu/award/$(ocid}_{awards/id}/supplier/{awards/suppliers/tbfy_id)/contactPoint~iri']
+      - ['ocds:isSupplierFor', 'http://data.tbfy.eu/award/$(ocid}_{awards/id)~iri']
+      - ['ocds:playsRoleIn', 'http://data.tbfy.eu/contractingProcess/$(ocid)~iri']
+      - ['owl:sameAs', 'http://data.tbfy.eu/organisation/$(tbfy_company_jurisdiction_code}-{tbfy_company_number)~iri']
+      - ['tbfy:correspondsToRegOrg', 'http://data.tbfy.eu/organisation/$(tbfy_company_jurisdiction_code}-{tbfy_company_number)~iri']
+      - ['tbfy:companyReconciliationScore', $(tbfy_company_reconciliation_score), 'xsd:decimal']
+      - ['tbfy:companyReconciliationSource', $(tbfy_company_reconciliation_source), 'xsd:string']
+      - ['tbfy:companyReconciliationDate', $(tbfy_company_reconciliation_date), 'xsd:date']
+  mapping24:
+    sources:
+      - [input.xml~xpath, /root/releases]
+    s: 'http://data.tbfy.eu/award/$(ocid}_{awards/id}/supplier/{awards/suppliers/tbfy_id)/address'
+    po:
+      - [a, 'http://data.tbfy.eu/ontology/ocds#Address']
+      - ['schema:addressLocality', $(locality), 'xsd:string']
+      - ['schema:postalCode', $(postalCode), 'xsd:string']
+      - ['schema:addressCountry', $(countryName), 'xsd:string']
+      - ['schema:streetAddress', $(streetAddress), 'xsd:string']
+  mapping25:
+    sources:
+      - [input.xml~xpath, /root/releases]
+    s: 'http://data.tbfy.eu/award/$(ocid}_{awards//id}/supplier/{awards/suppliers/tbfy_id)/contactPoint'
+    po:
+      - [a, 'http://data.tbfy.eu/ontology/ocds#ContactPoint']
+      - [a, 'http://data.tbfy.eu/ontology/ocds#Person']
+      - ['schema:name', $(name), 'xsd:string']
+      - ['schema:email', $(email), 'xsd:string']
+      - ['schema:faxNumber', $(faxNumber), 'xsd:string']
+      - ['schema:telephone', $(telephone), 'xsd:string']
+  mapping26:
+    sources:
+      - [input.xml~xpath, /root/releases]
+    s: 'http://data.tbfy.eu/award/$(ocid}_{awards/id}/item/{awards/items/id)'
+    po:
+      - [a, 'http://data.tbfy.eu/ontology/ocds#Item']
+      - ['ocds:itemId', $(id), 'xsd:string']
+      - ['dc:description', $(description), 'xsd:string']
+      - ['ocds:hasClassification', $(classification/id)]
+      - ['ocds:classificationScheme', $(classification/scheme)]
+      - ['ocds:hasAdditionalItemClassification', $(additionalClassifications/id)]
+      - ['ocds:additionalItemClassificationScheme', $(additionalClassifications/scheme)]
+  mapping27:
+    sources:
+      - [input.xml~xpath, /root/releases]
+    s: 'http://data.tbfy.eu/award/$(ocid}_{awards/id)/contractPeriod'
+    po:
+      - [a, 'http://data.tbfy.eu/ontology/ocds#Period']
+      - ['ocds:durationInDays', $(durationInDays)]
+      - ['ocds:periodEndDate', $(endDate), 'xsd:dateTime']
+      - ['ocds:periodStartDate', $(startDate), 'xsd:dateTime']
+  mapping28:
+    sources:
+      - [input.xml~xpath, /root/releases]
+    s: 'http://data.tbfy.eu/award/$(ocid}_{awards/id}/document/{awards/documents/id)'
+    po:
+      - [a, 'http://data.tbfy.eu/ontology/ocds#Document']
+      - ['ocds:documentId', $(id), 'xsd:string']
+      - ['ocds:documentType', $(documentType)]
+      - ['dc:language', $(language), 'xsd:string']
+      - ['schema:URL', $(url), 'xsd:string']
+  mapping29:
+    sources:
+      - [input.xml~xpath, /root/releases]
+    s: 'http://data.tbfy.eu/award/$(ocid}_{awards/id)/amendment'
+    po:
+      - [a, 'http://data.tbfy.eu/ontology/ocds#Amendment']
+      - ['ocds:amendmentDate', $(date), 'xsd:dateTime']
+      - ['ocds:hasChange', 'http://data.tbfy.eu/award/$(ocid}_{awards/id}/amendment/change/{awards/amendment/changes/property)~iri']
+      - ['ocds:amendmentRationale', $(rationale), 'xsd:string']
+  mapping30:
+    sources:
+      - [input.xml~xpath, /root/releases]
+    s: 'http://data.tbfy.eu/award/$(ocid}_{awards/id}/amendment/change/{awards/amendment/changes/property)'
+    po:
+      - [a, 'http://data.tbfy.eu/ontology/ocds#Change']
+      - ['ocds:changeProperty', $(property), 'xsd:string']
+      - ['ocds:changeFormerValue', $(former_value), 'xsd:string']
+  mapping31:
+    sources:
+      - [input.xml~xpath, /root/releases]
+    s: 'http://data.tbfy.eu/contract/$(ocid}_{contracts/id)'
+    po:
+      - [a, 'http://data.tbfy.eu/ontology/ocds#Contract']
+      - ['ocds:contractId', $(id), 'xsd:string']
+      - ['ocds:isIssuedForAward', 'http://data.tbfy.eu/award/$(ocid}_{contracts/awardID)~iri']
+      - ['dc:title', $(title), 'xsd:string']
+      - ['dc:description', $(description), 'xsd:string']
+      - ['ocds:contractStatus', $(status)]
+      - ['ocds:hasContractPeriod', 'http://data.tbfy.eu/contract/$(ocid}_{contracts/id)/contractPeriod~iri']
+      - ['ocds:hasContractValue', 'http://data.tbfy.eu/contract/$(ocid}_{contracts/id)/contractValue~iri']
+      - ['ocds:hasContractedItem', 'http://data.tbfy.eu/contract/$(ocid}_{contracts/id}/item/{contracts/items/id)~iri']
+      - ['ocds:dateContractSigned', $(dateSigned), 'xsd:dateTime']
+      - ['ocds:hasDocument', 'http://data.tbfy.eu/contract/$(ocid}_{contracts/id}/document/{contracts/documents/id)~iri']
+      - ['ocds:hasAmendment', 'http://data.tbfy.eu/contract/$(ocid}_{contracts/id)/amendment/~iri']
+      - ['ocds:hasContractImplementation', 'http://data.tbfy.eu/contract/$(ocid}_{contracts/id)/implementation~iri']
+  mapping32:
+    sources:
+      - [input.xml~xpath, /root/releases]
+    s: 'http://data.tbfy.eu/contract/$(ocid}_{contracts/id)/contractPeriod'
+    po:
+      - [a, 'http://data.tbfy.eu/ontology/ocds#Period']
+      - ['ocds:periodStartDate', $(startDate), 'xsd:dateTime']
+      - ['ocds:periodEndDate', $(endDate), 'xsd:dateTime']
+  mapping33:
+    sources:
+      - [input.xml~xpath, /root/releases]
+    s: 'http://data.tbfy.eu/contract/$(ocid}_{contracts/id)/value'
+    po:
+      - [a, 'http://data.tbfy.eu/ontology/ocds#Value']
+      - ['ocds:valueAmount', $(amount), 'xsd:decimal']
+      - ['ocds:valueCurrency', $(currency), 'xsd:string']
+  mapping34:
+    sources:
+      - [input.xml~xpath, /root/releases]
+    s: 'http://data.tbfy.eu/contract/$(ocid}_{contracts/id}/item/{contracts/items/id)'
+    po:
+      - [a, 'http://data.tbfy.eu/ontology/ocds#Item']
+      - ['ocds:itemId', $(id), 'xsd:string']
+      - ['dc:description', $(description), 'xsd:string']
+      - ['ocds:hasClassification', $(classification/id)]
+      - ['ocds:classificationScheme', $(classification/scheme)]
+      - ['ocds:hasAdditionalItemClassification', $(additionalClassifications/id)]
+      - ['ocds:additionalItemClassificationScheme', $(additionalClassifications/scheme)]
+  mapping35:
+    sources:
+      - [input.xml~xpath, /root/releases]
+    s: 'http://data.tbfy.eu/contract/$(ocid}_{contracts/id}/document/{contracts/documents/id)'
+    po:
+      - [a, 'http://data.tbfy.eu/ontology/ocds#Document']
+      - ['ocds:documentId', $(id), 'xsd:string']
+      - ['ocds:documentType', $(documentType)]
+      - ['dc:language', $(language), 'xsd:string']
+      - ['schema:URL', $(url), 'xsd:string']
+  mapping36:
+    sources:
+      - [input.xml~xpath, /root/releases]
+    s: 'http://data.tbfy.eu/contract/$(ocid}_{contracts/id)/amendment'
+    po:
+      - [a, 'http://data.tbfy.eu/ontology/ocds#Amendment']
+      - ['ocds:amendmentDate', $(date), 'xsd:dateTime']
+      - ['ocds:hasChange', 'http://data.tbfy.eu/contract/$(ocid}_{contracts/id}/amendment/change/{contracts/amendment/changes/property)~iri']
+      - ['ocds:amendmentRationale', $(rationale), 'xsd:string']
+  mapping37:
+    sources:
+      - [input.xml~xpath, /root/releases]
+    s: 'http://data.tbfy.eu/contract/$(ocid}_{contracts/id}/amendment/change/{contracts/amendment/changes/property)'
+    po:
+      - [a, 'http://data.tbfy.eu/ontology/ocds#Change']
+      - ['ocds:changeProperty', $(property), 'xsd:string']
+      - ['ocds:changeFormerValue', $(former_value), 'xsd:string']
+  mapping38:
+    sources:
+      - [input.xml~xpath, /root/releases]
+    s: 'http://data.tbfy.eu/contract/$(ocid}_{contracts/id)/implementation'
+    po:
+      - [a, 'http://data.tbfy.eu/ontology/ocds#Implementation']
+      - ['ocds:hasTransaction', 'http://data.tbfy.eu/contract/$(ocid}_{contracts/id}/implementation/transaction/{contracts/implementation/transaction/id)~iri']
+      - ['ocds:hasMilestone', 'http://data.tbfy.eu/contract/$(ocid}_{contracts/id}/implementation/milestone/{contracts/implementation/milestone/id)~iri']
+      - ['ocds:hasDocument', 'http://data.tbfy.eu/contract/$(ocid}_{contracts/id}/implementation/document/{contracts/implementation/document/id)~iri']
+  mapping39:
+    sources:
+      - [input.xml~xpath, /root/releases]
+    s: 'http://data.tbfy.eu/contract/$(ocid}_{contracts/id}/implementation/transaction/{contracts/implementation/transactions/id)'
+    po:
+      - [a, 'http://data.tbfy.eu/ontology/ocds#Value']
+      - ['ocds:transactionId', $(id), 'xsd:string']
+      - ['ocds:transactionDataSource', $(source), 'xsd:string']
+      - ['ocds:transactionDate', $(date), 'xsd:dateTime']
+      - ['ocds:hasTransactionValue', 'http://data.tbfy.eu/contract/$(ocid}_{contracts/id}/implementation/transaction/{contracts/implementation/transactions/id)/value~iri']
+      - ['ocds:transactionId', $(id), 'xsd:string']
+  mapping40:
+    sources:
+      - [input.xml~xpath, /root/releases]
+    s: 'http://data.tbfy.eu/contract/$(ocid}_{contracts/id}/implementation/transaction/{contracts/implementation/transactions/id)/value'
+    po:
+      - [a, 'http://data.tbfy.eu/ontology/ocds#Value']
+      - ['ocds:valueAmount', $(amount), 'xsd:decimal']
+      - ['ocds:valueCurrency', $(currency), 'xsd:string']
+  mapping41:
+    sources:
+      - [input.xml~xpath, /root/releases]
+    s: 'http://data.tbfy.eu/contract/$(ocid}_{contracts/id}/implementation/transaction/{contracts/implementation/transactions/id)/payer'
+    po:
+      - [a, 'http://data.tbfy.eu/ontology/ocds#Organisation']
+      - ['ocds:legalName', $(legalName), 'xsd:string']
+      - ['ocds:URI', $(uri), 'xsd:anyURI']
+      - ['ocds:isPayerFor', 'http://data.tbfy.eu/contract/$(ocid}_{contracts/id}/implementation/transaction/{contracts/implementation/transactions/id)~iri']
+  mapping42:
+    sources:
+      - [input.xml~xpath, /root/releases]
+    s: 'http://data.tbfy.eu/contract/$(ocid}_{contracts/id}/implementation/transaction/{contracts/implementation/transactions/id)/payee'
+    po:
+      - [a, 'http://data.tbfy.eu/ontology/ocds#Organisation']
+      - ['ocds:legalName', $(legalName), 'xsd:string']
+      - ['ocds:URI', $(uri), 'xsd:anyURI']
+      - ['ocds:isPayeeFor', 'http://data.tbfy.eu/contract/$(ocid}_{contracts/id}/implementation/transaction/{contracts/implementation/transactions/id)~iri']
+  mapping43:
+    sources:
+      - [input.xml~xpath, /root/releases]
+    s: 'http://data.tbfy.eu/contract/$(ocid}_{contracts/id}/milestone/{contracts/implementation/milestones/id)'
+    po:
+      - [a, 'http://data.tbfy.eu/ontology/ocds#Milestone']
+      - ['ocds:milestoneId', $(id), 'xsd:string']
+      - ['dc:title', $(title), 'xsd:string']
+      - ['ocds:milestoneDueDate', $(dueDate), 'xsd:dateTime']
+      - ['dc:description', $(description), 'xsd:string']
+  mapping44:
+    sources:
+      - [input.xml~xpath, /root/releases]
+    s: 'http://data.tbfy.eu/contract/$(ocid}_{contracts/id}/milestone/{contracts/implementation/milestones/id}/document/{contracts/implementation/milestones/documents/id)'
+    po:
+      - [a, 'http://data.tbfy.eu/ontology/ocds#Document']
+      - ['ocds:documentId', $(id), 'xsd:string']
+      - ['ocds:documentType', $(documentType)]
+      - ['dc:language', $(language), 'xsd:string']
+      - ['schema:URL', $(url), 'xsd:string']
+  mapping45:
+    sources:
+      - [input.xml~xpath, /root/releases]
+    s: 'http://data.tbfy.eu/contract/$(ocid}_{contracts/id}/document/{contracts/implementation/documents/id)'
+    po:
+      - [a, 'http://data.tbfy.eu/ontology/ocds#Document']
+      - ['ocds:documentId', $(id), 'xsd:string']
+      - ['ocds:documentType', $(documentType)]
+      - ['dc:language', $(language), 'xsd:string']
+      - ['schema:URL', $(url), 'xsd:string']

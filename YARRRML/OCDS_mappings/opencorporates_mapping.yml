@@ -1,0 +1,109 @@
+prefixes:
+  rr: 'http://www.w3.org/ns/r2rml#'
+  rml: 'http://semweb.mmlab.be/ns/rml#'
+  ql: 'http://semweb.mmlab.be/ns/ql#'
+  ebg: 'http://data.businessgraph.io/ontology#'
+  nace: 'http://data.businessgraph.io/nace/'
+  lau: 'http://data.businessgraph.io/lau/'
+  ebg-id: 'http://data.businessgraph.io/identifier/'
+  ebg-comp: 'http://data.businessgraph.io/company/'
+  adms: 'http://www.w3.org/ns/adms#'
+  dbo: 'http://dbpedia.org/ontology/'
+  dc: 'http://purl.org/dc/elements/1.1/'
+  dct: 'http://purl.org/dc/terms/'
+  foaf: 'http://xmlns.com/foaf/0.1/'
+  locn: 'http://www.w3.org/ns/locn#'
+  ngeo: 'http://geovocab.org/geometry#'
+  nuts: 'http://nuts.geovocab.org/id/'
+  ocds: 'https://theybuyforyou.eu/ontology/ocds/'
+  org: 'http://www.w3.org/ns/org#'
+  owl: 'http://www.w3.org/2002/07/owl#'
+  puml: 'http://plantuml.com/ontology#'
+  ramon: 'http://rdfdata.eionet.europa.eu/ramon/ontology/'
+  rdf: 'http://www.w3.org/1999/02/22-rdf-syntax-ns#'
+  rdfs: 'http://www.w3.org/2000/01/rdf-schema#'
+  rov: 'http://www.w3.org/ns/regorg#'
+  schema: 'http://schema.org/'
+  sioc: 'http://rdfs.org/sioc/ns#'
+  skos: 'http://www.w3.org/2004/02/skos/core#'
+  spatial: 'http://geovocab.org/spatial#'
+  time: 'http://www.w3.org/2006/time#'
+  vann: 'http://purl.org/vocab/vann/'
+  void: 'http://rdfs.org/ns/void#'
+  xsd: 'http://www.w3.org/2001/XMLSchema#'
+  person: 'http://www.w3.org/ns/person#'
+  sem: 'http://semanticweb.cs.vu.nl/2009/11/sem/'
+mappings:
+  mapping0:
+    sources:
+      - [input.xml~xpath, /root/results/company]
+    s: 'http://data.tbfy.eu/organisation/$(jurisdiction_code}-{company_number)'
+    po:
+      - [a, 'http://www.w3.org/ns/regorg#RegisteredOrganization']
+      - ['rov:legalName', $(name), 'xsd:string']
+      - ['skos:prefLabel', $(name), 'xsd:string']
+      - ['dbo:jurisdiction', $(jurisdiction_code), 'xsd:string']
+      - ['schema:foundingDate', $(incorporation_date), 'xsd:date']
+      - ['schema:dissolutionDate', $(dissolution_date), 'xsd:date']
+      - ['ebg:numberOfEmployees', $(number_of_employees), 'xsd:integer']
+      - ['ebg:orgActivity', 'http://data.tbfy.eu/nace/$(industry_codes/industry_code/tbfy_nace/code)~iri']
+      - ['ebg:orgActivityText', $(industry_codes/industry_code/description), 'xsd:string']
+      - ['ebg:orgTypeText', $(company_type), 'xsd:string']
+      - ['ebg:orgStatusText', $(current_status), 'xsd:string']
+      - ['rov:hasSite', 'http://data.tbfy.eu/organisation/$(jurisdiction_code}-{company_number)/registeredSite/address~iri']
+      - ['rov:hasRegisteredSite', 'http://data.tbfy.eu/organisation/$(jurisdiction_code}-{company_number)/registeredSite/address~iri']
+      - ['adms:identifier', 'http://data.tbfy.eu/organisation/$(jurisdiction_code}-{company_number)/id/OpenCorporates~iri']
+  mapping1:
+    sources:
+      - [input.xml~xpath, /root/results/company]
+    s: 'http://data.tbfy.eu/organisation/$(jurisdiction_code}-{company_number)/registeredSite/address'
+    po:
+      - [a, 'http://www.w3.org/ns/org#Site']
+      - [a, 'http://www.w3.org/ns/locn#Address']
+      - ['org:siteAddress', 'http://data.tbfy.eu/organisation/$(jurisdiction_code}-{company_number)/registeredSite/address~iri']
+      - ['locn:fullAddress', $(../registered_address_in_full), 'xsd:string']
+      - ['locn:postCode', $(postal_code), 'xsd:string']
+      - ['locn:postName', $(locality), 'xsd:string']
+      - ['locn:thoroughfare', $(street_address), 'xsd:string']
+      - ['locn:adminUnitL1', 'http://nuts.geovocab.org/id/$(tbfy_ramon_code)~iri']
+  mapping2:
+    sources:
+      - [input.xml~xpath, /root/results/company]
+    s: 'http://data.tbfy.eu/organisation/$(jurisdiction_code}-{company_number}/officer/{officers/officer/id)'
+    po:
+      - [a, 'http://www.w3.org/ns/org#Membership']
+      - ['ebg:rolePositionText', $(position), 'xsd:string']
+      - ['org:memberDuring', 'http://data.tbfy.eu/organisation/$(jurisdiction_code}-{company_number}/officer/{officers/officer/id)/interval~iri']
+      - ['org:organization', 'http://data.tbfy.eu/organisation/$(jurisdiction_code}-{company_number)~iri']
+      - ['org:member', 'http://data.tbfy.eu/officer/OpenCorporates/$(officers/officer/id)~iri']
+  mapping3:
+    sources:
+      - [input.xml~xpath, /root/results/company]
+    s: 'http://data.tbfy.eu/organisation/$(jurisdiction_code}-{company_number}/officer/{officers/officer/id)/interval'
+    po:
+      - [a, 'http://www.w3.org/2006/time#Interval']
+      - ['time:hasBeginning', 'http://data.tbfy.eu/organisation/$(jurisdiction_code}-{company_number}/officer/{officers/officer/id)/interval/beginning~iri']
+      - ['time:hasEnd', 'http://data.tbfy.eu/organisation/$(jurisdiction_code}-{company_number}/officer/{officers/officer/id)/end~iri']
+  mapping4:
+    sources:
+      - [input.xml~xpath, /root/results/company]
+    s: 'http://data.tbfy.eu/organisation/$(jurisdiction_code}-{company_number}/officer/{officers/officer/id)/interval/beginning'
+    po:
+      - [a, 'http://www.w3.org/2006/time#Instant']
+      - ['time:inXSDDate', $(start_date), 'xsd:date']
+  mapping5:
+    sources:
+      - [input.xml~xpath, /root/results/company]
+    s: 'http://data.tbfy.eu/organisation/$(jurisdiction_code}-{company_number}/officer/{officers/officer/id)/interval/end'
+    po:
+      - [a, 'http://www.w3.org/2006/time#Instant']
+      - ['time:inXSDDate', $(end_date), 'xsd:date']
+  mapping6:
+    sources:
+      - [input.xml~xpath, /root/results/company/officers/officer]
+    s: 'http://data.tbfy.eu/officer/OpenCorporates/$(id)'
+    po:
+      - [a, 'http://www.w3.org/ns/person#Person']
+      - ['schema:identifier', $(id), 'xsd:string']
+      - ['person:birthName', $(name), 'xsd:string']
+      - ['schema:nationality', $(nationality), 'xsd:string']

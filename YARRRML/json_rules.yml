@@ -1,0 +1,14 @@
+prefixes:
+  ex: http://www.example.com/
+  e: http://myontology.com/
+  dbo: http://dbpedia.org/ontology/
+  grel: http://users.ugent.be/~bjdmeest/function/grel.ttl#
+
+mappings:
+  episode:
+    sources:
+      - [episodes.json~jsonpath, "$.episodes[*]"]
+    s: ex:episode_$(number)
+    po:
+      - [a, schema:Episode]
+      - [schema:title, $(title)]
