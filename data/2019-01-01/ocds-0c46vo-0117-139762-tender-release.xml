@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	<uri>https://openopps.com/tenders/ocds-0c46vo-0117-139762/?format=json</uri>
+	<license>https://opendatacommons.org/licenses/odbl/</license>
+	<releases>
+		<id>139762</id>
+		<tag>tender</tag>
+		<date>2019-01-01T00:00:00+00:00</date>
+		<ocid>ocds-0c46vo-0117-139762</ocid>
+		<buyer>
+			<name>Transport Infrastructure Ireland (TII)</name>
+			<address>
+				<countryName>Ireland</countryName>
+			</address>
+			<contactPoint>
+				<name>Tony Redmond</name>
+			</contactPoint>
+		</buyer>
+		<tender>
+			<id>139762</id>
+			<items>
+				<id>1</id>
+				<classification>
+					<id>66523100</id>
+					<scheme>CPV</scheme>
+				</classification>
+			</items>
+			<title>Pension Administration Services</title>
+			<value>
+				<currency>EUR</currency>
+			</value>
+			<status>complete</status>
+			<documents>
+				<id>tender_url</id>
+				<url>https://irl.eu-supply.com/app/rfq/rwlentrance_s.asp?PID=135250&amp;PP=ctm/Supplier/PublicTenders&amp;B=ETENDERS_SIMPLE&amp;PS=2</url>
+				<format>text/html</format>
+				<language>en</language>
+				<documentType>tenderNotice</documentType>
+			</documents>
+			<description>TII has a requirement for a pension administration service provider to provide a full, efficient and proactive pension administration and associated advisory services. The administration services must be delivered in a manner that ensures that the operation and administration of TII current pension schemes are in full compliance with:
+o	The Trust Deed and Rules
+o	 Pensions and other relevant legislation (as part of the tender submission TII requires a listing of all legislative and best practice requirements for the successful administration of the pension schemes)
+o	The Pensions Authority guidelines
+o	The Pensions Ombudsman
+o	Revenue Commissioners, and
+o	Industry best practice.</description>
+			<tenderPeriod>
+				<endDate>2018-10-11T12:00:00+00:00</endDate>
+				<startDate>2019-01-01T00:00:00+00:00</startDate>
+			</tenderPeriod>
+		</tender>
+		<language>en</language>
+		<initiationType>tender</initiationType>
+	</releases>
+	<publisher>
+		<uid>https://beta.companieshouse.gov.uk/company/04962733</uid>
+		<uri>https://openopps.com</uri>
+		<name>Open Opps</name>
+		<scheme>Companies House</scheme>
+	</publisher>
+	<publishedDate>2019-03-30T01:39:52.387441+00:00</publishedDate>
+	<publicationPolicy>https://openopps.com/legal/</publicationPolicy>
+</root>

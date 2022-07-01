@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	<uri>https://openopps.com/tenders/ocds-0c46vo-0292-tzRSJOM4Mbqz09-mL9omsw/?format=json</uri>
+	<license>https://opendatacommons.org/licenses/odbl/</license>
+	<releases>
+		<id>tzRSJOM4Mbqz09+mL9omsw</id>
+		<tag>tender</tag>
+		<date>2019-01-01T00:00:00+00:00</date>
+		<ocid>ocds-0c46vo-0292-tzRSJOM4Mbqz09-mL9omsw</ocid>
+		<buyer>
+			<address>
+				<countryName>Italy</countryName>
+			</address>
+		</buyer>
+		<tender>
+			<id>tzRSJOM4Mbqz09+mL9omsw</id>
+			<title>Avviso di estrazione in seduta pubblica delle ditte da invitare alla gara informale ai sensi del d.lgs. 50/2016 e s.m.i. per l’affidamento in concessione del servizio bar e piccola ristorazione presso il compendio Viminale, sito in piazza del Viminale 1 –</title>
+			<status>complete</status>
+			<documents>
+				<id>tender_url</id>
+				<url>http://www.interno.gov.it/it/amministrazione-trasparente/bandi-gara-e-contratti/avviso-estrazione-seduta-pubblica-ditte-invitare-alla-gara-informale-sensi-dlgs-502016-e-smi-laffidamento-concessione-servizio-bar-e-piccola-ristorazione-presso-compendio-viminale-sito-piazza-viminale-0</url>
+				<format>text/html</format>
+				<language>en</language>
+				<documentType>tenderNotice</documentType>
+			</documents>
+			<description>Dipartimento per le Politiche del personale dell'amministrazione civile e per le Risorse strumentali e finanziarie</description>
+			<tenderPeriod>
+				<endDate>2019-01-08T00:00:00+00:00</endDate>
+				<startDate>2019-01-01T00:00:00+00:00</startDate>
+			</tenderPeriod>
+		</tender>
+		<language>it</language>
+		<initiationType>tender</initiationType>
+	</releases>
+	<publisher>
+		<uid>https://beta.companieshouse.gov.uk/company/04962733</uid>
+		<uri>https://openopps.com</uri>
+		<name>Open Opps</name>
+		<scheme>Companies House</scheme>
+	</publisher>
+	<publishedDate>2019-03-30T01:59:26.439254+00:00</publishedDate>
+	<publicationPolicy>https://openopps.com/legal/</publicationPolicy>
+</root>

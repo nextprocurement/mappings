@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	<uri>https://openopps.com/tenders/ocds-0c46vo-0049-153876/?format=json</uri>
+	<license>https://opendatacommons.org/licenses/odbl/</license>
+	<releases>
+		<id>153876</id>
+		<tag>tender</tag>
+		<date>2019-01-01T00:00:00+00:00</date>
+		<ocid>ocds-0c46vo-0049-153876</ocid>
+		<buyer>
+			<address>
+				<countryName>Germany</countryName>
+			</address>
+		</buyer>
+		<tender>
+			<id>153876</id>
+			<title>Bü­ro­mö­blie­run­gen</title>
+			<status>complete</status>
+			<documents>
+				<id>tender_url</id>
+				<url>https://www.service.bund.de/IMPORTE/Ausschreibungen/baysol/2019/01/153876.html;jsessionid=6F4C29516F10C229D2B891CE69962AF4.1_cid376?nn=4641482&amp;type=0&amp;searchResult=true</url>
+				<format>text/html</format>
+				<language>en</language>
+				<documentType>tenderNotice</documentType>
+			</documents>
+			<description>[]</description>
+			<tenderPeriod>
+				<endDate>2019-01-31T00:00:00+00:00</endDate>
+				<startDate>2019-01-01T00:00:00+00:00</startDate>
+			</tenderPeriod>
+			<procurementMethod>Dienst- und Lieferleistungen (VOL)</procurementMethod>
+		</tender>
+		<language>de</language>
+		<initiationType>tender</initiationType>
+	</releases>
+	<publisher>
+		<uid>https://beta.companieshouse.gov.uk/company/04962733</uid>
+		<uri>https://openopps.com</uri>
+		<name>Open Opps</name>
+		<scheme>Companies House</scheme>
+	</publisher>
+	<publishedDate>2019-03-30T03:02:36.827695+00:00</publishedDate>
+	<publicationPolicy>https://openopps.com/legal/</publicationPolicy>
+</root>

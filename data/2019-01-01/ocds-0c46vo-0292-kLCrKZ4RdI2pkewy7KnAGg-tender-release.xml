@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	<uri>https://openopps.com/tenders/ocds-0c46vo-0292-kLCrKZ4RdI2pkewy7KnAGg/?format=json</uri>
+	<license>https://opendatacommons.org/licenses/odbl/</license>
+	<releases>
+		<id>kLCrKZ4RdI2pkewy7KnAGg</id>
+		<tag>tender</tag>
+		<date>2019-01-01T00:00:00+00:00</date>
+		<ocid>ocds-0c46vo-0292-kLCrKZ4RdI2pkewy7KnAGg</ocid>
+		<buyer>
+			<address>
+				<countryName>Italy</countryName>
+			</address>
+		</buyer>
+		<tender>
+			<id>kLCrKZ4RdI2pkewy7KnAGg</id>
+			<title>Avviso di aggiudicazione polizza assicurativa  Dirigenti contrattualizzati  Area 1</title>
+			<status>complete</status>
+			<documents>
+				<id>tender_url</id>
+				<url>http://www.interno.gov.it/it/amministrazione-trasparente/bandi-gara-e-contratti/avviso-aggiudicazione-polizza-assicurativa-dirigenti-contrattualizzati-area-1</url>
+				<format>text/html</format>
+				<language>en</language>
+				<documentType>tenderNotice</documentType>
+			</documents>
+			<description>Dipartimento per le Politiche del personale dell'amministrazione civile e per le Risorse strumentali e finanziarie</description>
+			<tenderPeriod>
+				<startDate>2019-01-01T00:00:00+00:00</startDate>
+			</tenderPeriod>
+		</tender>
+		<language>it</language>
+		<initiationType>tender</initiationType>
+	</releases>
+	<publisher>
+		<uid>https://beta.companieshouse.gov.uk/company/04962733</uid>
+		<uri>https://openopps.com</uri>
+		<name>Open Opps</name>
+		<scheme>Companies House</scheme>
+	</publisher>
+	<publishedDate>2019-03-30T01:59:26.484276+00:00</publishedDate>
+	<publicationPolicy>https://openopps.com/legal/</publicationPolicy>
+</root>

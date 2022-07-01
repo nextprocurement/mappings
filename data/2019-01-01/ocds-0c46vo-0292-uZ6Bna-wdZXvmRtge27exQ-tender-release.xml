@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	<uri>https://openopps.com/tenders/ocds-0c46vo-0292-uZ6Bna-wdZXvmRtge27exQ/?format=json</uri>
+	<license>https://opendatacommons.org/licenses/odbl/</license>
+	<releases>
+		<id>uZ6Bna/wdZXvmRtge27exQ</id>
+		<tag>tender</tag>
+		<date>2019-01-01T00:00:00+00:00</date>
+		<ocid>ocds-0c46vo-0292-uZ6Bna-wdZXvmRtge27exQ</ocid>
+		<buyer>
+			<address>
+				<countryName>Italy</countryName>
+			</address>
+		</buyer>
+		<tender>
+			<id>uZ6Bna/wdZXvmRtge27exQ</id>
+			<title>Determina a contrarre e aggiudicazione contratto per l'acquisto di testi vari per la biblioteca della Sede didattico residenziale di via Veientana,386</title>
+			<status>complete</status>
+			<documents>
+				<id>tender_url</id>
+				<url>http://www.interno.gov.it/it/amministrazione-trasparente/bandi-gara-e-contratti/determina-contrarre-e-aggiudicazione-contratto-lacquisto-testi-vari-biblioteca-sede-didattico-residenziale-veientana386</url>
+				<format>text/html</format>
+				<language>en</language>
+				<documentType>tenderNotice</documentType>
+			</documents>
+			<description>Dipartimento per le Politiche del personale dell'amministrazione civile e per le Risorse strumentali e finanziarie</description>
+			<tenderPeriod>
+				<startDate>2019-01-01T00:00:00+00:00</startDate>
+			</tenderPeriod>
+		</tender>
+		<language>it</language>
+		<initiationType>tender</initiationType>
+	</releases>
+	<publisher>
+		<uid>https://beta.companieshouse.gov.uk/company/04962733</uid>
+		<uri>https://openopps.com</uri>
+		<name>Open Opps</name>
+		<scheme>Companies House</scheme>
+	</publisher>
+	<publishedDate>2019-03-30T01:59:26.529888+00:00</publishedDate>
+	<publicationPolicy>https://openopps.com/legal/</publicationPolicy>
+</root>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	<uri>https://openopps.com/tenders/ocds-0c46vo-0012-329224/?format=json</uri>
+	<license>https://opendatacommons.org/licenses/odbl/</license>
+	<releases>
+		<id>329224</id>
+		<tag>tender</tag>
+		<date>2019-01-01 22:02:26.987221+00:00</date>
+		<ocid>ocds-0c46vo-0012-329224</ocid>
+		<buyer>
+			<name>Aalst</name>
+			<address>
+				<countryName>Belgium</countryName>
+			</address>
+		</buyer>
+		<tender>
+			<id>329224</id>
+			<title>cluster Facility. Raamovereenkomst voor onderhoud technische installaties en bewaking Utopia voor een periode van 5 jaar</title>
+			<status>complete</status>
+			<documents>
+				<id>tender_url</id>
+				<url>https://enot.publicprocurement.be/enot-war/preViewNotice.do?noticeId=329224&amp;saveSearchParams=true&amp;useWorkingOrganisationId=%66%61%6C%73%65&amp;allLanguages=%66%61%6C%73%65&amp;selectAllChildren=%74%72%75%65&amp;isPopup=&amp;advancedSearch=&amp;publicationDateBDATo=&amp;publicationNumberBDA=&amp;versionReferenceNumber=&amp;d-446978-p=%32%32%37&amp;tenderSubmissionDeadline=&amp;title=&amp;marketPlaceType=%62%6F%74%68&amp;publicationDateBDAFrom=&amp;noticeStatus=%30&amp;purchaseAuthority=&amp;</url>
+				<format>text/html</format>
+				<language>en</language>
+				<documentType>tenderNotice</documentType>
+			</documents>
+			<description>zie II.2.4</description>
+		</tender>
+		<initiationType>tender</initiationType>
+	</releases>
+	<publisher>
+		<uid>https://beta.companieshouse.gov.uk/company/04962733</uid>
+		<uri>https://openopps.com</uri>
+		<name>Open Opps</name>
+		<scheme>Companies House</scheme>
+	</publisher>
+	<publishedDate>2019-03-30T01:37:49.888232+00:00</publishedDate>
+	<publicationPolicy>https://openopps.com/legal/</publicationPolicy>
+</root>

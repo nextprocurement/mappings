@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	<uri>https://openopps.com/tenders/ocds-0c46vo-0020-gosharedservices_229/?format=json</uri>
+	<license>https://opendatacommons.org/licenses/odbl/</license>
+	<releases>
+		<id>gosharedservices_229</id>
+		<tag>tender</tag>
+		<date>2019-01-01 22:02:40.731818+00:00</date>
+		<ocid>ocds-0c46vo-0020-gosharedservices_229</ocid>
+		<buyer>
+			<name>Cheltenham Borough Council</name>
+			<address>
+				<countryName>United Kingdom</countryName>
+			</address>
+			<contactPoint>
+				<name>Julian Denslow</name>
+			</contactPoint>
+		</buyer>
+		<tender>
+			<id>gosharedservices_229</id>
+			<items>
+				<id>1</id>
+				<classification>
+					<id>45210000</id>
+					<scheme>CPV</scheme>
+				</classification>
+				<additionalClassifications>
+					<id>45320000</id>
+					<scheme>CPV</scheme>
+				</additionalClassifications>
+				<additionalClassifications>
+					<id>45261200</id>
+					<scheme>CPV</scheme>
+				</additionalClassifications>
+				<additionalClassifications>
+					<id>45261910</id>
+					<scheme>CPV</scheme>
+				</additionalClassifications>
+				<additionalClassifications>
+					<id>45261410</id>
+					<scheme>CPV</scheme>
+				</additionalClassifications>
+				<additionalClassifications>
+					<id>45211000</id>
+					<scheme>CPV</scheme>
+				</additionalClassifications>
+				<additionalClassifications>
+					<id>45261920</id>
+					<scheme>CPV</scheme>
+				</additionalClassifications>
+				<additionalClassifications>
+					<id>45261210</id>
+					<scheme>CPV</scheme>
+				</additionalClassifications>
+				<additionalClassifications>
+					<id>45321000</id>
+					<scheme>CPV</scheme>
+				</additionalClassifications>
+				<additionalClassifications>
+					<id>45262330</id>
+					<scheme>CPV</scheme>
+				</additionalClassifications>
+				<additionalClassifications>
+					<id>45260000</id>
+					<scheme>CPV</scheme>
+				</additionalClassifications>
+				<additionalClassifications>
+					<id>45261900</id>
+					<scheme>CPV</scheme>
+				</additionalClassifications>
+				<additionalClassifications>
+					<id>45261211</id>
+					<scheme>CPV</scheme>
+				</additionalClassifications>
+				<additionalClassifications>
+					<id>45262700</id>
+					<scheme>CPV</scheme>
+				</additionalClassifications>
+			</items>
+			<title>External Renovation &amp; Improvement of Cornish Type Properties (Re-roofing; Concrete Repairs, External Wall Insulation)</title>
+			<status>complete</status>
+			<minValue>
+				<amount>0.0</amount>
+			</minValue>
+			<documents>
+				<id>tender_url</id>
+				<url>https://in-tendhost.co.uk/gosharedservices/aspx/ProjectManage/229</url>
+				<format>text/html</format>
+				<language>en</language>
+				<documentType>tenderNotice</documentType>
+			</documents>
+			<awardPeriod>
+				<startDate>2019-01-01T00:00:00+00:00</startDate>
+			</awardPeriod>
+			<description>This opportunity is for the external renovation and improvement of Cornish type properties owned by Cheltenham Borough Council and managed by Cheltenham Borough Homes.  Cornish type properties are a form of non-traditional construction built using pre-fabricated reinforced concrete ground floor walls and a tiled mansard for the first floor and a tiled roof. The tendered work comprises: •	Concrete Repairs: Removal of all concrete infill panels forming the external skin, repair of the concrete columns, infilling between         columns with loadbearing blockwork •      External wall insulation: installation •	Roof coverings, renewal inc chimney works, new fascias, soffits &amp; rain water goods.   •	Windows &amp; Doors: Replacement by a named sub-contractor •       Associated Works CBC’s Cornish properties are situated at two sites within Cheltenham:  •     Site A: Elmfield Avenue &amp; Midwinter Avenue - 36 properties consisting of 4 two storey blocks of flats containing 16 flats (2 leasehold)       and 16 semi-detached/end terrace and 4 mid-terrace houses.        &amp; •     Site B: Pitman Road - 30 properties consisting of 7 two storey blocks of flats containing 28 flats (5 leasehold) and 2 houses Site A is to be undertaken during 2019 and Site B during 2020 although there is the possibility that Site B may not progress to site. The works are to be undertaken outside of the winter months and for each site works are expected to be complete before 1st November.  On/adjacent to both sites is a garage site which will be made available for the Principal Contractor’s compound.  It is to be expected that all properties will be occupied during the works. CBH has appointed Curtins Consulting as Contract Administrator and Principal Designer for the project.</description>
+			<tenderPeriod>
+				<endDate>2019-02-04T00:00:00+00:00</endDate>
+			</tenderPeriod>
+		</tender>
+		<language>en</language>
+		<initiationType>tender</initiationType>
+	</releases>
+	<publisher>
+		<uid>https://beta.companieshouse.gov.uk/company/04962733</uid>
+		<uri>https://openopps.com</uri>
+		<name>Open Opps</name>
+		<scheme>Companies House</scheme>
+	</publisher>
+	<publishedDate>2019-03-30T01:32:35.401762+00:00</publishedDate>
+	<publicationPolicy>https://openopps.com/legal/</publicationPolicy>
+</root>

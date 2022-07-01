@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	<uri>https://openopps.com/tenders/ocds-0c46vo-0049-2710244/?format=json</uri>
+	<license>https://opendatacommons.org/licenses/odbl/</license>
+	<releases>
+		<id>2710244</id>
+		<tag>tender</tag>
+		<date>2019-01-01T00:00:00+00:00</date>
+		<ocid>ocds-0c46vo-0049-2710244</ocid>
+		<buyer>
+			<address>
+				<countryName>Germany</countryName>
+			</address>
+			<contactPoint>
+				<email>box@elektro-innung-wuerzburg.de</email>
+			</contactPoint>
+		</buyer>
+		<tender>
+			<id>2710244</id>
+			<title>Wall-Box</title>
+			<status>complete</status>
+			<documents>
+				<id>tender_url</id>
+				<url>https://www.service.bund.de/IMPORTE/Ausschreibungen/editor/Innung-fuer-Elektro-und-Informationstechnik-Wuerzburg/2019/01/2710244.html;jsessionid=1F1E6D321848428B74DD5FE30A8826D2.2_cid358?nn=4641482&amp;type=0&amp;searchResult=true</url>
+				<format>text/html</format>
+				<language>en</language>
+				<documentType>tenderNotice</documentType>
+			</documents>
+			<description>[u'Ausschreibung geht \xfcber die Lieferung von einer Wall-Box f\xfcr die Verwendung in der \xfcberbetrieblichen Ausbildung und Meisterausbildung Elektrotechnik. Die komplette Wall-Box soll inklusive Zubeh\xf6r, wie zum Beispiel deutsche Bedienungsanleitung und Montage-Zubeh\xf6r geliefert werden. Details siehe Leistungsverzeichnis.']</description>
+			<tenderPeriod>
+				<endDate>2019-01-25T00:00:00+00:00</endDate>
+				<startDate>2019-01-01T00:00:00+00:00</startDate>
+			</tenderPeriod>
+			<procurementMethod>Unterschwellenvergabeordnung (UVgO)</procurementMethod>
+		</tender>
+		<language>de</language>
+		<initiationType>tender</initiationType>
+	</releases>
+	<publisher>
+		<uid>https://beta.companieshouse.gov.uk/company/04962733</uid>
+		<uri>https://openopps.com</uri>
+		<name>Open Opps</name>
+		<scheme>Companies House</scheme>
+	</publisher>
+	<publishedDate>2019-03-30T03:00:31.840675+00:00</publishedDate>
+	<publicationPolicy>https://openopps.com/legal/</publicationPolicy>
+</root>

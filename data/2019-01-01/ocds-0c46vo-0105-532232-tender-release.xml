@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	<uri>https://openopps.com/tenders/ocds-0c46vo-0105-532232/?format=json</uri>
+	<license>https://opendatacommons.org/licenses/odbl/</license>
+	<releases>
+		<id>532232</id>
+		<tag>tender</tag>
+		<date>2019-01-01T00:00:00+00:00</date>
+		<ocid>ocds-0c46vo-0105-532232</ocid>
+		<buyer>
+			<name>GRAND CHAMBERY</name>
+			<address>
+				<countryName>France</countryName>
+				<streetAddress>GRAND CHAMBERY</streetAddress>
+			</address>
+			<contactPoint>
+				<url>https://www.grandchambery.fr</url>
+				<name>GRAND CHAMBERY</name>
+			</contactPoint>
+		</buyer>
+		<tender>
+			<id>532232</id>
+			<items>
+				<id>1</id>
+				<classification>
+					<id>34144511</id>
+					<scheme>CPV</scheme>
+				</classification>
+			</items>
+			<title>Location de courte durée de camions benne à ordures ménagères à chargement vertical par grue auxiliaire pour la direction de la gestion des déchets de Grand Chambéry</title>
+			<status>complete</status>
+			<documents>
+				<id>tender_url</id>
+				<url>http://www.marches-publics.info/mpiaws/index.cfm?fuseaction=mpAW.affM2&amp;IDM=532232&amp;test=false&amp;serveur=MPI&amp;CFID=33419821&amp;CFTOKEN=b265fc3758d086eb-89B2C634-B3D5-4669-0F93B5C26796136E</url>
+				<format>text/html</format>
+				<language>en</language>
+				<documentType>tenderNotice</documentType>
+			</documents>
+			<description>Le présent accord cadre consiste en la réalisation des prestations suivantes :-	Location de camions 26 T équipé d'une benne à ordures ménagères et d'une grue auxiliaire-	Quantité : de 1 à 3 véhicules sur une même période-	Durée : location de 6 mois à 24 mois par véhiculeIl s'agit d'un accord-cadre sans montant minimum ni maximum, passé en application des articles 78 et 79 du Décret n°2016-360 du 25 mars 2016.Il sera attribué à 3 opérateurs économiques (sous réserve d'un nombre suffisant d'offres).Les marchés subséquents sont attribués après remise en concurrence de tous les titulaires de l'accord-cadre. Cette remise en concurrence intervient lors de la survenance du besoin.Les dits titulaires doivent déposer une offre à chaque remise en concurrence. En cas d'absence de nouvelle offre, chaque titulaire doit justifier par écrit de son impossibilité de répondre.</description>
+			<tenderPeriod>
+				<endDate>2019-02-01T10:00:00+00:00</endDate>
+				<startDate>2019-01-01T00:00:00+00:00</startDate>
+			</tenderPeriod>
+		</tender>
+		<language>fr</language>
+		<initiationType>tender</initiationType>
+	</releases>
+	<publisher>
+		<uid>https://beta.companieshouse.gov.uk/company/04962733</uid>
+		<uri>https://openopps.com</uri>
+		<name>Open Opps</name>
+		<scheme>Companies House</scheme>
+	</publisher>
+	<publishedDate>2019-03-30T01:31:23.033295+00:00</publishedDate>
+	<publicationPolicy>https://openopps.com/legal/</publicationPolicy>
+</root>

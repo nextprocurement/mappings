@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	<uri>https://openopps.com/tenders/ocds-0c46vo-0292-MbCbUmjjZqeh1NZk5gZGMA/?format=json</uri>
+	<license>https://opendatacommons.org/licenses/odbl/</license>
+	<releases>
+		<id>MbCbUmjjZqeh1NZk5gZGMA</id>
+		<tag>tender</tag>
+		<date>2019-01-01T00:00:00+00:00</date>
+		<ocid>ocds-0c46vo-0292-MbCbUmjjZqeh1NZk5gZGMA</ocid>
+		<buyer>
+			<address>
+				<countryName>Italy</countryName>
+			</address>
+		</buyer>
+		<tender>
+			<id>MbCbUmjjZqeh1NZk5gZGMA</id>
+			<title>Determina per rinnovo licenza  Devart DotConnect for Oracle e relativo avviso di aggiudicazione</title>
+			<status>complete</status>
+			<documents>
+				<id>tender_url</id>
+				<url>http://www.interno.gov.it/it/amministrazione-trasparente/bandi-gara-e-contratti/determina-rinnovo-licenza-devart-dotconnect-oracle-e-relativo-avviso-aggiudicazione</url>
+				<format>text/html</format>
+				<language>en</language>
+				<documentType>tenderNotice</documentType>
+			</documents>
+			<description>Ordine diretto tramite Mepa mediante OdA</description>
+			<tenderPeriod>
+				<startDate>2019-01-01T00:00:00+00:00</startDate>
+			</tenderPeriod>
+		</tender>
+		<language>it</language>
+		<initiationType>tender</initiationType>
+	</releases>
+	<publisher>
+		<uid>https://beta.companieshouse.gov.uk/company/04962733</uid>
+		<uri>https://openopps.com</uri>
+		<name>Open Opps</name>
+		<scheme>Companies House</scheme>
+	</publisher>
+	<publishedDate>2019-03-30T01:59:26.575566+00:00</publishedDate>
+	<publicationPolicy>https://openopps.com/legal/</publicationPolicy>
+</root>

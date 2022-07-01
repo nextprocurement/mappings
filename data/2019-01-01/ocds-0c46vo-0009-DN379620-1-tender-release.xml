@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	<uri>https://openopps.com/tenders/ocds-0c46vo-0009-DN379620-1/?format=json</uri>
+	<license>https://opendatacommons.org/licenses/odbl/</license>
+	<releases>
+		<id>DN379620-1</id>
+		<tag>tender</tag>
+		<date>2019-01-01T00:00:00+00:00</date>
+		<ocid>ocds-0c46vo-0009-DN379620-1</ocid>
+		<buyer>
+			<name>Wolverhampton City Council</name>
+			<address>
+				<region>West Midlands</region>
+				<locality>Wolverhampton</locality>
+				<postalCode>WV1 1RL</postalCode>
+				<countryName>United Kingdom</countryName>
+				<streetAddress>Civic Centre</streetAddress>
+			</address>
+			<contactPoint>
+				<name>John Bailey</name>
+				<email>john.bailey2@wolverhampton.gov.uk</email>
+				<telephone>01902 552012</telephone>
+			</contactPoint>
+		</buyer>
+		<tender>
+			<id>DN379620-1</id>
+			<items>
+				<id>1</id>
+				<classification>
+					<id>72153002</id>
+					<scheme>UNSPSC</scheme>
+					<description>Glazing installation and repair service</description>
+				</classification>
+			</items>
+			<title>WH18001 - Glazing Repairs &amp; Maintenance</title>
+			<status>complete</status>
+			<documents>
+				<id>tender_url</id>
+				<url>https://procontract.due-north.com/Advert?advertId=a9d162c1-c60d-e911-80f0-005056b64545</url>
+				<format>text/html</format>
+				<language>en</language>
+				<documentType>tenderNotice</documentType>
+			</documents>
+			<description>Wolverhampton Homes (The Client), an Arm’s Length Management Organisation (ALMO), requires an established and competent Contractor (The Contractor) to provide glazing repairs and maintenance services to both void and occupied properties throughout the City of Wolverhampton.To provide glazing se...f the In-House Team by providing a fully integrated and flexible service that is seamless from the customer’s perspective and that ensures that value for money is achieved.Works will include glazing services for the repairs service, works carried out by building solutions teams and void repairs
+More...</description>
+			<tenderPeriod>
+				<endDate>2019-01-31T15:00:00+00:00</endDate>
+				<startDate>2019-01-01T14:00:00+00:00</startDate>
+			</tenderPeriod>
+		</tender>
+		<language>en</language>
+		<contracts>
+			<id>1</id>
+			<period>
+				<endDate>2024-04-30T00:00:00+00:00</endDate>
+				<startDate>2019-05-01T00:00:00+00:00</startDate>
+			</period>
+		</contracts>
+		<initiationType>tender</initiationType>
+	</releases>
+	<publisher>
+		<uid>https://beta.companieshouse.gov.uk/company/04962733</uid>
+		<uri>https://openopps.com</uri>
+		<name>Open Opps</name>
+		<scheme>Companies House</scheme>
+	</publisher>
+	<publishedDate>2019-03-30T01:34:10.025789+00:00</publishedDate>
+	<publicationPolicy>https://openopps.com/legal/</publicationPolicy>
+</root>
