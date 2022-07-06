@@ -1,0 +1,51 @@
+###################################################################################################
+# RML mapping rules for OCDS 1.0 (https://standard.open-contracting.org/1.0/en/release-schema.json)
+# 
+# Copyright: SINTEF 2018-2021
+# Author   : Brian Elvesæter (brian.elvesater@sintef.no)
+# License  : Apache License 2.0 (http://www.apache.org/licenses/LICENSE-2.0)
+# Project  : Developed as part of the TheyBuyForYou project (https://theybuyforyou.eu/)
+# Funding  : TheyBuyForYou has received funding from the European Union's Horizon 2020
+#            research and innovation programme under grant agreement No 780247
+###################################################################################################
+
+
+# RML prefixes
+@prefix rr:       <http://www.w3.org/ns/r2rml#> .
+@prefix rml:      <http://semweb.mmlab.be/ns/rml#> .
+@prefix ql:       <http://semweb.mmlab.be/ns/ql#> .
+
+# Own prefixes
+@base             <http://data.tbfy.eu/> .
+@prefix tbfy:     <http://data.tbfy.eu/ontology/tbfy#> . 
+@prefix ocds:     <http://data.tbfy.eu/ontology/ocds#> .
+
+# External prefixes
+@prefix dc:       <http://purl.org/dc/terms/> .
+@prefix foaf:     <http://xmlns.com/foaf/0.1/> .
+@prefix owl:      <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:      <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix schema:   <http://schema.org/> .
+@prefix skos:     <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd:      <http://www.w3.org/2001/XMLSchema#> .
+
+
+
+
+# *********************************
+# Contracting Process mapping rules
+# *********************************
+
+<ContractingProcessMap>
+  a rr:TriplesMap ;
+
+  rml:logicalSource [
+    rml:source: "../data/outsiders_2021.parquet" ;
+	] ;
+
+  rr:predicateObjectMap [
+    rr:predicate ocds:hasTender ;
+    rr:objectMap [
+      rr:template "http://data.tbfy.eu/tender/{$(Número de Expediente)}"
+    ]
+  ].
