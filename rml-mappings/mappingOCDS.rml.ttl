@@ -121,22 +121,7 @@
     ]
   ];
 
-  rr:predicateObjectMap [
-    rr:predicate ocds:hasClassification ;
-    rr:objectMap [
-      rml:reference "Clasificación CPV" ;
-      rr:datatype xsd:string
-    ]
-  ];
-
-  rr:predicateObjectMap [
-    rr:predicate ocds:hasClassificationScheme ;
-    rr:objectMap [
-      rr:constant "CPV" ;
-      rr:datatype xsd:string
-    ]
-  ];
-
+  
 
   rr:predicateObjectMap [
     rr:predicate ocds:hasContractPeriod ;
@@ -350,4 +335,94 @@
 	]
   ].
   
+<#TenderItem>
+
+  a rr:TriplesMap ;
+
+  rml:logicalSource [
+    rml:source: "../data/outsiders_2021.parquet" 
+  ];
+
+  rr:subjectMap [
+    rr:template "http://data.nextprocurement.linkeddata.es/contractingProcess/{Número de Expediente}/tender/{Número de Expediente}/Item/" ;
+    rr:class ocds:Item
+  ];
+
+  rr:predicateObjectMap [
+    rr:predicate ocds:hasAdditionalClassification ;
+    rr:objectMap [
+      rr:template "http://data.nextprocurement.linkeddata.es/contractingProcess/Classification/NUTS/{Código de Subentidad Nacional}" ;
+      rr:datatype xsd:URI
+    ]
+  ];
+
+  rr:predicateObjectMap [
+    rr:predicate ocds:hasClassification ;
+    rr:objectMap [
+      rr:template "http://data.nextprocurement.linkeddata.es/contractingProcess/Classification/CPV/{Clasificación CPV}" ;
+      rr:datatype xsd:URI
+    ]
+  ].
   
+  
+<#CPVConcept>
+
+  a rr:TriplesMap ;
+
+  rml:logicalSource [
+    rml:source: "../data/outsiders_2021.parquet" 
+  ];
+
+  rr:subjectMap [
+    rr:template "http://data.nextprocurement.linkeddata.es/contractingProcess/Classification/CPV/{Clasificación CPV}" ;
+    rr:class skos:Concept
+  ];
+
+
+  rr:predicateObjectMap [
+    rr:predicate  dc:title ;
+    rr:objectMap [
+      rml:reference "Clasificación CPV" ;
+	  rr:datatype xsd:string
+    ] 
+  ];
+  
+  rr:predicateObjectMap [
+    rr:predicate  skos:inScheme ;
+    rr:objectMap [
+      rr:constant "http://data.nextprocurement.linkeddata.es/contractingProcess/Classification/CPV" ;
+	  rr:datatype xsd:URI
+    ] 
+  ].
+  
+  
+  
+<#NUTSConcept>
+
+  a rr:TriplesMap ;
+
+  rml:logicalSource [
+    rml:source: "../data/outsiders_2021.parquet" 
+  ];
+
+  rr:subjectMap [
+    rr:template "http://data.nextprocurement.linkeddata.es/contractingProcess/Classification/NUTS/{Código de Subentidad Nacional}" ;
+    rr:class skos:Concept
+  ];
+
+
+  rr:predicateObjectMap [
+    rr:predicate  dc:title ;
+    rr:objectMap [
+      rml:reference "Código de Subentidad Nacional" ;
+	  rr:datatype xsd:string
+    ] 
+  ];
+  
+  rr:predicateObjectMap [
+    rr:predicate  skos:inScheme ;
+    rr:objectMap [
+      rr:constant "http://data.nextprocurement.linkeddata.es/contractingProcess/Classification/NUTS" ;
+	  rr:datatype xsd:URI
+    ] 
+  ].
