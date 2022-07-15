@@ -158,6 +158,13 @@
     rr:objectMap [
       rr:template "http://data.nextprocurement.linkeddata.es/contractingProcess/{Número de Expediente}/tender/{Número de Expediente}/document/evaluationCriteria"
     ]
+  ];
+  
+  rr:predicateObjectMap [
+    rr:predicate ocds:hasAward ;
+    rr:objectMap [
+      rr:template "http://data.nextprocurement.linkeddata.es/contractingProcess/{Número de Expediente}/tender/{Número de Expediente}/award"
+    ]
   ].
 
 
@@ -425,4 +432,83 @@
       rr:constant "http://data.nextprocurement.linkeddata.es/contractingProcess/Classification/NUTS" ;
 	  rr:datatype xsd:URI
     ] 
+  ].
+  
+<#award>
+
+
+  a rr:TriplesMap ;
+
+  rml:logicalSource [
+    rml:source: "../data/outsiders_2021.parquet" 
+  ];
+
+  rr:subjectMap [
+    rr:template "http://data.nextprocurement.linkeddata.es/contractingProcess/{Número de Expediente}/tender/{Número de Expediente}/award" ;
+    rr:class ocds:Award
+  ];
+
+
+  rr:predicateObjectMap [
+    rr:predicate  ocds:hasAwardValue ;
+    rr:objectMap [
+      rml:template "http://data.nextprocurement.linkeddata.es/contractingProcess/{Número de Expediente}/tender/award/hasContractValue" ;
+    ] 
+  ].
+  
+  
+<#ContractValue>
+  a rr:TriplesMap ;
+
+  rml:logicalSource [
+    rml:source: "../data/outsiders_2021.parquet" 
+  ];
+
+  rr:subjectMap [
+    rr:template "http://data.nextprocurement.linkeddata.es/contractingProcess/{Número de Expediente}/tender/award/hasContractValue" ;
+    rr:class ocds:Value
+  ];
+      
+  rr:predicateObjectMap [
+    rr:predicate ocds:valueAmount ;
+    rr:objectMap [
+      rml:reference "Importe total ofertado (sin impuestos)" ;
+      rr:datatype xsd:decimal
+    ]
+  ];
+      
+  rr:predicateObjectMap [
+    rr:predicate ocds:valueCurrency ;
+    rr:objectMap [
+      rr:constant "Euro" ;
+      rr:datatype xsd:string
+    ]
+  ].
+  
+  
+<#OrganizationContract>
+  a rr:TriplesMap ;
+
+  rml:logicalSource [
+    rml:source: "../data/outsiders_2021.parquet" 
+  ];
+
+  rr:subjectMap [
+    rr:template "http://data.nextprocurement.linkeddata.es/contractingProcess/Organization/{Identificador (+ Tipo: mod schemeName)}" ;
+    rr:class ocds:Organisation 
+  ];
+      
+  rr:predicateObjectMap [
+    rr:predicate ocds:isSupplierFor ;
+    rr:objectMap [
+      rr:template "http://data.nextprocurement.linkeddata.es/contractingProcess/{Número de Expediente}/tender/{Número de Expediente}/award" ;
+    ]
+  ];
+      
+  rr:predicateObjectMap [
+    rr:predicate schema:name ;
+    rr:objectMap [
+      rr:reference "Nombre del Adjudicatario" ;
+      rr:datatype xsd:string
+    ]
   ].
