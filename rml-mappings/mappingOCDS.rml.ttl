@@ -27,6 +27,7 @@
 @prefix schema:   <http://schema.org/> .
 @prefix skos:     <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd:      <http://www.w3.org/2001/XMLSchema#> .
+@prefix schema:   <http://schema.org/> .
 
 
 
@@ -159,6 +160,13 @@
       rr:template "http://data.nextprocurement.linkeddata.es/contractingProcess/{Número de Expediente}/tender/{Número de Expediente}/document/evaluationCriteria"
     ]
   ];
+  
+  rr:predicateObjectMap [
+    rr:predicate ocds:isProcuringEntityFor ;
+    rr:objectMap [
+      rr:template "http://data.nextprocurement.linkeddata.es/contractingProcess/Organization/{ID}" ;
+    ]
+  ];    
   
   rr:predicateObjectMap [
     rr:predicate ocds:hasAward ;
@@ -452,7 +460,7 @@
   rr:predicateObjectMap [
     rr:predicate  ocds:hasAwardValue ;
     rr:objectMap [
-      rml:template "http://data.nextprocurement.linkeddata.es/contractingProcess/{Número de Expediente}/tender/award/hasContractValue" ;
+      rr:template "http://data.nextprocurement.linkeddata.es/contractingProcess/{Número de Expediente}/tender/award/hasContractValue" ;
     ] 
   ].
   
@@ -495,7 +503,7 @@
 
   rr:subjectMap [
     rr:template "http://data.nextprocurement.linkeddata.es/contractingProcess/Organization/{Identificador (+ Tipo: mod schemeName)}" ;
-    rr:class ocds:Organisation 
+    rr:class ocds:Organisation ;
   ];
       
   rr:predicateObjectMap [
@@ -508,7 +516,35 @@
   rr:predicateObjectMap [
     rr:predicate schema:name ;
     rr:objectMap [
-      rr:reference "Nombre del Adjudicatario" ;
+      rml:reference "Nombre del Adjudicatario" ;
       rr:datatype xsd:string
+    ]
+  ].
+  
+<#OrganizationContratante>
+  a rr:TriplesMap ;
+
+  rml:logicalSource [
+    rml:source: "../data/outsiders_2021.parquet" 
+  ];
+
+  rr:subjectMap [
+    rr:template "http://data.nextprocurement.linkeddata.es/contractingProcess/Organization/{ID}" ;
+    rr:class ocds:Organisation ;
+  ];
+      
+  rr:predicateObjectMap [
+    rr:predicate ocds:legalName ;
+    rr:objectMap [
+      rml:reference "ID" ;
+      rr:datatype xsd:string
+    ]
+  ];
+      
+  rr:predicateObjectMap [
+    rr:predicate ocds:URI ;
+    rr:objectMap [
+      rml:reference "URL perfil de contratante" ;
+      rr:datatype xsd:anyURI
     ]
   ].
