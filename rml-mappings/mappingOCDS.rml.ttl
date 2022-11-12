@@ -38,10 +38,16 @@
 
 <ContractingProcessMap>
   a rr:TriplesMap ;
-
+  
   rml:logicalSource [
-    rml:source: "../data/outsiders_2021.parquet" 
+    rr:sqlVersion rr:SQL2008;
+    rml:query """
+        SELECT "Número de Expediente"
+		FROM 'C:/Users/mnavas/CODE/NextProcurement/newMorphKGC/data/outsiders_2021.parquet'
+    """;
+    rml:referenceFormulation ql:Parquet
   ];
+  
   
   rr:subjectMap [
     rr:template "http://data.nextprocurement.linkeddata.es/contractingProcess/{Número de Expediente}" ;
@@ -56,11 +62,25 @@
   ].
   
   
+   
 <TenderMap>
   a rr:TriplesMap ;
 
   rml:logicalSource [
-    rml:source: "../data/outsiders_2021.parquet" 
+    rr:sqlVersion rr:SQL2008;
+    rml:query """
+        SELECT "Número de Expediente", "title", "Objeto del Contrato", "Estado", "ID",
+		CASE "Tipo de Contrato" WHEN 1 THEN 'goods' 
+             WHEN 2 THEN 'services' 
+             WHEN 3 THEN 'works' 
+             WHEN 31 THEN 'works' 
+             WHEN 21 THEN 'services'
+             ELSE 'other' 
+             END as TipoContrato,
+		trim("Número de Licitadores Participantes",'[].0') AS NumLicitadores
+		FROM 'C:/Users/mnavas/CODE/NextProcurement/newMorphKGC/data/outsiders_2021.parquet'
+    """;
+    rml:referenceFormulation ql:Parquet
   ];
 
   rr:subjectMap [
@@ -117,7 +137,7 @@
   rr:predicateObjectMap [
     rr:predicate ocds:mainProcurementCategory ;
     rr:objectMap [
-      rml:reference "Tipo de Contrato" ;
+      rml:reference "TipoContrato" ;
       rr:datatype xsd:string
     ]
   ];
@@ -139,13 +159,13 @@
     ]
   ];
 
-  rr:predicateObjectMap [
-    rr:predicate ocds:numberOfTenderers ;
-    rr:objectMap [
-      rml:reference "Número de Licitadores Participantes" ;
-      rr:datatype xsd:integer
-    ]
-  ];
+#   rr:predicateObjectMap [
+#     rr:predicate ocds:numberOfTenderers ;
+#     rr:objectMap [
+#       rml:reference "NumLicitadores" ;
+#       rr:datatype xsd:integer
+#     ]
+#   ];
 
   rr:predicateObjectMap [
     rr:predicate ocds:hasDocument ;
@@ -175,14 +195,16 @@
     ]
   ].
 
-
-
-
 <#TenderMinValueMap>
   a rr:TriplesMap ;
 
   rml:logicalSource [
-    rml:source: "../data/outsiders_2021.parquet" 
+    rr:sqlVersion rr:SQL2008;
+    rml:query """
+        SELECT "Número de Expediente", "Valor estimado del contrato"
+		FROM 'C:/Users/mnavas/CODE/NextProcurement/newMorphKGC/data/outsiders_2021.parquet'
+    """;
+    rml:referenceFormulation ql:Parquet
   ];
 
   rr:subjectMap [
@@ -210,7 +232,12 @@
   a rr:TriplesMap ;
 
   rml:logicalSource [
-    rml:source: "../data/outsiders_2021.parquet" 
+    rr:sqlVersion rr:SQL2008;
+    rml:query """
+        SELECT "Número de Expediente", "Valor estimado del contrato"
+		FROM 'C:/Users/mnavas/CODE/NextProcurement/newMorphKGC/data/outsiders_2021.parquet'
+    """;
+    rml:referenceFormulation ql:Parquet
   ];
 
   rr:subjectMap [
@@ -233,12 +260,23 @@
       rr:datatype xsd:string
     ]
   ].
-
+  
+  
+  
 <#TenderPeriodMap>
   a rr:TriplesMap ;
 
   rml:logicalSource [
-    rml:source: "../data/outsiders_2021.parquet" 
+    rr:sqlVersion rr:SQL2008;
+    rml:query """
+        SELECT "Número de Expediente",
+		CASE WHEN ("Presentación de Solicitudes (Fecha)" IS NOT NULL) AND ("Presentación de Solicitudes (Hora)" IS NOT NULL) THEN CONCAT("Presentación de Solicitudes (Fecha)",'T', "Presentación de Solicitudes (Hora)") 
+             WHEN ("Presentación de Solicitudes (Fecha)" IS NOT NULL) THEN "Presentación de Solicitudes (Fecha)"
+             ELSE '' 
+             END AS Presentacion
+		FROM 'C:/Users/mnavas/CODE/NextProcurement/newMorphKGC/data/outsiders_2021.parquet'
+    """;
+    rml:referenceFormulation ql:Parquet
   ];
 
   rr:subjectMap [
@@ -249,17 +287,29 @@
   rr:predicateObjectMap [
     rr:predicate ocds:periodEndDate ;
     rr:objectMap [
-      rml:reference "Presentación de Solicitudes (Fecha)" ;
+      rml:reference "Presentacion" ;
       rr:datatype xsd:dateTime
     ]
   ].
   
+
 <#ContractPeriodMap>
   a rr:TriplesMap ;
 
   rml:logicalSource [
-    rml:source: "../data/outsiders_2021.parquet" 
+    rr:sqlVersion rr:SQL2008;
+    rml:query """
+        SELECT "Número de Expediente", "Plazo de Ejecución (Comienzo)", "Plazo de Ejecución (Fin)", 
+		CASE WHEN (isnan("Plazo de Ejecución (Duración)") OR ("Plazo de Ejecución (Duración)" IS NULL))THEN 0
+		     WHEN regexp_matches("Plazo de Ejecución (Duración)", '\\d+\\.?\\d*') THEN CAST(CAST("Plazo de Ejecución (Duración)" AS FLOAT) AS INTEGER)
+			 ELSE 0
+			 END AS Duracion
+		FROM 'C:/Users/mnavas/CODE/NextProcurement/newMorphKGC/data/outsiders_2021.parquet'
+    """;
+    rml:referenceFormulation ql:Parquet
   ];
+  
+  # CASE "Tipo de Contrato" WHEN 1 THEN 'goods'
 
   rr:subjectMap [
     rr:template "http://data.nextprocurement.linkeddata.es/contractingProcess/{Número de Expediente}/tender/{Número de Expediente}/contractPeriod" ;
@@ -286,18 +336,34 @@
   rr:predicateObjectMap [
 	rr:predicate ocds:periodDurationInDays ;
       rr:objectMap [
-		rml:reference "Plazo de Ejecución (Duración)" ;
+		rml:reference "Duracion" ;
 		rr:datatype xsd:integer
 	]
   ].
   
-
-<#TenderPPT>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <#TenderPPT>
 
   a rr:TriplesMap ;
 
   rml:logicalSource [
-    rml:source: "../data/outsiders_2021.parquet" 
+    rr:sqlVersion rr:SQL2008;
+    rml:query """
+        SELECT "Número de Expediente", "Pliego de Prescripciones técnicas (URI)"
+		FROM 'C:/Users/mnavas/CODE/NextProcurement/newMorphKGC/data/outsiders_2021.parquet'
+    """;
+    rml:referenceFormulation ql:Parquet
   ];
 
   rr:subjectMap [
@@ -326,7 +392,12 @@
   a rr:TriplesMap ;
 
   rml:logicalSource [
-    rml:source: "../data/outsiders_2021.parquet" 
+    rr:sqlVersion rr:SQL2008;
+    rml:query """
+        SELECT "Número de Expediente", "Pliego de cláusulas administrativas (URI)"
+		FROM 'C:/Users/mnavas/CODE/NextProcurement/newMorphKGC/data/outsiders_2021.parquet'
+    """;
+    rml:referenceFormulation ql:Parquet
   ];
 
   rr:subjectMap [
@@ -379,8 +450,7 @@
     ]
   ].
   
-  
-<#CPVConcept>
+  <#CPVConcept>
 
   a rr:TriplesMap ;
 
