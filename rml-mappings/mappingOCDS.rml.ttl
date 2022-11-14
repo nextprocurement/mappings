@@ -60,7 +60,38 @@
       rr:template "http://data.nextprocurement.linkeddata.es/contractingProcess/{Número de Expediente}/tender/{Número de Expediente}" ;
     ]
   ].
+
+<LotMap>
+  a rr:TriplesMap ;
+
+  rml:logicalSource [
+    rr:sqlVersion rr:SQL2008;
+    rml:query """
+        SELECT "Número de Expediente", 
+		CASE WHEN length(replace("Lote",'[\\s\\[\\]]+',''))=0 THEN 0 
+		ELSE UNNEST(string_split(replace("Lote",'[\\s]+','')[2:-1], ','))
+		END AS Lotes,
+		CASE WHEN length(replace("Número de Licitadores Participantes",'[\\s\\[\\]]+',''))=0 THEN 0 
+		ELSE UNNEST(CAST(CAST(string_split(replace(replace("Número de Licitadores Participantes",'[\\s]+',''), 'NULL', '0')[2:-1], ',') AS DOUBLE[]) AS INT[]))
+		END AS NumTenders
+		FROM 'C:/Users/mnavas/CODE/NextProcurement/newMorphKGC/data/outsiders_2021.parquet'
+    """;
+    rml:referenceFormulation ql:Parquet
+  ];
   
+  
+  rr:subjectMap [
+    rr:template "http://data.nextprocurement.linkeddata.es/contractingProcess/{Número de Expediente}/lot/{Lotes}" ;
+    rr:class ocds:Lot
+  ];
+
+  rr:predicateObjectMap [
+    rr:predicate ocds:numberOfTenderers ;
+    rr:objectMap [
+      rml:reference "NumTenders" ;
+      rr:datatype xsd:integer
+    ]
+  ].
   
    
 <TenderMap>
@@ -76,8 +107,7 @@
              WHEN 31 THEN 'works' 
              WHEN 21 THEN 'services'
              ELSE 'other' 
-             END as TipoContrato,
-		trim("Número de Licitadores Participantes",'[].0') AS NumLicitadores
+             END as TipoContrato
 		FROM 'C:/Users/mnavas/CODE/NextProcurement/newMorphKGC/data/outsiders_2021.parquet'
     """;
     rml:referenceFormulation ql:Parquet
@@ -159,14 +189,6 @@
     ]
   ];
 
-#   rr:predicateObjectMap [
-#     rr:predicate ocds:numberOfTenderers ;
-#     rr:objectMap [
-#       rml:reference "NumLicitadores" ;
-#       rr:datatype xsd:integer
-#     ]
-#   ];
-
   rr:predicateObjectMap [
     rr:predicate ocds:hasDocument ;
     rr:objectMap [
@@ -192,429 +214,5 @@
     rr:predicate ocds:hasAward ;
     rr:objectMap [
       rr:template "http://data.nextprocurement.linkeddata.es/contractingProcess/{Número de Expediente}/tender/{Número de Expediente}/award"
-    ]
-  ].
-
-<#TenderMinValueMap>
-  a rr:TriplesMap ;
-
-  rml:logicalSource [
-    rr:sqlVersion rr:SQL2008;
-    rml:query """
-        SELECT "Número de Expediente", "Valor estimado del contrato"
-		FROM 'C:/Users/mnavas/CODE/NextProcurement/newMorphKGC/data/outsiders_2021.parquet'
-    """;
-    rml:referenceFormulation ql:Parquet
-  ];
-
-  rr:subjectMap [
-    rr:template "http://data.nextprocurement.linkeddata.es/contractingProcess/{Número de Expediente}/tender/{Número de Expediente}/minValue" ;
-    rr:class ocds:Value
-  ];
-      
-  rr:predicateObjectMap [
-    rr:predicate ocds:valueAmount ;
-    rr:objectMap [
-      rml:reference "Valor estimado del contrato" ;
-      rr:datatype xsd:decimal
-    ]
-  ];
-      
-  rr:predicateObjectMap [
-    rr:predicate ocds:valueCurrency ;
-    rr:objectMap [
-      rr:constant "Euro" ;
-      rr:datatype xsd:string
-    ]
-  ].
-
-<#TenderMaxValueMap>
-  a rr:TriplesMap ;
-
-  rml:logicalSource [
-    rr:sqlVersion rr:SQL2008;
-    rml:query """
-        SELECT "Número de Expediente", "Valor estimado del contrato"
-		FROM 'C:/Users/mnavas/CODE/NextProcurement/newMorphKGC/data/outsiders_2021.parquet'
-    """;
-    rml:referenceFormulation ql:Parquet
-  ];
-
-  rr:subjectMap [
-    rr:template "http://data.nextprocurement.linkeddata.es/contractingProcess/{Número de Expediente}/tender/{Número de Expediente}/maxValue" ;
-    rr:class ocds:Value
-  ];
-      
-  rr:predicateObjectMap [
-    rr:predicate ocds:valueAmount ;
-    rr:objectMap [
-      rml:reference "Valor estimado del contrato" ;
-      rr:datatype xsd:decimal
-    ]
-  ];
-      
-  rr:predicateObjectMap [
-    rr:predicate ocds:valueCurrency ;
-    rr:objectMap [
-      rr:constant "Euro" ;
-      rr:datatype xsd:string
-    ]
-  ].
-  
-  
-  
-<#TenderPeriodMap>
-  a rr:TriplesMap ;
-
-  rml:logicalSource [
-    rr:sqlVersion rr:SQL2008;
-    rml:query """
-        SELECT "Número de Expediente",
-		CASE WHEN ("Presentación de Solicitudes (Fecha)" IS NOT NULL) AND ("Presentación de Solicitudes (Hora)" IS NOT NULL) THEN CONCAT("Presentación de Solicitudes (Fecha)",'T', "Presentación de Solicitudes (Hora)") 
-             WHEN ("Presentación de Solicitudes (Fecha)" IS NOT NULL) THEN "Presentación de Solicitudes (Fecha)"
-             ELSE '' 
-             END AS Presentacion
-		FROM 'C:/Users/mnavas/CODE/NextProcurement/newMorphKGC/data/outsiders_2021.parquet'
-    """;
-    rml:referenceFormulation ql:Parquet
-  ];
-
-  rr:subjectMap [
-    rr:template "http://data.nextprocurement.linkeddata.es/contractingProcess/{Número de Expediente}/tender/{Número de Expediente}/tenderPeriod" ;
-    rr:class ocds:Period
-  ];
-  
-  rr:predicateObjectMap [
-    rr:predicate ocds:periodEndDate ;
-    rr:objectMap [
-      rml:reference "Presentacion" ;
-      rr:datatype xsd:dateTime
-    ]
-  ].
-  
-
-<#ContractPeriodMap>
-  a rr:TriplesMap ;
-
-  rml:logicalSource [
-    rr:sqlVersion rr:SQL2008;
-    rml:query """
-        SELECT "Número de Expediente", "Plazo de Ejecución (Comienzo)", "Plazo de Ejecución (Fin)", 
-		CASE WHEN (isnan("Plazo de Ejecución (Duración)") OR ("Plazo de Ejecución (Duración)" IS NULL))THEN 0
-		     WHEN regexp_matches("Plazo de Ejecución (Duración)", '\\d+\\.?\\d*') THEN CAST(CAST("Plazo de Ejecución (Duración)" AS FLOAT) AS INTEGER)
-			 ELSE 0
-			 END AS Duracion
-		FROM 'C:/Users/mnavas/CODE/NextProcurement/newMorphKGC/data/outsiders_2021.parquet'
-    """;
-    rml:referenceFormulation ql:Parquet
-  ];
-  
-  # CASE "Tipo de Contrato" WHEN 1 THEN 'goods'
-
-  rr:subjectMap [
-    rr:template "http://data.nextprocurement.linkeddata.es/contractingProcess/{Número de Expediente}/tender/{Número de Expediente}/contractPeriod" ;
-    rr:class ocds:Period
-  ];
-  
-     
-  rr:predicateObjectMap [
-    rr:predicate ocds:periodStartDate ;
-    rr:objectMap [
-      rml:reference "Plazo de Ejecución (Comienzo)" ;
-      rr:datatype xsd:dateTime
-    ]
-  ];
-
-  rr:predicateObjectMap [
-    rr:predicate ocds:periodEndDate ;
-    rr:objectMap [
-      rml:reference "Plazo de Ejecución (Fin)" ;
-      rr:datatype xsd:dateTime
-    ]
-  ];
-
-  rr:predicateObjectMap [
-	rr:predicate ocds:periodDurationInDays ;
-      rr:objectMap [
-		rml:reference "Duracion" ;
-		rr:datatype xsd:integer
-	]
-  ].
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  <#TenderPPT>
-
-  a rr:TriplesMap ;
-
-  rml:logicalSource [
-    rr:sqlVersion rr:SQL2008;
-    rml:query """
-        SELECT "Número de Expediente", "Pliego de Prescripciones técnicas (URI)"
-		FROM 'C:/Users/mnavas/CODE/NextProcurement/newMorphKGC/data/outsiders_2021.parquet'
-    """;
-    rml:referenceFormulation ql:Parquet
-  ];
-
-  rr:subjectMap [
-    rr:template "http://data.nextprocurement.linkeddata.es/contractingProcess/{Número de Expediente}/tender/{Número de Expediente}/document/technicalSpecifications" ;
-    rr:class ocds:Document
-  ];
-  
-  rr:predicateObjectMap [
-    rr:predicate ocds:documentType ;
-    rr:objectMap [
-      rr:constant "technicalSpecifications" ;
-      rr:datatype xsd:string
-    ]
-  ];
-  
-  rr:predicateObjectMap [
-	rr:predicate schema:URL ;
-      rr:objectMap [
-		rml:reference "Pliego de Prescripciones técnicas (URI)" ;
-		rr:datatype xsd:string
-	]
-  ].
-  
-<#TenderPPA>
-
-  a rr:TriplesMap ;
-
-  rml:logicalSource [
-    rr:sqlVersion rr:SQL2008;
-    rml:query """
-        SELECT "Número de Expediente", "Pliego de cláusulas administrativas (URI)"
-		FROM 'C:/Users/mnavas/CODE/NextProcurement/newMorphKGC/data/outsiders_2021.parquet'
-    """;
-    rml:referenceFormulation ql:Parquet
-  ];
-
-  rr:subjectMap [
-    rr:template "http://data.nextprocurement.linkeddata.es/contractingProcess/{Número de Expediente}/tender/{Número de Expediente}/document/evaluationCriteria" ;
-    rr:class ocds:Document
-  ];
-  
-  rr:predicateObjectMap [
-    rr:predicate ocds:documentType ;
-    rr:objectMap [
-      rr:constant "evaluationCriteria" ;
-      rr:datatype xsd:string
-    ]
-  ];
-  
-  rr:predicateObjectMap [
-	rr:predicate schema:URL ;
-      rr:objectMap [
-		rml:reference "Pliego de cláusulas administrativas (URI)" ;
-		rr:datatype xsd:string
-	]
-  ].
-  
-<#TenderItem>
-
-  a rr:TriplesMap ;
-
-  rml:logicalSource [
-    rml:source: "../data/outsiders_2021.parquet" 
-  ];
-
-  rr:subjectMap [
-    rr:template "http://data.nextprocurement.linkeddata.es/contractingProcess/{Número de Expediente}/tender/{Número de Expediente}/Item/" ;
-    rr:class ocds:Item
-  ];
-
-  rr:predicateObjectMap [
-    rr:predicate ocds:hasAdditionalClassification ;
-    rr:objectMap [
-      rr:template "http://data.nextprocurement.linkeddata.es/contractingProcess/Classification/NUTS/{Código de Subentidad Nacional}" ;
-      rr:datatype xsd:URI
-    ]
-  ];
-
-  rr:predicateObjectMap [
-    rr:predicate ocds:hasClassification ;
-    rr:objectMap [
-      rr:template "http://data.nextprocurement.linkeddata.es/contractingProcess/Classification/CPV/{Clasificación CPV}" ;
-      rr:datatype xsd:URI
-    ]
-  ].
-  
-  <#CPVConcept>
-
-  a rr:TriplesMap ;
-
-  rml:logicalSource [
-    rml:source: "../data/outsiders_2021.parquet" 
-  ];
-
-  rr:subjectMap [
-    rr:template "http://data.nextprocurement.linkeddata.es/contractingProcess/Classification/CPV/{Clasificación CPV}" ;
-    rr:class skos:Concept
-  ];
-
-
-  rr:predicateObjectMap [
-    rr:predicate  dc:title ;
-    rr:objectMap [
-      rml:reference "Clasificación CPV" ;
-	  rr:datatype xsd:string
-    ] 
-  ];
-  
-  rr:predicateObjectMap [
-    rr:predicate  skos:inScheme ;
-    rr:objectMap [
-      rr:constant "http://data.nextprocurement.linkeddata.es/contractingProcess/Classification/CPV" ;
-	  rr:datatype xsd:URI
-    ] 
-  ].
-  
-  
-  
-<#NUTSConcept>
-
-  a rr:TriplesMap ;
-
-  rml:logicalSource [
-    rml:source: "../data/outsiders_2021.parquet" 
-  ];
-
-  rr:subjectMap [
-    rr:template "http://data.nextprocurement.linkeddata.es/contractingProcess/Classification/NUTS/{Código de Subentidad Nacional}" ;
-    rr:class skos:Concept
-  ];
-
-
-  rr:predicateObjectMap [
-    rr:predicate  dc:title ;
-    rr:objectMap [
-      rml:reference "Código de Subentidad Nacional" ;
-	  rr:datatype xsd:string
-    ] 
-  ];
-  
-  rr:predicateObjectMap [
-    rr:predicate  skos:inScheme ;
-    rr:objectMap [
-      rr:constant "http://data.nextprocurement.linkeddata.es/contractingProcess/Classification/NUTS" ;
-	  rr:datatype xsd:URI
-    ] 
-  ].
-  
-<#award>
-
-
-  a rr:TriplesMap ;
-
-  rml:logicalSource [
-    rml:source: "../data/outsiders_2021.parquet" 
-  ];
-
-  rr:subjectMap [
-    rr:template "http://data.nextprocurement.linkeddata.es/contractingProcess/{Número de Expediente}/tender/{Número de Expediente}/award" ;
-    rr:class ocds:Award
-  ];
-
-
-  rr:predicateObjectMap [
-    rr:predicate  ocds:hasAwardValue ;
-    rr:objectMap [
-      rr:template "http://data.nextprocurement.linkeddata.es/contractingProcess/{Número de Expediente}/tender/award/hasContractValue" ;
-    ] 
-  ].
-  
-  
-<#ContractValue>
-  a rr:TriplesMap ;
-
-  rml:logicalSource [
-    rml:source: "../data/outsiders_2021.parquet" 
-  ];
-
-  rr:subjectMap [
-    rr:template "http://data.nextprocurement.linkeddata.es/contractingProcess/{Número de Expediente}/tender/award/hasContractValue" ;
-    rr:class ocds:Value
-  ];
-      
-  rr:predicateObjectMap [
-    rr:predicate ocds:valueAmount ;
-    rr:objectMap [
-      rml:reference "Importe total ofertado (sin impuestos)" ;
-      rr:datatype xsd:decimal
-    ]
-  ];
-      
-  rr:predicateObjectMap [
-    rr:predicate ocds:valueCurrency ;
-    rr:objectMap [
-      rr:constant "Euro" ;
-      rr:datatype xsd:string
-    ]
-  ].
-  
-  
-<#OrganizationContract>
-  a rr:TriplesMap ;
-
-  rml:logicalSource [
-    rml:source: "../data/outsiders_2021.parquet" 
-  ];
-
-  rr:subjectMap [
-    rr:template "http://data.nextprocurement.linkeddata.es/contractingProcess/Organization/{Identificador (+ Tipo: mod schemeName)}" ;
-    rr:class ocds:Organisation ;
-  ];
-      
-  rr:predicateObjectMap [
-    rr:predicate ocds:isSupplierFor ;
-    rr:objectMap [
-      rr:template "http://data.nextprocurement.linkeddata.es/contractingProcess/{Número de Expediente}/tender/{Número de Expediente}/award" ;
-    ]
-  ];
-      
-  rr:predicateObjectMap [
-    rr:predicate schema:name ;
-    rr:objectMap [
-      rml:reference "Nombre del Adjudicatario" ;
-      rr:datatype xsd:string
-    ]
-  ].
-  
-<#OrganizationContratante>
-  a rr:TriplesMap ;
-
-  rml:logicalSource [
-    rml:source: "../data/outsiders_2021.parquet" 
-  ];
-
-  rr:subjectMap [
-    rr:template "http://data.nextprocurement.linkeddata.es/contractingProcess/Organization/{ID}" ;
-    rr:class ocds:Organisation ;
-  ];
-      
-  rr:predicateObjectMap [
-    rr:predicate ocds:legalName ;
-    rr:objectMap [
-      rml:reference "ID" ;
-      rr:datatype xsd:string
-    ]
-  ];
-      
-  rr:predicateObjectMap [
-    rr:predicate ocds:URI ;
-    rr:objectMap [
-      rml:reference "URL perfil de contratante" ;
-      rr:datatype xsd:anyURI
     ]
   ].
