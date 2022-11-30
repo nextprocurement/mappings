@@ -68,12 +68,8 @@
     rr:sqlVersion rr:SQL2008;
     rml:query """
         SELECT "Número de Expediente", 
-		CASE WHEN length(replace("Lote",'[\\s\\[\\]]+',''))=0 THEN 0 
-		ELSE UNNEST(string_split(replace("Lote",'[\\s]+','')[2:-1], ','))
-		END AS Lotes,
-		CASE WHEN length(replace("Número de Licitadores Participantes",'[\\s\\[\\]]+',''))=0 THEN 0 
-		ELSE UNNEST(CAST(CAST(string_split(replace(replace("Número de Licitadores Participantes",'[\\s]+',''), 'NULL', '0')[2:-1], ',') AS DOUBLE[]) AS INT[]))
-		END AS NumTenders
+		UNNEST("Lote"::DOUBLE[]) AS Lotes,
+		UNNEST((string_split(replace("Número de Licitadores Participantes", 'NULL', '0')[2:-1], ',')::DOUBLE[])::INT[]) AS NumTenders
 		FROM 'C:/Users/mnavas/CODE/NextProcurement/newMorphKGC/data/outsiders_2021.parquet'
     """;
     rml:referenceFormulation ql:Parquet
