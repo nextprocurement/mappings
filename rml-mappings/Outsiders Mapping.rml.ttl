@@ -1,0 +1,1578 @@
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix rml: <http://semweb.mmlab.be/ns/rml#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix ql: <http://semweb.mmlab.be/ns/ql#> .
+@prefix map: <http://mapping.example.com/> .
+@prefix ma: <http://www.w3.org/ns/ma-ont#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix sd: <http://www.w3.org/ns/sparql-service-description#> .
+@prefix org: <http://www.w3.org/ns/org#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix schema: <http://schema.org/> .
+@prefix epo: <http://data.europa.eu/a4g/ontology#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix at-voc: <http://publications.europa.eu/resource/authority/> .
+@prefix nextproc: <http://data.nextprocurement.linkeddata.es/ontology#> .
+
+map:map_triplesMapBuyer_000 rml:logicalSource map:source_007 ;
+	rdf:type rr:TriplesMap ;
+	rdfs:label "triplesMapBuyer" ;
+	rr:predicateObjectMap map:pom_026, map:pom_027, map:pom_028 ;
+	rr:subjectMap map:s_007 .
+
+map:map_triplesMapContract_000 rml:logicalSource map:source_006 ;
+	rdf:type rr:TriplesMap ;
+	rdfs:label "triplesMapContract" ;
+	rr:predicateObjectMap map:pom_017, map:pom_018, map:pom_019, map:pom_020, map:pom_021, map:pom_022, map:pom_023, map:pom_024, map:pom_025 ;
+	rr:subjectMap map:s_006 .
+
+map:map_triplesMapContractspecificterm_000 rml:logicalSource map:source_014 ;
+	rdf:type rr:TriplesMap ;
+	rdfs:label "triplesMapContractspecificterm" ;
+	rr:predicateObjectMap map:pom_050 ;
+	rr:subjectMap map:s_014 .
+
+map:map_triplesMapContractterm_000 rml:logicalSource map:source_010 ;
+	rdf:type rr:TriplesMap ;
+	rdfs:label "triplesMapContractterm" ;
+	rr:predicateObjectMap map:pom_039, map:pom_040, map:pom_041, map:pom_042 ;
+	rr:subjectMap map:s_010 .
+
+map:map_triplesMapCpysuppl_000 rml:logicalSource map:source_020 ;
+	rdf:type rr:TriplesMap ;
+	rdfs:label "triplesMapCpysuppl" ;
+	rr:predicateObjectMap map:pom_060 ;
+	rr:subjectMap map:s_020 .
+
+map:map_triplesMapDocument2_000 rml:logicalSource map:source_027 ;
+	rdf:type rr:TriplesMap ;
+	rdfs:label "triplesMapDocument2" ;
+	rr:predicateObjectMap map:pom_082, map:pom_083, map:pom_084, map:pom_085 ;
+	rr:subjectMap map:s_027 .
+
+map:map_triplesMapDocument_000 rml:logicalSource map:source_026 ;
+	rdf:type rr:TriplesMap ;
+	rdfs:label "triplesMapDocument" ;
+	rr:predicateObjectMap map:pom_078, map:pom_079, map:pom_080, map:pom_081 ;
+	rr:subjectMap map:s_026 .
+
+map:map_triplesMapDuration_000 rml:logicalSource map:source_018 ;
+	rdf:type rr:TriplesMap ;
+	rdfs:label "triplesMapDuration" ;
+	rr:predicateObjectMap map:pom_057 ;
+	rr:subjectMap map:s_018 .
+
+map:map_triplesMapIdentifier2_000 rml:logicalSource map:source_002 ;
+	rdf:type rr:TriplesMap ;
+	rdfs:label "triplesMapIdentifier2" ;
+	rr:predicateObjectMap map:pom_009, map:pom_010 ;
+	rr:subjectMap map:s_002 .
+
+map:map_triplesMapIdentifier3_000 rml:logicalSource map:source_003 ;
+	rdf:type rr:TriplesMap ;
+	rdfs:label "triplesMapIdentifier3" ;
+	rr:predicateObjectMap map:pom_011, map:pom_012 ;
+	rr:subjectMap map:s_003 .
+
+map:map_triplesMapIdentifier4_000 rml:logicalSource map:source_004 ;
+	rdf:type rr:TriplesMap ;
+	rdfs:label "triplesMapIdentifier4" ;
+	rr:predicateObjectMap map:pom_013, map:pom_014 ;
+	rr:subjectMap map:s_004 .
+
+map:map_triplesMapIdentifier5_000 rml:logicalSource map:source_005 ;
+	rdf:type rr:TriplesMap ;
+	rdfs:label "triplesMapIdentifier5" ;
+	rr:predicateObjectMap map:pom_015, map:pom_016 ;
+	rr:subjectMap map:s_005 .
+
+map:map_triplesMapIdentifier_000 rml:logicalSource map:source_001 ;
+	rdf:type rr:TriplesMap ;
+	rdfs:label "triplesMapIdentifier" ;
+	rr:predicateObjectMap map:pom_007, map:pom_008 ;
+	rr:subjectMap map:s_001 .
+
+map:map_triplesMapLocation_000 rml:logicalSource map:source_011 ;
+	rdf:type rr:TriplesMap ;
+	rdfs:label "triplesMapLocation" ;
+	rr:predicateObjectMap map:pom_043, map:pom_044 ;
+	rr:subjectMap map:s_011 .
+
+map:map_triplesMapLotawardoutcome_000 rml:logicalSource map:source_028 ;
+	rdf:type rr:TriplesMap ;
+	rdfs:label "triplesMapLotawardoutcome" ;
+	rr:predicateObjectMap map:pom_086, map:pom_087, map:pom_088 ;
+	rr:subjectMap map:s_028 .
+
+map:map_triplesMapMonetaryvalue_000 rml:logicalSource map:source_015 ;
+	rdf:type rr:TriplesMap ;
+	rdfs:label "triplesMapMonetaryvalue" ;
+	rr:predicateObjectMap map:pom_051, map:pom_052, map:pom_053 ;
+	rr:subjectMap map:s_015 .
+
+map:map_triplesMapNotice_000 rml:logicalSource map:source_025 ;
+	rdf:type rr:TriplesMap ;
+	rdfs:label "triplesMapNotice" ;
+	rr:predicateObjectMap map:pom_075, map:pom_076, map:pom_077 ;
+	rr:subjectMap map:s_025 .
+
+map:map_triplesMapNoticedescription_000 rml:logicalSource map:source_024 ;
+	rdf:type rr:TriplesMap ;
+	rdfs:label "triplesMapNoticedescription" ;
+	rr:predicateObjectMap map:pom_070, map:pom_071, map:pom_072, map:pom_073, map:pom_074 ;
+	rr:subjectMap map:s_024 .
+
+map:map_triplesMapNuts_000 rml:logicalSource map:source_012 ;
+	rdf:type rr:TriplesMap ;
+	rdfs:label "triplesMapNuts" ;
+	rr:predicateObjectMap map:pom_045 ;
+	rr:subjectMap map:s_012 .
+
+map:map_triplesMapOrganization2_000 rml:logicalSource map:source_009 ;
+	rdf:type rr:TriplesMap ;
+	rdfs:label "triplesMapOrganization2" ;
+	rr:predicateObjectMap map:pom_036, map:pom_037, map:pom_038 ;
+	rr:subjectMap map:s_009 .
+
+map:map_triplesMapOrganization_000 rml:logicalSource map:source_008 ;
+	rdf:type rr:TriplesMap ;
+	rdfs:label "triplesMapOrganization" ;
+	rr:predicateObjectMap map:pom_029, map:pom_030, map:pom_031, map:pom_032, map:pom_033, map:pom_034, map:pom_035 ;
+	rr:subjectMap map:s_008 .
+
+map:map_triplesMapPeriod_000 rml:logicalSource map:source_017 ;
+	rdf:type rr:TriplesMap ;
+	rdfs:label "triplesMapPeriod" ;
+	rr:predicateObjectMap map:pom_055, map:pom_056 ;
+	rr:subjectMap map:s_017 .
+
+map:map_triplesMapProcedure_000 rml:logicalSource map:source_021 ;
+	rdf:type rr:TriplesMap ;
+	rdfs:label "triplesMapProcedure" ;
+	rr:predicateObjectMap map:pom_061, map:pom_062, map:pom_063, map:pom_064 ;
+	rr:subjectMap map:s_021 .
+
+map:map_triplesMapProcedurespecificterm_000 rml:logicalSource map:source_023 ;
+	rdf:type rr:TriplesMap ;
+	rdfs:label "triplesMapProcedurespecificterm" ;
+	rr:predicateObjectMap map:pom_066, map:pom_067, map:pom_068, map:pom_069 ;
+	rr:subjectMap map:s_023 .
+
+map:map_triplesMapProcurement-procedure-type_000 rml:logicalSource map:source_022 ;
+	rdf:type rr:TriplesMap ;
+	rdfs:label "triplesMapProcurement-procedure-type" ;
+	rr:predicateObjectMap map:pom_065 ;
+	rr:subjectMap map:s_022 .
+
+map:map_triplesMapProcurementelement_000 rml:logicalSource map:source_016 ;
+	rdf:type rr:TriplesMap ;
+	rdfs:label "triplesMapProcurementelement" ;
+	rr:predicateObjectMap map:pom_054 ;
+	rr:subjectMap map:s_016 .
+
+map:map_triplesMapProcurementobject_000 rml:logicalSource map:source_013 ;
+	rdf:type rr:TriplesMap ;
+	rdfs:label "triplesMapProcurementobject" ;
+	rr:predicateObjectMap map:pom_046, map:pom_047, map:pom_048, map:pom_049 ;
+	rr:subjectMap map:s_013 .
+
+map:map_triplesMapPurpose_000 rml:logicalSource map:source_019 ;
+	rdf:type rr:TriplesMap ;
+	rdfs:label "triplesMapPurpose" ;
+	rr:predicateObjectMap map:pom_058, map:pom_059 ;
+	rr:subjectMap map:s_019 .
+
+map:map_triplesMapSubmissionstatisticalinformation_000 rml:logicalSource map:source_030 ;
+	rdf:type rr:TriplesMap ;
+	rdfs:label "triplesMapSubmissionstatisticalinformation" ;
+	rr:predicateObjectMap map:pom_090, map:pom_091, map:pom_092 ;
+	rr:subjectMap map:s_030 .
+
+map:map_triplesMapTender_000 rml:logicalSource map:source_000 ;
+	rdf:type rr:TriplesMap ;
+	rdfs:label "triplesMapTender" ;
+	rr:predicateObjectMap map:pom_000, map:pom_001, map:pom_002, map:pom_003, map:pom_004, map:pom_005, map:pom_006 ;
+	rr:subjectMap map:s_000 .
+
+map:map_triplesMapTenderawardoutcome_000 rml:logicalSource map:source_031 ;
+	rdf:type rr:TriplesMap ;
+	rdfs:label "triplesMapTenderawardoutcome" ;
+	rr:predicateObjectMap map:pom_093, map:pom_094, map:pom_095 ;
+	rr:subjectMap map:s_031 .
+
+map:map_triplesMapTenderer_000 rml:logicalSource map:source_033 ;
+	rdf:type rr:TriplesMap ;
+	rdfs:label "triplesMapTenderer" ;
+	rr:predicateObjectMap map:pom_098, map:pom_099 ;
+	rr:subjectMap map:s_033 .
+
+map:map_triplesMapWinner-selection-status_000 rml:logicalSource map:source_029 ;
+	rdf:type rr:TriplesMap ;
+	rdfs:label "triplesMapWinner-selection-status" ;
+	rr:predicateObjectMap map:pom_089 ;
+	rr:subjectMap map:s_029 .
+
+map:map_triplesMapWinner_000 rml:logicalSource map:source_032 ;
+	rdf:type rr:TriplesMap ;
+	rdfs:label "triplesMapWinner" ;
+	rr:predicateObjectMap map:pom_096, map:pom_097 ;
+	rr:subjectMap map:s_032 .
+
+map:om_000 rdf:type rr:ObjectMap ;
+	rr:constant "http://data.europa.eu/a4g/ontology#Tender" ;
+	rr:termType rr:IRI .
+
+map:om_001 rml:reference "Title" ;
+	rdf:type rr:ObjectMap ;
+	rr:termType rr:Literal .
+
+map:om_002 rml:reference "ContractFolder_StatusCode" ;
+	rdf:type rr:ObjectMap ;
+	rr:termType rr:Literal .
+
+map:om_003 rml:reference "Updated" ;
+	rdf:type rr:ObjectMap ;
+	rr:datatype xsd:dateTime ;
+	rr:termType rr:Literal .
+
+map:om_004 rdf:type rr:ObjectMap ;
+	rr:constant "http://data.europa.eu/a4g/ontology#ProcurementElement" ;
+	rr:termType rr:Literal .
+
+map:om_005 rdf:type rr:ObjectMap ;
+	rr:template "http://data.nextprocurement.linkeddata.es/resource/identifier/{ContractFolder_ID}" ;
+	rr:termType rr:IRI .
+
+map:om_006 rdf:type rr:ObjectMap ;
+	rr:template "http://data.nextprocurement.linkeddata.es/resource/monetaryvalue/{ID}" ;
+	rr:termType rr:IRI .
+
+map:om_007 rdf:type rr:ObjectMap ;
+	rr:constant "http://data.europa.eu/a4g/ontology#Identifier" ;
+	rr:termType rr:IRI .
+
+map:om_008 rml:reference "ID" ;
+	rdf:type rr:ObjectMap ;
+	rr:termType rr:Literal .
+
+map:om_009 rdf:type rr:ObjectMap ;
+	rr:constant "http://data.europa.eu/a4g/ontology#Identifier" ;
+	rr:termType rr:IRI .
+
+map:om_010 rml:reference "ID" ;
+	rdf:type rr:ObjectMap ;
+	rr:termType rr:Literal .
+
+map:om_011 rdf:type rr:ObjectMap ;
+	rr:constant "http://data.europa.eu/a4g/ontology#Identifier" ;
+	rr:termType rr:IRI .
+
+map:om_012 rml:reference "ID" ;
+	rdf:type rr:ObjectMap ;
+	rr:termType rr:Literal .
+
+map:om_013 rdf:type rr:ObjectMap ;
+	rr:constant "http://data.europa.eu/a4g/ontology#Identifier" ;
+	rr:termType rr:IRI .
+
+map:om_014 rml:reference "ID" ;
+	rdf:type rr:ObjectMap ;
+	rr:termType rr:Literal .
+
+map:om_015 rdf:type rr:ObjectMap ;
+	rr:constant "http://data.europa.eu/a4g/ontology#Identifier" ;
+	rr:termType rr:IRI .
+
+map:om_016 rml:reference "ID" ;
+	rdf:type rr:ObjectMap ;
+	rr:termType rr:Literal .
+
+map:om_017 rdf:type rr:ObjectMap ;
+	rr:constant "http://data.europa.eu/a4g/ontology#Contract" ;
+	rr:termType rr:IRI .
+
+map:om_018 rml:reference "ProcurementProject_Name" ;
+	rdf:type rr:ObjectMap ;
+	rr:termType rr:Literal .
+
+map:om_019 rml:reference "ProcurementProject_TypeCode" ;
+	rdf:type rr:ObjectMap ;
+	rr:termType rr:Literal .
+
+map:om_020 rml:reference "ProcurementProject_StartDate" ;
+	rdf:type rr:ObjectMap ;
+	rr:datatype xsd:date ;
+	rr:termType rr:Literal .
+
+map:om_021 rdf:type rr:ObjectMap ;
+	rr:constant "http://data.europa.eu/a4g/ontology#ProcurementElement" ;
+	rr:termType rr:Literal .
+
+map:om_022 rdf:type rr:ObjectMap ;
+	rr:template "http://data.nextprocurement.linkeddata.es/resource/monetaryvalue/{ID}" ;
+	rr:termType rr:IRI .
+
+map:om_023 rdf:type rr:ObjectMap ;
+	rr:template "http://data.nextprocurement.linkeddata.es/resource/tender/{ContractFolder_ID}" ;
+	rr:termType rr:IRI .
+
+map:om_024 rdf:type rr:ObjectMap ;
+	rr:template "http://data.nextprocurement.linkeddata.es/resource/duration/{ProcurementProject_DurationMeasure}" ;
+	rr:termType rr:IRI .
+
+map:om_025 rdf:type rr:ObjectMap ;
+	rr:template "http://data.nextprocurement.linkeddata.es/resource/buyer/{LocatedContractingParty_ID}" ;
+	rr:termType rr:IRI .
+
+map:om_026 rdf:type rr:ObjectMap ;
+	rr:constant "http://data.europa.eu/a4g/ontology#Buyer" ;
+	rr:termType rr:IRI .
+
+map:om_027 rml:reference "LocatedContractingParty_BuyerProfile" ;
+	rdf:type rr:ObjectMap ;
+	rr:datatype xsd:anyURI ;
+	rr:termType rr:Literal .
+
+map:om_028 rdf:type rr:ObjectMap ;
+	rr:template "http://data.nextprocurement.linkeddata.es/resource/organization/{LocatedContractingParty_Name}" ;
+	rr:termType rr:IRI .
+
+map:om_029 rdf:type rr:ObjectMap ;
+	rr:constant "http://www.w3.org/ns/org#Organization" ;
+	rr:termType rr:IRI .
+
+map:om_030 rml:reference "LocatedContractingParty_Name" ;
+	rdf:type rr:ObjectMap ;
+	rr:termType rr:Literal .
+
+map:om_031 rml:reference "LocatedContractingParty_Parent_PartyName" ;
+	rdf:type rr:ObjectMap ;
+	rr:termType rr:Literal .
+
+map:om_032 rml:reference "LocatedContractingParty_Parent_Parent_PartyName" ;
+	rdf:type rr:ObjectMap ;
+	rr:termType rr:Literal .
+
+map:om_033 rml:reference "LocatedContractingParty_Parent_Parent_Parent_PartyName" ;
+	rdf:type rr:ObjectMap ;
+	rr:termType rr:Literal .
+
+map:om_034 rml:reference "LocatedContractingParty_Parent_Parent_Parent_Parent_PartyName" ;
+	rdf:type rr:ObjectMap ;
+	rr:termType rr:Literal .
+
+map:om_035 rdf:type rr:ObjectMap ;
+	rr:template "http://data.nextprocurement.linkeddata.es/resource/identifier/{LocatedContractingParty_ID}" ;
+	rr:termType rr:IRI .
+
+map:om_036 rdf:type rr:ObjectMap ;
+	rr:constant "http://www.w3.org/ns/org#Organization" ;
+	rr:termType rr:IRI .
+
+map:om_037 rml:reference "TenderResult_WinningParty_Name" ;
+	rdf:type rr:ObjectMap ;
+	rr:termType rr:Literal .
+
+map:om_038 rdf:type rr:ObjectMap ;
+	rr:template "http://data.nextprocurement.linkeddata.es/resource/identifier/{TenderResult_WinningParty_ID}" ;
+	rr:termType rr:IRI .
+
+map:om_039 rdf:type rr:ObjectMap ;
+	rr:constant "http://data.europa.eu/a4g/ontology#ContractTerm" ;
+	rr:termType rr:IRI .
+
+map:om_040 rdf:type rr:ObjectMap ;
+	rr:constant "http://data.europa.eu/a4g/ontology#ContractSpecificTerm" ;
+	rr:termType rr:Literal .
+
+map:om_041 rdf:type rr:ObjectMap ;
+	rr:template "http://data.nextprocurement.linkeddata.es/resource/location/{ID}" ;
+	rr:termType rr:IRI .
+
+map:om_042 rdf:type rr:ObjectMap ;
+	rr:template "http://data.nextprocurement.linkeddata.es/resource/period/{ProcurementProject_EndDate}" ;
+	rr:termType rr:IRI .
+
+map:om_043 rdf:type rr:ObjectMap ;
+	rr:constant "http://purl.org/dc/terms/Location" ;
+	rr:termType rr:IRI .
+
+map:om_044 rdf:type rr:ObjectMap ;
+	rr:template "http://data.nextprocurement.linkeddata.es/resource/nuts/{ProcurementProject_CountrySubentityCode}" ;
+	rr:termType rr:IRI .
+
+map:om_045 rdf:type rr:ObjectMap ;
+	rr:constant "http://publications.europa.eu/resource/authority/nuts" ;
+	rr:termType rr:IRI .
+
+map:om_046 rdf:type rr:ObjectMap ;
+	rr:constant "http://data.europa.eu/a4g/ontology#ProcurementObject" ;
+	rr:termType rr:IRI .
+
+map:om_047 rdf:type rr:ObjectMap ;
+	rr:constant "http://data.europa.eu/a4g/ontology#ProcurementElement" ;
+	rr:termType rr:Literal .
+
+map:om_048 rdf:type rr:ObjectMap ;
+	rr:template "http://data.nextprocurement.linkeddata.es/resource/purpose/{ProcurementProject_ItemClassificationCode}" ;
+	rr:termType rr:IRI .
+
+map:om_049 rdf:type rr:ObjectMap ;
+	rr:template "http://data.nextprocurement.linkeddata.es/resource/contractspecificterm/{ID}" ;
+	rr:termType rr:IRI .
+
+map:om_050 rdf:type rr:ObjectMap ;
+	rr:constant "http://data.europa.eu/a4g/ontology#ContractSpecificTerm" ;
+	rr:termType rr:IRI .
+
+map:om_051 rdf:type rr:ObjectMap ;
+	rr:constant "http://data.europa.eu/a4g/ontology#MonetaryValue" ;
+	rr:termType rr:IRI .
+
+map:om_052 rml:reference "ProcurementProject_EstimatedOverallContractAmount" ;
+	rdf:type rr:ObjectMap ;
+	rr:datatype xsd:float ;
+	rr:termType rr:Literal .
+
+map:om_053 rml:reference "ProcurementProject_TaxExclusiveAmount" ;
+	rdf:type rr:ObjectMap ;
+	rr:datatype xsd:float ;
+	rr:termType rr:Literal .
+
+map:om_054 rdf:type rr:ObjectMap ;
+	rr:constant "http://data.europa.eu/a4g/ontology#ProcurementElement" ;
+	rr:termType rr:IRI .
+
+map:om_055 rdf:type rr:ObjectMap ;
+	rr:constant "http://data.europa.eu/a4g/ontology#Period" ;
+	rr:termType rr:IRI .
+
+map:om_056 rml:reference "ProcurementProject_EndDate" ;
+	rdf:type rr:ObjectMap ;
+	rr:datatype xsd:date ;
+	rr:termType rr:Literal .
+
+map:om_057 rdf:type rr:ObjectMap ;
+	rr:constant "http://data.europa.eu/a4g/ontology#Duration" ;
+	rr:termType rr:IRI .
+
+map:om_058 rdf:type rr:ObjectMap ;
+	rr:constant "http://data.europa.eu/a4g/ontology#Purpose" ;
+	rr:termType rr:IRI .
+
+map:om_059 rdf:type rr:ObjectMap ;
+	rr:template "http://data.nextprocurement.linkeddata.es/resource/cpysuppl/{ProcurementProject_ItemClassificationCode}" ;
+	rr:termType rr:IRI .
+
+map:om_060 rdf:type rr:ObjectMap ;
+	rr:constant "http://publications.europa.eu/resource/authority/cpysuppl" ;
+	rr:termType rr:IRI .
+
+map:om_061 rdf:type rr:ObjectMap ;
+	rr:constant "http://data.europa.eu/a4g/ontology#Procedure" ;
+	rr:termType rr:IRI .
+
+map:om_062 rdf:type rr:ObjectMap ;
+	rr:constant "http://data.europa.eu/a4g/ontology#ProcurementElement" ;
+	rr:termType rr:Literal .
+
+map:om_063 rdf:type rr:ObjectMap ;
+	rr:template "http://data.nextprocurement.linkeddata.es/resource/procurement-procedure-type/{TenderingProcess_ProcedureCode}" ;
+	rr:termType rr:IRI .
+
+map:om_064 rdf:type rr:ObjectMap ;
+	rr:template "http://data.nextprocurement.linkeddata.es/resource/procedurespecificterm/{ID}" ;
+	rr:termType rr:IRI .
+
+map:om_065 rdf:type rr:ObjectMap ;
+	rr:constant "http://publications.europa.eu/resource/authority/procurement-procedure-type" ;
+	rr:termType rr:IRI .
+
+map:om_066 rdf:type rr:ObjectMap ;
+	rr:constant "http://data.europa.eu/a4g/ontology#ProcedureSpecificTerm" ;
+	rr:termType rr:IRI .
+
+map:om_067 rml:reference "TenderingProcess_TenderSubmissionDeadlinePeriod" ;
+	rdf:type rr:ObjectMap ;
+	rr:datatype xsd:dateTime ;
+	rr:termType rr:Literal .
+
+map:om_068 rml:reference "TenderingProcess_TenderSubmission_Description" ;
+	rdf:type rr:ObjectMap ;
+	rr:termType rr:Literal .
+
+map:om_069 rml:reference "TenderingProcess_ParticipationRequestReceptionPeriod" ;
+	rdf:type rr:ObjectMap ;
+	rr:datatype xsd:dateTime ;
+	rr:termType rr:Literal .
+
+map:om_070 rdf:type rr:ObjectMap ;
+	rr:constant "http://data.europa.eu/a4g/ontology#NoticeDescription" ;
+	rr:termType rr:IRI .
+
+map:om_071 rml:reference "ValidNoticeInfo_NoticeTypeCode" ;
+	rdf:type rr:ObjectMap ;
+	rr:termType rr:Literal .
+
+map:om_072 rml:reference "ValidNoticeInfo_PublicationMediaName" ;
+	rdf:type rr:ObjectMap ;
+	rr:termType rr:Literal .
+
+map:om_073 rml:reference "ValidNoticeInfo_IssueDate" ;
+	rdf:type rr:ObjectMap ;
+	rr:datatype xsd:date ;
+	rr:termType rr:Literal .
+
+map:om_074 rdf:type rr:ObjectMap ;
+	rr:template "http://data.nextprocurement.linkeddata.es/resource/notice/{ID}" ;
+	rr:termType rr:IRI .
+
+map:om_075 rdf:type rr:ObjectMap ;
+	rr:constant "http://data.europa.eu/a4g/ontology#Notice" ;
+	rr:termType rr:IRI .
+
+map:om_076 rdf:type rr:ObjectMap ;
+	rr:constant "http://data.europa.eu/a4g/ontology#Document" ;
+	rr:termType rr:Literal .
+
+map:om_077 rdf:type rr:ObjectMap ;
+	rr:template "http://data.nextprocurement.linkeddata.es/resource/procedure/{ID}" ;
+	rr:termType rr:IRI .
+
+map:om_078 rdf:type rr:ObjectMap ;
+	rr:constant "http://data.europa.eu/a4g/ontology#Document" ;
+	rr:termType rr:IRI .
+
+map:om_079 rml:reference "LegalDocumentReference_URI" ;
+	rdf:type rr:ObjectMap ;
+	rr:datatype xsd:anyURI ;
+	rr:termType rr:Literal .
+
+map:om_080 rml:reference "TechnicalDocumentReference_URI" ;
+	rdf:type rr:ObjectMap ;
+	rr:datatype xsd:anyURI ;
+	rr:termType rr:Literal .
+
+map:om_081 rdf:type rr:ObjectMap ;
+	rr:template "http://data.nextprocurement.linkeddata.es/resource/identifier/{LegalDocumentReference_ID}" ;
+	rr:termType rr:IRI .
+
+map:om_082 rdf:type rr:ObjectMap ;
+	rr:constant "http://data.europa.eu/a4g/ontology#Document" ;
+	rr:termType rr:IRI .
+
+map:om_083 rml:reference "LegalDocumentReference_URI" ;
+	rdf:type rr:ObjectMap ;
+	rr:datatype xsd:anyURI ;
+	rr:termType rr:Literal .
+
+map:om_084 rml:reference "TechnicalDocumentReference_URI" ;
+	rdf:type rr:ObjectMap ;
+	rr:datatype xsd:anyURI ;
+	rr:termType rr:Literal .
+
+map:om_085 rdf:type rr:ObjectMap ;
+	rr:template "http://data.nextprocurement.linkeddata.es/resource/identifier/{TechnicalDocumentReference_ID}" ;
+	rr:termType rr:IRI .
+
+map:om_086 rdf:type rr:ObjectMap ;
+	rr:constant "http://data.europa.eu/a4g/ontology#LotAwardOutcome" ;
+	rr:termType rr:IRI .
+
+map:om_087 rdf:type rr:ObjectMap ;
+	rr:template "http://data.nextprocurement.linkeddata.es/resource/winner-selection-status/{TenderResult_ResultCode}" ;
+	rr:termType rr:IRI .
+
+map:om_088 rdf:type rr:ObjectMap ;
+	rr:template "http://data.nextprocurement.linkeddata.es/resource/tenderawardoutcome/{ID}" ;
+	rr:termType rr:IRI .
+
+map:om_089 rdf:type rr:ObjectMap ;
+	rr:constant "http://publications.europa.eu/resource/authority/winner-selection-status" ;
+	rr:termType rr:IRI .
+
+map:om_090 rdf:type rr:ObjectMap ;
+	rr:constant "http://data.europa.eu/a4g/ontology#SubmissionStatisticalInformation" ;
+	rr:termType rr:IRI .
+
+map:om_091 rml:reference "TenderResult_ReceivedTenderQuantity" ;
+	rdf:type rr:ObjectMap ;
+	rr:datatype xsd:integer ;
+	rr:termType rr:Literal .
+
+map:om_092 rdf:type rr:ObjectMap ;
+	rr:template "http://data.nextprocurement.linkeddata.es/resource/lotawardoutcome/{ID}" ;
+	rr:termType rr:IRI .
+
+map:om_093 rdf:type rr:ObjectMap ;
+	rr:constant "http://data.europa.eu/a4g/ontology#TenderAwardOutcome" ;
+	rr:termType rr:IRI .
+
+map:om_094 rdf:type rr:ObjectMap ;
+	rr:template "http://data.nextprocurement.linkeddata.es/resource/tender/{ContractFolder_ID}" ;
+	rr:termType rr:IRI .
+
+map:om_095 rdf:type rr:ObjectMap ;
+	rr:template "http://data.nextprocurement.linkeddata.es/resource/winner/{ID}" ;
+	rr:termType rr:IRI .
+
+map:om_096 rdf:type rr:ObjectMap ;
+	rr:constant "http://data.europa.eu/a4g/ontology#Winner" ;
+	rr:termType rr:IRI .
+
+map:om_097 rdf:type rr:ObjectMap ;
+	rr:template "http://data.nextprocurement.linkeddata.es/resource/tenderer/{TenderResult_WinningParty_ID}" ;
+	rr:termType rr:IRI .
+
+map:om_098 rdf:type rr:ObjectMap ;
+	rr:constant "http://data.europa.eu/a4g/ontology#Tenderer" ;
+	rr:termType rr:IRI .
+
+map:om_099 rdf:type rr:ObjectMap ;
+	rr:template "http://data.nextprocurement.linkeddata.es/resource/organization/{TenderResult_WinningParty_Name}" ;
+	rr:termType rr:IRI .
+
+map:pm_000 rdf:type rr:PredicateMap ;
+	rr:constant rdf:type .
+
+map:pm_001 rdf:type rr:PredicateMap ;
+	rr:constant epo:hasTitle .
+
+map:pm_002 rdf:type rr:PredicateMap ;
+	rr:constant epo:hasDescription .
+
+map:pm_003 rdf:type rr:PredicateMap ;
+	rr:constant schema:dateModified .
+
+map:pm_004 rdf:type rr:PredicateMap ;
+	rr:constant rdfs:subClassOf .
+
+map:pm_005 rdf:type rr:PredicateMap ;
+	rr:constant epo:hasID .
+
+map:pm_006 rdf:type rr:PredicateMap ;
+	rr:constant epo:hasFinancialOfferValue .
+
+map:pm_007 rdf:type rr:PredicateMap ;
+	rr:constant rdf:type .
+
+map:pm_008 rdf:type rr:PredicateMap ;
+	rr:constant epo:hasIdentifierValue .
+
+map:pm_009 rdf:type rr:PredicateMap ;
+	rr:constant rdf:type .
+
+map:pm_010 rdf:type rr:PredicateMap ;
+	rr:constant epo:hasIdentifierValue .
+
+map:pm_011 rdf:type rr:PredicateMap ;
+	rr:constant rdf:type .
+
+map:pm_012 rdf:type rr:PredicateMap ;
+	rr:constant epo:hasIdentifierValue .
+
+map:pm_013 rdf:type rr:PredicateMap ;
+	rr:constant rdf:type .
+
+map:pm_014 rdf:type rr:PredicateMap ;
+	rr:constant epo:hasIdentifierValue .
+
+map:pm_015 rdf:type rr:PredicateMap ;
+	rr:constant rdf:type .
+
+map:pm_016 rdf:type rr:PredicateMap ;
+	rr:constant epo:hasIdentifierValue .
+
+map:pm_017 rdf:type rr:PredicateMap ;
+	rr:constant rdf:type .
+
+map:pm_018 rdf:type rr:PredicateMap ;
+	rr:constant epo:hasTitle .
+
+map:pm_019 rdf:type rr:PredicateMap ;
+	rr:constant epo:hasDescription .
+
+map:pm_020 rdf:type rr:PredicateMap ;
+	rr:constant epo:hasEntryIntoForceDate .
+
+map:pm_021 rdf:type rr:PredicateMap ;
+	rr:constant rdfs:subClassOf .
+
+map:pm_022 rdf:type rr:PredicateMap ;
+	rr:constant epo:hasContractValue .
+
+map:pm_023 rdf:type rr:PredicateMap ;
+	rr:constant epo:includesTender .
+
+map:pm_024 rdf:type rr:PredicateMap ;
+	rr:constant epo:hasEstimatedDuration .
+
+map:pm_025 rdf:type rr:PredicateMap ;
+	rr:constant epo:bindsBuyer .
+
+map:pm_026 rdf:type rr:PredicateMap ;
+	rr:constant rdf:type .
+
+map:pm_027 rdf:type rr:PredicateMap ;
+	rr:constant epo:hasBuyerProfile .
+
+map:pm_028 rdf:type rr:PredicateMap ;
+	rr:constant epo:playedBy .
+
+map:pm_029 rdf:type rr:PredicateMap ;
+	rr:constant rdf:type .
+
+map:pm_030 rdf:type rr:PredicateMap ;
+	rr:constant epo:hasLegalName .
+
+map:pm_031 rdf:type rr:PredicateMap ;
+	rr:constant epo:hasOrganisationUnit .
+
+map:pm_032 rdf:type rr:PredicateMap ;
+	rr:constant epo:hasOrganisationUnit .
+
+map:pm_033 rdf:type rr:PredicateMap ;
+	rr:constant epo:hasOrganisationUnit .
+
+map:pm_034 rdf:type rr:PredicateMap ;
+	rr:constant epo:hasOrganisationUnit .
+
+map:pm_035 rdf:type rr:PredicateMap ;
+	rr:constant epo:hasID .
+
+map:pm_036 rdf:type rr:PredicateMap ;
+	rr:constant rdf:type .
+
+map:pm_037 rdf:type rr:PredicateMap ;
+	rr:constant epo:hasLegalName .
+
+map:pm_038 rdf:type rr:PredicateMap ;
+	rr:constant epo:hasID .
+
+map:pm_039 rdf:type rr:PredicateMap ;
+	rr:constant rdf:type .
+
+map:pm_040 rdf:type rr:PredicateMap ;
+	rr:constant rdfs:subClassOf .
+
+map:pm_041 rdf:type rr:PredicateMap ;
+	rr:constant epo:definesSpecificPlaceOfPerformance .
+
+map:pm_042 rdf:type rr:PredicateMap ;
+	rr:constant epo:definesContractPeriod .
+
+map:pm_043 rdf:type rr:PredicateMap ;
+	rr:constant rdf:type .
+
+map:pm_044 rdf:type rr:PredicateMap ;
+	rr:constant epo:hasNutsCode .
+
+map:pm_045 rdf:type rr:PredicateMap ;
+	rr:constant rdf:type .
+
+map:pm_046 rdf:type rr:PredicateMap ;
+	rr:constant rdf:type .
+
+map:pm_047 rdf:type rr:PredicateMap ;
+	rr:constant rdfs:subClassOf .
+
+map:pm_048 rdf:type rr:PredicateMap ;
+	rr:constant epo:hasPurpose .
+
+map:pm_049 rdf:type rr:PredicateMap ;
+	rr:constant epo:foreseesContractSpecificTerm .
+
+map:pm_050 rdf:type rr:PredicateMap ;
+	rr:constant rdf:type .
+
+map:pm_051 rdf:type rr:PredicateMap ;
+	rr:constant rdf:type .
+
+map:pm_052 rdf:type rr:PredicateMap ;
+	rr:constant epo:hasAmountValue .
+
+map:pm_053 rdf:type rr:PredicateMap ;
+	rr:constant epo:hasAmountValue .
+
+map:pm_054 rdf:type rr:PredicateMap ;
+	rr:constant rdf:type .
+
+map:pm_055 rdf:type rr:PredicateMap ;
+	rr:constant rdf:type .
+
+map:pm_056 rdf:type rr:PredicateMap ;
+	rr:constant epo:hasEnd .
+
+map:pm_057 rdf:type rr:PredicateMap ;
+	rr:constant rdf:type .
+
+map:pm_058 rdf:type rr:PredicateMap ;
+	rr:constant rdf:type .
+
+map:pm_059 rdf:type rr:PredicateMap ;
+	rr:constant epo:hasMainClassification .
+
+map:pm_060 rdf:type rr:PredicateMap ;
+	rr:constant rdf:type .
+
+map:pm_061 rdf:type rr:PredicateMap ;
+	rr:constant rdf:type .
+
+map:pm_062 rdf:type rr:PredicateMap ;
+	rr:constant rdfs:subClassOf .
+
+map:pm_063 rdf:type rr:PredicateMap ;
+	rr:constant epo:hasProcedureType .
+
+map:pm_064 rdf:type rr:PredicateMap ;
+	rr:constant epo:isSubjectToProcedureSpecificTerm .
+
+map:pm_065 rdf:type rr:PredicateMap ;
+	rr:constant rdf:type .
+
+map:pm_066 rdf:type rr:PredicateMap ;
+	rr:constant rdf:type .
+
+map:pm_067 rdf:type rr:PredicateMap ;
+	rr:constant epo:hasReceiptDeadline .
+
+map:pm_068 rdf:type rr:PredicateMap ;
+	rr:constant nextproc:hasReceiptDeadlineDescription .
+
+map:pm_069 rdf:type rr:PredicateMap ;
+	rr:constant epo:hasReceiptExpressionDeadline .
+
+map:pm_070 rdf:type rr:PredicateMap ;
+	rr:constant rdf:type .
+
+map:pm_071 rdf:type rr:PredicateMap ;
+	rr:constant nextproc:noticeTypeCode .
+
+map:pm_072 rdf:type rr:PredicateMap ;
+	rr:constant nextproc:publicationMediaName .
+
+map:pm_073 rdf:type rr:PredicateMap ;
+	rr:constant epo:hasPreferredPublicationDate .
+
+map:pm_074 rdf:type rr:PredicateMap ;
+	rr:constant epo:describesNotice .
+
+map:pm_075 rdf:type rr:PredicateMap ;
+	rr:constant rdf:type .
+
+map:pm_076 rdf:type rr:PredicateMap ;
+	rr:constant rdfs:subClassOf .
+
+map:pm_077 rdf:type rr:PredicateMap ;
+	rr:constant epo:refersToProcedure .
+
+map:pm_078 rdf:type rr:PredicateMap ;
+	rr:constant rdf:type .
+
+map:pm_079 rdf:type rr:PredicateMap ;
+	rr:constant epo:hasAccessURL .
+
+map:pm_080 rdf:type rr:PredicateMap ;
+	rr:constant epo:hasAccessURL .
+
+map:pm_081 rdf:type rr:PredicateMap ;
+	rr:constant epo:hasID .
+
+map:pm_082 rdf:type rr:PredicateMap ;
+	rr:constant rdf:type .
+
+map:pm_083 rdf:type rr:PredicateMap ;
+	rr:constant epo:hasAccessURL .
+
+map:pm_084 rdf:type rr:PredicateMap ;
+	rr:constant epo:hasAccessURL .
+
+map:pm_085 rdf:type rr:PredicateMap ;
+	rr:constant epo:hasID .
+
+map:pm_086 rdf:type rr:PredicateMap ;
+	rr:constant rdf:type .
+
+map:pm_087 rdf:type rr:PredicateMap ;
+	rr:constant epo:hasAwardStatus .
+
+map:pm_088 rdf:type rr:PredicateMap ;
+	rr:constant epo:comprisesTenderAwardOutcome .
+
+map:pm_089 rdf:type rr:PredicateMap ;
+	rr:constant rdf:type .
+
+map:pm_090 rdf:type rr:PredicateMap ;
+	rr:constant rdf:type .
+
+map:pm_091 rdf:type rr:PredicateMap ;
+	rr:constant epo:hasReceivedTenders .
+
+map:pm_092 rdf:type rr:PredicateMap ;
+	rr:constant epo:summarisesInformationForLotAwardOutcome .
+
+map:pm_093 rdf:type rr:PredicateMap ;
+	rr:constant rdf:type .
+
+map:pm_094 rdf:type rr:PredicateMap ;
+	rr:constant epo:describesTender .
+
+map:pm_095 rdf:type rr:PredicateMap ;
+	rr:constant epo:indicatesAwardOfLotToWinner .
+
+map:pm_096 rdf:type rr:PredicateMap ;
+	rr:constant rdf:type .
+
+map:pm_097 rdf:type rr:PredicateMap ;
+	rr:constant epo:dependsOnTenderer .
+
+map:pm_098 rdf:type rr:PredicateMap ;
+	rr:constant rdf:type .
+
+map:pm_099 rdf:type rr:PredicateMap ;
+	rr:constant epo:playedBy .
+
+map:pom_000 rdf:type rr:PredicateObjectMap ;
+	rr:objectMap map:om_000 ;
+	rr:predicateMap map:pm_000 .
+
+map:pom_001 rdf:type rr:PredicateObjectMap ;
+	rr:objectMap map:om_001 ;
+	rr:predicateMap map:pm_001 .
+
+map:pom_002 rdf:type rr:PredicateObjectMap ;
+	rr:objectMap map:om_002 ;
+	rr:predicateMap map:pm_002 .
+
+map:pom_003 rdf:type rr:PredicateObjectMap ;
+	rr:objectMap map:om_003 ;
+	rr:predicateMap map:pm_003 .
+
+map:pom_004 rdf:type rr:PredicateObjectMap ;
+	rr:objectMap map:om_004 ;
+	rr:predicateMap map:pm_004 .
+
+map:pom_005 rdf:type rr:PredicateObjectMap ;
+	rr:objectMap map:om_005 ;
+	rr:predicateMap map:pm_005 .
+
+map:pom_006 rdf:type rr:PredicateObjectMap ;
+	rr:objectMap map:om_006 ;
+	rr:predicateMap map:pm_006 .
+
+map:pom_007 rdf:type rr:PredicateObjectMap ;
+	rr:objectMap map:om_007 ;
+	rr:predicateMap map:pm_007 .
+
+map:pom_008 rdf:type rr:PredicateObjectMap ;
+	rr:objectMap map:om_008 ;
+	rr:predicateMap map:pm_008 .
+
+map:pom_009 rdf:type rr:PredicateObjectMap ;
+	rr:objectMap map:om_009 ;
+	rr:predicateMap map:pm_009 .
+
+map:pom_010 rdf:type rr:PredicateObjectMap ;
+	rr:objectMap map:om_010 ;
+	rr:predicateMap map:pm_010 .
+
+map:pom_011 rdf:type rr:PredicateObjectMap ;
+	rr:objectMap map:om_011 ;
+	rr:predicateMap map:pm_011 .
+
+map:pom_012 rdf:type rr:PredicateObjectMap ;
+	rr:objectMap map:om_012 ;
+	rr:predicateMap map:pm_012 .
+
+map:pom_013 rdf:type rr:PredicateObjectMap ;
+	rr:objectMap map:om_013 ;
+	rr:predicateMap map:pm_013 .
+
+map:pom_014 rdf:type rr:PredicateObjectMap ;
+	rr:objectMap map:om_014 ;
+	rr:predicateMap map:pm_014 .
+
+map:pom_015 rdf:type rr:PredicateObjectMap ;
+	rr:objectMap map:om_015 ;
+	rr:predicateMap map:pm_015 .
+
+map:pom_016 rdf:type rr:PredicateObjectMap ;
+	rr:objectMap map:om_016 ;
+	rr:predicateMap map:pm_016 .
+
+map:pom_017 rdf:type rr:PredicateObjectMap ;
+	rr:objectMap map:om_017 ;
+	rr:predicateMap map:pm_017 .
+
+map:pom_018 rdf:type rr:PredicateObjectMap ;
+	rr:objectMap map:om_018 ;
+	rr:predicateMap map:pm_018 .
+
+map:pom_019 rdf:type rr:PredicateObjectMap ;
+	rr:objectMap map:om_019 ;
+	rr:predicateMap map:pm_019 .
+
+map:pom_020 rdf:type rr:PredicateObjectMap ;
+	rr:objectMap map:om_020 ;
+	rr:predicateMap map:pm_020 .
+
+map:pom_021 rdf:type rr:PredicateObjectMap ;
+	rr:objectMap map:om_021 ;
+	rr:predicateMap map:pm_021 .
+
+map:pom_022 rdf:type rr:PredicateObjectMap ;
+	rr:objectMap map:om_022 ;
+	rr:predicateMap map:pm_022 .
+
+map:pom_023 rdf:type rr:PredicateObjectMap ;
+	rr:objectMap map:om_023 ;
+	rr:predicateMap map:pm_023 .
+
+map:pom_024 rdf:type rr:PredicateObjectMap ;
+	rr:objectMap map:om_024 ;
+	rr:predicateMap map:pm_024 .
+
+map:pom_025 rdf:type rr:PredicateObjectMap ;
+	rr:objectMap map:om_025 ;
+	rr:predicateMap map:pm_025 .
+
+map:pom_026 rdf:type rr:PredicateObjectMap ;
+	rr:objectMap map:om_026 ;
+	rr:predicateMap map:pm_026 .
+
+map:pom_027 rdf:type rr:PredicateObjectMap ;
+	rr:objectMap map:om_027 ;
+	rr:predicateMap map:pm_027 .
+
+map:pom_028 rdf:type rr:PredicateObjectMap ;
+	rr:objectMap map:om_028 ;
+	rr:predicateMap map:pm_028 .
+
+map:pom_029 rdf:type rr:PredicateObjectMap ;
+	rr:objectMap map:om_029 ;
+	rr:predicateMap map:pm_029 .
+
+map:pom_030 rdf:type rr:PredicateObjectMap ;
+	rr:objectMap map:om_030 ;
+	rr:predicateMap map:pm_030 .
+
+map:pom_031 rdf:type rr:PredicateObjectMap ;
+	rr:objectMap map:om_031 ;
+	rr:predicateMap map:pm_031 .
+
+map:pom_032 rdf:type rr:PredicateObjectMap ;
+	rr:objectMap map:om_032 ;
+	rr:predicateMap map:pm_032 .
+
+map:pom_033 rdf:type rr:PredicateObjectMap ;
+	rr:objectMap map:om_033 ;
+	rr:predicateMap map:pm_033 .
+
+map:pom_034 rdf:type rr:PredicateObjectMap ;
+	rr:objectMap map:om_034 ;
+	rr:predicateMap map:pm_034 .
+
+map:pom_035 rdf:type rr:PredicateObjectMap ;
+	rr:objectMap map:om_035 ;
+	rr:predicateMap map:pm_035 .
+
+map:pom_036 rdf:type rr:PredicateObjectMap ;
+	rr:objectMap map:om_036 ;
+	rr:predicateMap map:pm_036 .
+
+map:pom_037 rdf:type rr:PredicateObjectMap ;
+	rr:objectMap map:om_037 ;
+	rr:predicateMap map:pm_037 .
+
+map:pom_038 rdf:type rr:PredicateObjectMap ;
+	rr:objectMap map:om_038 ;
+	rr:predicateMap map:pm_038 .
+
+map:pom_039 rdf:type rr:PredicateObjectMap ;
+	rr:objectMap map:om_039 ;
+	rr:predicateMap map:pm_039 .
+
+map:pom_040 rdf:type rr:PredicateObjectMap ;
+	rr:objectMap map:om_040 ;
+	rr:predicateMap map:pm_040 .
+
+map:pom_041 rdf:type rr:PredicateObjectMap ;
+	rr:objectMap map:om_041 ;
+	rr:predicateMap map:pm_041 .
+
+map:pom_042 rdf:type rr:PredicateObjectMap ;
+	rr:objectMap map:om_042 ;
+	rr:predicateMap map:pm_042 .
+
+map:pom_043 rdf:type rr:PredicateObjectMap ;
+	rr:objectMap map:om_043 ;
+	rr:predicateMap map:pm_043 .
+
+map:pom_044 rdf:type rr:PredicateObjectMap ;
+	rr:objectMap map:om_044 ;
+	rr:predicateMap map:pm_044 .
+
+map:pom_045 rdf:type rr:PredicateObjectMap ;
+	rr:objectMap map:om_045 ;
+	rr:predicateMap map:pm_045 .
+
+map:pom_046 rdf:type rr:PredicateObjectMap ;
+	rr:objectMap map:om_046 ;
+	rr:predicateMap map:pm_046 .
+
+map:pom_047 rdf:type rr:PredicateObjectMap ;
+	rr:objectMap map:om_047 ;
+	rr:predicateMap map:pm_047 .
+
+map:pom_048 rdf:type rr:PredicateObjectMap ;
+	rr:objectMap map:om_048 ;
+	rr:predicateMap map:pm_048 .
+
+map:pom_049 rdf:type rr:PredicateObjectMap ;
+	rr:objectMap map:om_049 ;
+	rr:predicateMap map:pm_049 .
+
+map:pom_050 rdf:type rr:PredicateObjectMap ;
+	rr:objectMap map:om_050 ;
+	rr:predicateMap map:pm_050 .
+
+map:pom_051 rdf:type rr:PredicateObjectMap ;
+	rr:objectMap map:om_051 ;
+	rr:predicateMap map:pm_051 .
+
+map:pom_052 rdf:type rr:PredicateObjectMap ;
+	rr:objectMap map:om_052 ;
+	rr:predicateMap map:pm_052 .
+
+map:pom_053 rdf:type rr:PredicateObjectMap ;
+	rr:objectMap map:om_053 ;
+	rr:predicateMap map:pm_053 .
+
+map:pom_054 rdf:type rr:PredicateObjectMap ;
+	rr:objectMap map:om_054 ;
+	rr:predicateMap map:pm_054 .
+
+map:pom_055 rdf:type rr:PredicateObjectMap ;
+	rr:objectMap map:om_055 ;
+	rr:predicateMap map:pm_055 .
+
+map:pom_056 rdf:type rr:PredicateObjectMap ;
+	rr:objectMap map:om_056 ;
+	rr:predicateMap map:pm_056 .
+
+map:pom_057 rdf:type rr:PredicateObjectMap ;
+	rr:objectMap map:om_057 ;
+	rr:predicateMap map:pm_057 .
+
+map:pom_058 rdf:type rr:PredicateObjectMap ;
+	rr:objectMap map:om_058 ;
+	rr:predicateMap map:pm_058 .
+
+map:pom_059 rdf:type rr:PredicateObjectMap ;
+	rr:objectMap map:om_059 ;
+	rr:predicateMap map:pm_059 .
+
+map:pom_060 rdf:type rr:PredicateObjectMap ;
+	rr:objectMap map:om_060 ;
+	rr:predicateMap map:pm_060 .
+
+map:pom_061 rdf:type rr:PredicateObjectMap ;
+	rr:objectMap map:om_061 ;
+	rr:predicateMap map:pm_061 .
+
+map:pom_062 rdf:type rr:PredicateObjectMap ;
+	rr:objectMap map:om_062 ;
+	rr:predicateMap map:pm_062 .
+
+map:pom_063 rdf:type rr:PredicateObjectMap ;
+	rr:objectMap map:om_063 ;
+	rr:predicateMap map:pm_063 .
+
+map:pom_064 rdf:type rr:PredicateObjectMap ;
+	rr:objectMap map:om_064 ;
+	rr:predicateMap map:pm_064 .
+
+map:pom_065 rdf:type rr:PredicateObjectMap ;
+	rr:objectMap map:om_065 ;
+	rr:predicateMap map:pm_065 .
+
+map:pom_066 rdf:type rr:PredicateObjectMap ;
+	rr:objectMap map:om_066 ;
+	rr:predicateMap map:pm_066 .
+
+map:pom_067 rdf:type rr:PredicateObjectMap ;
+	rr:objectMap map:om_067 ;
+	rr:predicateMap map:pm_067 .
+
+map:pom_068 rdf:type rr:PredicateObjectMap ;
+	rr:objectMap map:om_068 ;
+	rr:predicateMap map:pm_068 .
+
+map:pom_069 rdf:type rr:PredicateObjectMap ;
+	rr:objectMap map:om_069 ;
+	rr:predicateMap map:pm_069 .
+
+map:pom_070 rdf:type rr:PredicateObjectMap ;
+	rr:objectMap map:om_070 ;
+	rr:predicateMap map:pm_070 .
+
+map:pom_071 rdf:type rr:PredicateObjectMap ;
+	rr:objectMap map:om_071 ;
+	rr:predicateMap map:pm_071 .
+
+map:pom_072 rdf:type rr:PredicateObjectMap ;
+	rr:objectMap map:om_072 ;
+	rr:predicateMap map:pm_072 .
+
+map:pom_073 rdf:type rr:PredicateObjectMap ;
+	rr:objectMap map:om_073 ;
+	rr:predicateMap map:pm_073 .
+
+map:pom_074 rdf:type rr:PredicateObjectMap ;
+	rr:objectMap map:om_074 ;
+	rr:predicateMap map:pm_074 .
+
+map:pom_075 rdf:type rr:PredicateObjectMap ;
+	rr:objectMap map:om_075 ;
+	rr:predicateMap map:pm_075 .
+
+map:pom_076 rdf:type rr:PredicateObjectMap ;
+	rr:objectMap map:om_076 ;
+	rr:predicateMap map:pm_076 .
+
+map:pom_077 rdf:type rr:PredicateObjectMap ;
+	rr:objectMap map:om_077 ;
+	rr:predicateMap map:pm_077 .
+
+map:pom_078 rdf:type rr:PredicateObjectMap ;
+	rr:objectMap map:om_078 ;
+	rr:predicateMap map:pm_078 .
+
+map:pom_079 rdf:type rr:PredicateObjectMap ;
+	rr:objectMap map:om_079 ;
+	rr:predicateMap map:pm_079 .
+
+map:pom_080 rdf:type rr:PredicateObjectMap ;
+	rr:objectMap map:om_080 ;
+	rr:predicateMap map:pm_080 .
+
+map:pom_081 rdf:type rr:PredicateObjectMap ;
+	rr:objectMap map:om_081 ;
+	rr:predicateMap map:pm_081 .
+
+map:pom_082 rdf:type rr:PredicateObjectMap ;
+	rr:objectMap map:om_082 ;
+	rr:predicateMap map:pm_082 .
+
+map:pom_083 rdf:type rr:PredicateObjectMap ;
+	rr:objectMap map:om_083 ;
+	rr:predicateMap map:pm_083 .
+
+map:pom_084 rdf:type rr:PredicateObjectMap ;
+	rr:objectMap map:om_084 ;
+	rr:predicateMap map:pm_084 .
+
+map:pom_085 rdf:type rr:PredicateObjectMap ;
+	rr:objectMap map:om_085 ;
+	rr:predicateMap map:pm_085 .
+
+map:pom_086 rdf:type rr:PredicateObjectMap ;
+	rr:objectMap map:om_086 ;
+	rr:predicateMap map:pm_086 .
+
+map:pom_087 rdf:type rr:PredicateObjectMap ;
+	rr:objectMap map:om_087 ;
+	rr:predicateMap map:pm_087 .
+
+map:pom_088 rdf:type rr:PredicateObjectMap ;
+	rr:objectMap map:om_088 ;
+	rr:predicateMap map:pm_088 .
+
+map:pom_089 rdf:type rr:PredicateObjectMap ;
+	rr:objectMap map:om_089 ;
+	rr:predicateMap map:pm_089 .
+
+map:pom_090 rdf:type rr:PredicateObjectMap ;
+	rr:objectMap map:om_090 ;
+	rr:predicateMap map:pm_090 .
+
+map:pom_091 rdf:type rr:PredicateObjectMap ;
+	rr:objectMap map:om_091 ;
+	rr:predicateMap map:pm_091 .
+
+map:pom_092 rdf:type rr:PredicateObjectMap ;
+	rr:objectMap map:om_092 ;
+	rr:predicateMap map:pm_092 .
+
+map:pom_093 rdf:type rr:PredicateObjectMap ;
+	rr:objectMap map:om_093 ;
+	rr:predicateMap map:pm_093 .
+
+map:pom_094 rdf:type rr:PredicateObjectMap ;
+	rr:objectMap map:om_094 ;
+	rr:predicateMap map:pm_094 .
+
+map:pom_095 rdf:type rr:PredicateObjectMap ;
+	rr:objectMap map:om_095 ;
+	rr:predicateMap map:pm_095 .
+
+map:pom_096 rdf:type rr:PredicateObjectMap ;
+	rr:objectMap map:om_096 ;
+	rr:predicateMap map:pm_096 .
+
+map:pom_097 rdf:type rr:PredicateObjectMap ;
+	rr:objectMap map:om_097 ;
+	rr:predicateMap map:pm_097 .
+
+map:pom_098 rdf:type rr:PredicateObjectMap ;
+	rr:objectMap map:om_098 ;
+	rr:predicateMap map:pm_098 .
+
+map:pom_099 rdf:type rr:PredicateObjectMap ;
+	rr:objectMap map:om_099 ;
+	rr:predicateMap map:pm_099 .
+
+map:rules_000 <http://rdfs.org/ns/void#exampleResource> map:map_triplesMapBuyer_000, map:map_triplesMapContract_000, map:map_triplesMapContractspecificterm_000, map:map_triplesMapContractterm_000, map:map_triplesMapCpysuppl_000, map:map_triplesMapDocument2_000, map:map_triplesMapDocument_000, map:map_triplesMapDuration_000, map:map_triplesMapIdentifier2_000, map:map_triplesMapIdentifier3_000, map:map_triplesMapIdentifier4_000, map:map_triplesMapIdentifier5_000, map:map_triplesMapIdentifier_000, map:map_triplesMapLocation_000, map:map_triplesMapLotawardoutcome_000, map:map_triplesMapMonetaryvalue_000, map:map_triplesMapNotice_000, map:map_triplesMapNoticedescription_000, map:map_triplesMapNuts_000, map:map_triplesMapOrganization2_000, map:map_triplesMapOrganization_000, map:map_triplesMapPeriod_000, map:map_triplesMapProcedure_000, map:map_triplesMapProcedurespecificterm_000, map:map_triplesMapProcurement-procedure-type_000, map:map_triplesMapProcurementelement_000, map:map_triplesMapProcurementobject_000, map:map_triplesMapPurpose_000, map:map_triplesMapSubmissionstatisticalinformation_000, map:map_triplesMapTender_000, map:map_triplesMapTenderawardoutcome_000, map:map_triplesMapTenderer_000, map:map_triplesMapWinner-selection-status_000, map:map_triplesMapWinner_000 ;
+	rdf:type <http://rdfs.org/ns/void#Dataset> .
+
+map:s_000 rdf:type rr:SubjectMap ;
+	rr:template "http://data.nextprocurement.linkeddata.es/resource/tender/{ContractFolder_ID}" .
+
+map:s_001 rdf:type rr:SubjectMap ;
+	rr:template "http://data.nextprocurement.linkeddata.es/resource/identifier/{ContractFolder_ID}" .
+
+map:s_002 rdf:type rr:SubjectMap ;
+	rr:template "http://data.nextprocurement.linkeddata.es/resource/identifier/{LocatedContractingParty_ID}" .
+
+map:s_003 rdf:type rr:SubjectMap ;
+	rr:template "http://data.nextprocurement.linkeddata.es/resource/identifier/{TenderResult_WinningParty_ID}" .
+
+map:s_004 rdf:type rr:SubjectMap ;
+	rr:template "http://data.nextprocurement.linkeddata.es/resource/identifier/{LegalDocumentReference_ID}" .
+
+map:s_005 rdf:type rr:SubjectMap ;
+	rr:template "http://data.nextprocurement.linkeddata.es/resource/identifier/{TechnicalDocumentReference_ID}" .
+
+map:s_006 rdf:type rr:SubjectMap ;
+	rr:template "http://data.nextprocurement.linkeddata.es/resource/contract/{ID}" .
+
+map:s_007 rdf:type rr:SubjectMap ;
+	rr:template "http://data.nextprocurement.linkeddata.es/resource/buyer/{LocatedContractingParty_ID}" .
+
+map:s_008 rdf:type rr:SubjectMap ;
+	rr:template "http://data.nextprocurement.linkeddata.es/resource/organization/{LocatedContractingParty_Name}" .
+
+map:s_009 rdf:type rr:SubjectMap ;
+	rr:template "http://data.nextprocurement.linkeddata.es/resource/organization/{TenderResult_WinningParty_Name}" .
+
+map:s_010 rdf:type rr:SubjectMap ;
+	rr:template "http://data.nextprocurement.linkeddata.es/resource/contractterm/{ID}" .
+
+map:s_011 rdf:type rr:SubjectMap ;
+	rr:template "http://data.nextprocurement.linkeddata.es/resource/location/{ID}" .
+
+map:s_012 rdf:type rr:SubjectMap ;
+	rr:template "http://data.nextprocurement.linkeddata.es/resource/nuts/{ProcurementProject_CountrySubentityCode}" .
+
+map:s_013 rdf:type rr:SubjectMap ;
+	rr:template "http://data.nextprocurement.linkeddata.es/resource/procurementobject/{ID}" .
+
+map:s_014 rdf:type rr:SubjectMap ;
+	rr:template "http://data.nextprocurement.linkeddata.es/resource/contractspecificterm/{ID}" .
+
+map:s_015 rdf:type rr:SubjectMap ;
+	rr:template "http://data.nextprocurement.linkeddata.es/resource/monetaryvalue/{ID}" .
+
+map:s_016 rdf:type rr:SubjectMap ;
+	rr:template "http://data.nextprocurement.linkeddata.es/resource/procurementelement/{ID}" .
+
+map:s_017 rdf:type rr:SubjectMap ;
+	rr:template "http://data.nextprocurement.linkeddata.es/resource/period/{ProcurementProject_EndDate}" .
+
+map:s_018 rdf:type rr:SubjectMap ;
+	rr:template "http://data.nextprocurement.linkeddata.es/resource/duration/{ProcurementProject_DurationMeasure}" .
+
+map:s_019 rdf:type rr:SubjectMap ;
+	rr:template "http://data.nextprocurement.linkeddata.es/resource/purpose/{ProcurementProject_ItemClassificationCode}" .
+
+map:s_020 rdf:type rr:SubjectMap ;
+	rr:template "http://data.nextprocurement.linkeddata.es/resource/cpysuppl/{ProcurementProject_ItemClassificationCode}" .
+
+map:s_021 rdf:type rr:SubjectMap ;
+	rr:template "http://data.nextprocurement.linkeddata.es/resource/procedure/{ID}" .
+
+map:s_022 rdf:type rr:SubjectMap ;
+	rr:template "http://data.nextprocurement.linkeddata.es/resource/procurement-procedure-type/{TenderingProcess_ProcedureCode}" .
+
+map:s_023 rdf:type rr:SubjectMap ;
+	rr:template "http://data.nextprocurement.linkeddata.es/resource/procedurespecificterm/{ID}" .
+
+map:s_024 rdf:type rr:SubjectMap ;
+	rr:template "http://data.nextprocurement.linkeddata.es/resource/noticedescription/{ID}" .
+
+map:s_025 rdf:type rr:SubjectMap ;
+	rr:template "http://data.nextprocurement.linkeddata.es/resource/notice/{ID}" .
+
+map:s_026 rdf:type rr:SubjectMap ;
+	rr:template "http://data.nextprocurement.linkeddata.es/resource/document/{LegalDocumentReference_ID}" .
+
+map:s_027 rdf:type rr:SubjectMap ;
+	rr:template "http://data.nextprocurement.linkeddata.es/resource/document/{TechnicalDocumentReference_ID}" .
+
+map:s_028 rdf:type rr:SubjectMap ;
+	rr:template "http://data.nextprocurement.linkeddata.es/resource/lotawardoutcome/{ID}" .
+
+map:s_029 rdf:type rr:SubjectMap ;
+	rr:template "http://data.nextprocurement.linkeddata.es/resource/winner-selection-status/{TenderResult_ResultCode}" .
+
+map:s_030 rdf:type rr:SubjectMap ;
+	rr:template "http://data.nextprocurement.linkeddata.es/resource/submissionstatisticalinformation/{ID}" .
+
+map:s_031 rdf:type rr:SubjectMap ;
+	rr:template "http://data.nextprocurement.linkeddata.es/resource/tenderawardoutcome/{ID}" .
+
+map:s_032 rdf:type rr:SubjectMap ;
+	rr:template "http://data.nextprocurement.linkeddata.es/resource/winner/{ID}" .
+
+map:s_033 rdf:type rr:SubjectMap ;
+	rr:template "http://data.nextprocurement.linkeddata.es/resource/tenderer/{TenderResult_WinningParty_ID}" .
+
+map:source_000 rml:referenceFormulation ql:CSV ;
+	rml:source "outsiders.csv" ;
+	rdf:type rml:LogicalSource .
+
+map:source_001 rml:referenceFormulation ql:CSV ;
+	rml:source "outsiders.csv" ;
+	rdf:type rml:LogicalSource .
+
+map:source_002 rml:referenceFormulation ql:CSV ;
+	rml:source "outsiders.csv" ;
+	rdf:type rml:LogicalSource .
+
+map:source_003 rml:referenceFormulation ql:CSV ;
+	rml:source "outsiders.csv" ;
+	rdf:type rml:LogicalSource .
+
+map:source_004 rml:referenceFormulation ql:CSV ;
+	rml:source "outsiders.csv" ;
+	rdf:type rml:LogicalSource .
+
+map:source_005 rml:referenceFormulation ql:CSV ;
+	rml:source "outsiders.csv" ;
+	rdf:type rml:LogicalSource .
+
+map:source_006 rml:referenceFormulation ql:CSV ;
+	rml:source "outsiders.csv" ;
+	rdf:type rml:LogicalSource .
+
+map:source_007 rml:referenceFormulation ql:CSV ;
+	rml:source "outsiders.csv" ;
+	rdf:type rml:LogicalSource .
+
+map:source_008 rml:referenceFormulation ql:CSV ;
+	rml:source "outsiders.csv" ;
+	rdf:type rml:LogicalSource .
+
+map:source_009 rml:referenceFormulation ql:CSV ;
+	rml:source "outsiders.csv" ;
+	rdf:type rml:LogicalSource .
+
+map:source_010 rml:referenceFormulation ql:CSV ;
+	rml:source "outsiders.csv" ;
+	rdf:type rml:LogicalSource .
+
+map:source_011 rml:referenceFormulation ql:CSV ;
+	rml:source "outsiders.csv" ;
+	rdf:type rml:LogicalSource .
+
+map:source_012 rml:referenceFormulation ql:CSV ;
+	rml:source "outsiders.csv" ;
+	rdf:type rml:LogicalSource .
+
+map:source_013 rml:referenceFormulation ql:CSV ;
+	rml:source "outsiders.csv" ;
+	rdf:type rml:LogicalSource .
+
+map:source_014 rml:referenceFormulation ql:CSV ;
+	rml:source "outsiders.csv" ;
+	rdf:type rml:LogicalSource .
+
+map:source_015 rml:referenceFormulation ql:CSV ;
+	rml:source "outsiders.csv" ;
+	rdf:type rml:LogicalSource .
+
+map:source_016 rml:referenceFormulation ql:CSV ;
+	rml:source "outsiders.csv" ;
+	rdf:type rml:LogicalSource .
+
+map:source_017 rml:referenceFormulation ql:CSV ;
+	rml:source "outsiders.csv" ;
+	rdf:type rml:LogicalSource .
+
+map:source_018 rml:referenceFormulation ql:CSV ;
+	rml:source "outsiders.csv" ;
+	rdf:type rml:LogicalSource .
+
+map:source_019 rml:referenceFormulation ql:CSV ;
+	rml:source "outsiders.csv" ;
+	rdf:type rml:LogicalSource .
+
+map:source_020 rml:referenceFormulation ql:CSV ;
+	rml:source "outsiders.csv" ;
+	rdf:type rml:LogicalSource .
+
+map:source_021 rml:referenceFormulation ql:CSV ;
+	rml:source "outsiders.csv" ;
+	rdf:type rml:LogicalSource .
+
+map:source_022 rml:referenceFormulation ql:CSV ;
+	rml:source "outsiders.csv" ;
+	rdf:type rml:LogicalSource .
+
+map:source_023 rml:referenceFormulation ql:CSV ;
+	rml:source "outsiders.csv" ;
+	rdf:type rml:LogicalSource .
+
+map:source_024 rml:referenceFormulation ql:CSV ;
+	rml:source "outsiders.csv" ;
+	rdf:type rml:LogicalSource .
+
+map:source_025 rml:referenceFormulation ql:CSV ;
+	rml:source "outsiders.csv" ;
+	rdf:type rml:LogicalSource .
+
+map:source_026 rml:referenceFormulation ql:CSV ;
+	rml:source "outsiders.csv" ;
+	rdf:type rml:LogicalSource .
+
+map:source_027 rml:referenceFormulation ql:CSV ;
+	rml:source "outsiders.csv" ;
+	rdf:type rml:LogicalSource .
+
+map:source_028 rml:referenceFormulation ql:CSV ;
+	rml:source "outsiders.csv" ;
+	rdf:type rml:LogicalSource .
+
+map:source_029 rml:referenceFormulation ql:CSV ;
+	rml:source "outsiders.csv" ;
+	rdf:type rml:LogicalSource .
+
+map:source_030 rml:referenceFormulation ql:CSV ;
+	rml:source "outsiders.csv" ;
+	rdf:type rml:LogicalSource .
+
+map:source_031 rml:referenceFormulation ql:CSV ;
+	rml:source "outsiders.csv" ;
+	rdf:type rml:LogicalSource .
+
+map:source_032 rml:referenceFormulation ql:CSV ;
+	rml:source "outsiders.csv" ;
+	rdf:type rml:LogicalSource .
+
+map:source_033 rml:referenceFormulation ql:CSV ;
+	rml:source "outsiders.csv" ;
+	rdf:type rml:LogicalSource .
+

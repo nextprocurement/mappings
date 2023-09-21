@@ -1,0 +1,325 @@
+prefixes:
+  xsd: http://www.w3.org/2001/XMLSchema#
+  rr: http://www.w3.org/ns/r2rml#
+  rml: http://semweb.mmlab.be/ns/rml#
+  rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#
+  ql: http://semweb.mmlab.be/ns/ql#
+  rdfs: http://www.w3.org/2000/01/rdf-schema#
+  foaf: http://xmlns.com/foaf/0.1/
+  schema: http://schema.org/
+  dc: http://purl.org/dc/elements/1.1/
+  skos: http://www.w3.org/2004/02/skos/core#
+  epo: http://data.europa.eu/a4g/ontology#
+  dct: http://purl.org/dc/terms/
+  org: http://www.w3.org/ns/org#
+  at-voc: http://publications.europa.eu/resource/authority/
+  nextproc: http://data.nextprocurement.linkeddata.es/ontology#
+
+mappings:
+  triplesMapTender:
+    sources:
+    - [outsiders.csv~csv]
+    s: http://data.nextprocurement.linkeddata.es/resource/tender/$(ContractFolder_ID)
+    po:
+    - [a, epo:Tender]
+    - [epo:hasTitle, $(Title)]
+    - [epo:hasDescription, $(ContractFolder_StatusCode)]
+    - [schema:dateModified, $(Updated), xsd:dateTime]
+    - [rdfs:subClassOf, epo:ProcurementElement]
+    - [epo:hasID, http://data.nextprocurement.linkeddata.es/resource/identifier/$(ContractFolder_ID)~iri]
+    - [epo:hasFinancialOfferValue, http://data.nextprocurement.linkeddata.es/resource/monetaryvalue/$(ID)~iri]
+    # - [epo:hasFinancialOfferValue, http://data.nextprocurement.linkeddata.es/resource/monetaryvalue/$(ProcurementProject_EstimatedOverallContractAmount)~iri]
+    # - [epo:hasFinancialOfferValue, http://data.nextprocurement.linkeddata.es/resource/monetaryvalue/$(ProcurementProject_TaxExclusiveAmount)~iri]
+  
+  triplesMapIdentifier:
+    sources:
+    - [outsiders.csv~csv]
+    s: http://data.nextprocurement.linkeddata.es/resource/identifier/$(ContractFolder_ID)
+    po:
+    - [a, epo:Identifier]
+    - [epo:hasIdentifierValue, $(ID)]
+  
+  triplesMapIdentifier2:
+    sources:
+    - [outsiders.csv~csv]
+    s: http://data.nextprocurement.linkeddata.es/resource/identifier/$(LocatedContractingParty_ID)
+    po:
+    - [a, epo:Identifier]
+    - [epo:hasIdentifierValue, $(ID)]
+
+  triplesMapIdentifier3:
+    sources:
+    - [outsiders.csv~csv]
+    s: http://data.nextprocurement.linkeddata.es/resource/identifier/$(TenderResult_WinningParty_ID)
+    po:
+    - [a, epo:Identifier]
+    - [epo:hasIdentifierValue, $(ID)]
+
+  triplesMapIdentifier4:
+    sources:
+    - [outsiders.csv~csv]
+    s: http://data.nextprocurement.linkeddata.es/resource/identifier/$(LegalDocumentReference_ID)
+    po:
+    - [a, epo:Identifier]
+    - [epo:hasIdentifierValue, $(ID)]
+
+  triplesMapIdentifier5:
+    sources:
+    - [outsiders.csv~csv]
+    s: http://data.nextprocurement.linkeddata.es/resource/identifier/$(TechnicalDocumentReference_ID)
+    po:
+    - [a, epo:Identifier]
+    - [epo:hasIdentifierValue, $(ID)]
+
+  triplesMapContract:
+    sources:
+    - [outsiders.csv~csv]
+    s: http://data.nextprocurement.linkeddata.es/resource/contract/$(ID)
+    po:
+    - [a, epo:Contract]
+    - [epo:hasTitle, $(ProcurementProject_Name)]
+    - [epo:hasDescription, $(ProcurementProject_TypeCode)]
+    - [epo:hasEntryIntoForceDate, $(ProcurementProject_StartDate), xsd:date]
+    - [rdfs:subClassOf, epo:ProcurementElement]
+    - [epo:hasContractValue, http://data.nextprocurement.linkeddata.es/resource/monetaryvalue/$(ID)~iri]
+    # - [epo:hasContractValue, http://data.nextprocurement.linkeddata.es/resource/monetaryvalue/$(ProcurementProject_EstimatedOverallContractAmount)~iri]
+    # - [epo:hasContractValue, http://data.nextprocurement.linkeddata.es/resource/monetaryvalue/$(ProcurementProject_TaxExclusiveAmount)~iri]
+    - [epo:includesTender, http://data.nextprocurement.linkeddata.es/resource/tender/$(ContractFolder_ID)~iri]
+    - [epo:hasEstimatedDuration, http://data.nextprocurement.linkeddata.es/resource/duration/$(ProcurementProject_DurationMeasure)~iri]
+    - [epo:bindsBuyer, http://data.nextprocurement.linkeddata.es/resource/buyer/$(LocatedContractingParty_ID)~iri]
+
+  triplesMapBuyer:
+    sources:
+    - [outsiders.csv~csv]
+    s: http://data.nextprocurement.linkeddata.es/resource/buyer/$(LocatedContractingParty_ID)
+    po:
+    - [a, epo:Buyer]
+    - [epo:hasBuyerProfile, $(LocatedContractingParty_BuyerProfile), xsd:anyURI]
+    - [epo:playedBy, http://data.nextprocurement.linkeddata.es/resource/organization/$(LocatedContractingParty_Name)~iri]
+  
+  triplesMapOrganization:
+    sources:
+    - [outsiders.csv~csv]
+    s: http://data.nextprocurement.linkeddata.es/resource/organization/$(LocatedContractingParty_Name)
+    po:
+    - [a, org:Organization]
+    - [epo:hasLegalName, $(LocatedContractingParty_Name)]
+    - [epo:hasOrganisationUnit, $(LocatedContractingParty_Parent_PartyName)]
+    - [epo:hasOrganisationUnit, $(LocatedContractingParty_Parent_Parent_PartyName)]
+    - [epo:hasOrganisationUnit, $(LocatedContractingParty_Parent_Parent_Parent_PartyName)]
+    - [epo:hasOrganisationUnit, $(LocatedContractingParty_Parent_Parent_Parent_Parent_PartyName)]
+    - [epo:hasID, http://data.nextprocurement.linkeddata.es/resource/identifier/$(LocatedContractingParty_ID)~iri]
+
+  triplesMapOrganization2:
+    sources:
+    - [outsiders.csv~csv]
+    s: http://data.nextprocurement.linkeddata.es/resource/organization/$(TenderResult_WinningParty_Name)
+    po:
+    - [a, org:Organization]
+    - [epo:hasLegalName, $(TenderResult_WinningParty_Name)]
+    - [epo:hasID, http://data.nextprocurement.linkeddata.es/resource/identifier/$(TenderResult_WinningParty_ID)~iri]
+
+  triplesMapContractterm:
+    sources:
+    - [outsiders.csv~csv]
+    s: http://data.nextprocurement.linkeddata.es/resource/contractterm/$(ID)
+    po:
+    - [a, epo:ContractTerm]
+    - [rdfs:subClassOf, epo:ContractSpecificTerm]
+    - [epo:definesSpecificPlaceOfPerformance, http://data.nextprocurement.linkeddata.es/resource/location/$(ID)~iri]
+    - [epo:definesContractPeriod, http://data.nextprocurement.linkeddata.es/resource/period/$(ProcurementProject_EndDate)~iri]
+
+  triplesMapLocation:
+    sources:
+    - [outsiders.csv~csv]
+    s: http://data.nextprocurement.linkeddata.es/resource/location/$(ID)
+    po:
+    - [a, dct:Location]
+    - [epo:hasNutsCode, http://data.nextprocurement.linkeddata.es/resource/nuts/$(ProcurementProject_CountrySubentityCode)~iri]
+
+  triplesMapNuts:
+    sources:
+    - [outsiders.csv~csv]
+    s: http://data.nextprocurement.linkeddata.es/resource/nuts/$(ProcurementProject_CountrySubentityCode)
+    po:
+    - [a, at-voc:nuts]
+
+  triplesMapProcurementobject:
+    sources:
+    - [outsiders.csv~csv]
+    s: http://data.nextprocurement.linkeddata.es/resource/procurementobject/$(ID)
+    po:
+    - [a, epo:ProcurementObject]
+    - [rdfs:subClassOf, epo:ProcurementElement]
+    - [epo:hasPurpose, http://data.nextprocurement.linkeddata.es/resource/purpose/$(ProcurementProject_ItemClassificationCode)~iri]
+    - [epo:foreseesContractSpecificTerm, http://data.nextprocurement.linkeddata.es/resource/contractspecificterm/$(ID)~iri]
+
+  triplesMapContractspecificterm:
+    sources:
+    - [outsiders.csv~csv]
+    s: http://data.nextprocurement.linkeddata.es/resource/contractspecificterm/$(ID)
+    po:
+    - [a, epo:ContractSpecificTerm]
+
+  triplesMapMonetaryvalue:
+    sources:
+    - [outsiders.csv~csv]
+    s: http://data.nextprocurement.linkeddata.es/resource/monetaryvalue/$(ID)
+    po:
+    - [a, epo:MonetaryValue]
+    - [epo:hasAmountValue, $(ProcurementProject_EstimatedOverallContractAmount), xsd:float]
+    - [epo:hasAmountValue, $(ProcurementProject_TaxExclusiveAmount), xsd:float]
+
+  triplesMapProcurementelement:
+    sources:
+    - [outsiders.csv~csv]
+    s: http://data.nextprocurement.linkeddata.es/resource/procurementelement/$(ID)
+    po:
+    - [a, epo:ProcurementElement]
+
+  triplesMapPeriod:
+    sources:
+    - [outsiders.csv~csv]
+    s: http://data.nextprocurement.linkeddata.es/resource/period/$(ProcurementProject_EndDate)
+    po:
+    - [a, epo:Period]
+    - [epo:hasEnd, $(ProcurementProject_EndDate), xsd:date]
+
+  triplesMapDuration:
+    sources:
+    - [outsiders.csv~csv]
+    s: http://data.nextprocurement.linkeddata.es/resource/duration/$(ProcurementProject_DurationMeasure)
+    po:
+    - [a, epo:Duration]
+
+  triplesMapPurpose:
+    sources:
+    - [outsiders.csv~csv]
+    s: http://data.nextprocurement.linkeddata.es/resource/purpose/$(ProcurementProject_ItemClassificationCode)
+    po:
+    - [a, epo:Purpose]
+    - [epo:hasMainClassification, http://data.nextprocurement.linkeddata.es/resource/cpysuppl/$(ProcurementProject_ItemClassificationCode)~iri]
+
+  triplesMapCpysuppl:
+    sources:
+    - [outsiders.csv~csv]
+    s: http://data.nextprocurement.linkeddata.es/resource/cpysuppl/$(ProcurementProject_ItemClassificationCode)
+    po:
+    - [a, at-voc:cpysuppl]
+
+  triplesMapProcedure:
+    sources:
+    - [outsiders.csv~csv]
+    s: http://data.nextprocurement.linkeddata.es/resource/procedure/$(ID)
+    po:
+    - [a, epo:Procedure]
+    - [rdfs:subClassOf, epo:ProcurementElement]
+    - [epo:hasProcedureType, http://data.nextprocurement.linkeddata.es/resource/procurement-procedure-type/$(TenderingProcess_ProcedureCode)~iri]
+    - [epo:isSubjectToProcedureSpecificTerm, http://data.nextprocurement.linkeddata.es/resource/procedurespecificterm/$(ID)~iri]
+
+  triplesMapProcurement-procedure-type:
+    sources:
+    - [outsiders.csv~csv]
+    s: http://data.nextprocurement.linkeddata.es/resource/procurement-procedure-type/$(TenderingProcess_ProcedureCode)
+    po:
+    - [a, at-voc:procurement-procedure-type]
+
+  triplesMapProcedurespecificterm:
+    sources:
+    - [outsiders.csv~csv]
+    s: http://data.nextprocurement.linkeddata.es/resource/procedurespecificterm/$(ID)
+    po:
+    - [a, epo:ProcedureSpecificTerm]
+    - [epo:hasReceiptDeadline, $(TenderingProcess_TenderSubmissionDeadlinePeriod), xsd:dateTime]
+    - [nextproc:hasReceiptDeadlineDescription, $(TenderingProcess_TenderSubmission_Description)]
+    - [epo:hasReceiptExpressionDeadline, $(TenderingProcess_ParticipationRequestReceptionPeriod), xsd:dateTime]
+  
+  triplesMapNoticedescription:
+    sources:
+    - [outsiders.csv~csv]
+    s: http://data.nextprocurement.linkeddata.es/resource/noticedescription/$(ID)
+    po:
+    - [a, epo:NoticeDescription]
+    - [nextproc:noticeTypeCode, $(ValidNoticeInfo_NoticeTypeCode)]
+    - [nextproc:publicationMediaName, $(ValidNoticeInfo_PublicationMediaName)]
+    - [epo:hasPreferredPublicationDate, $(ValidNoticeInfo_IssueDate), xsd:date]
+    - [epo:describesNotice, http://data.nextprocurement.linkeddata.es/resource/notice/$(ID)~iri]
+
+  triplesMapNotice:
+    sources:
+    - [outsiders.csv~csv]
+    s: http://data.nextprocurement.linkeddata.es/resource/notice/$(ID)
+    po:
+    - [a, epo:Notice]
+    - [rdfs:subClassOf, epo:Document]
+    - [epo:refersToProcedure, http://data.nextprocurement.linkeddata.es/resource/procedure/$(ID)~iri]
+  
+  triplesMapDocument:
+    sources:
+    - [outsiders.csv~csv]
+    s: http://data.nextprocurement.linkeddata.es/resource/document/$(LegalDocumentReference_ID)
+    po:
+    - [a, epo:Document]
+    - [epo:hasAccessURL, $(LegalDocumentReference_URI), xsd:anyURI]
+    - [epo:hasAccessURL, $(TechnicalDocumentReference_URI), xsd:anyURI]
+    - [epo:hasID, http://data.nextprocurement.linkeddata.es/resource/identifier/$(LegalDocumentReference_ID)~iri]
+  
+  triplesMapDocument2:
+    sources:
+    - [outsiders.csv~csv]
+    s: http://data.nextprocurement.linkeddata.es/resource/document/$(TechnicalDocumentReference_ID)
+    po:
+    - [a, epo:Document]
+    - [epo:hasAccessURL, $(LegalDocumentReference_URI), xsd:anyURI]
+    - [epo:hasAccessURL, $(TechnicalDocumentReference_URI), xsd:anyURI]
+    - [epo:hasID, http://data.nextprocurement.linkeddata.es/resource/identifier/$(TechnicalDocumentReference_ID)~iri]
+
+  triplesMapLotawardoutcome:
+    sources:
+    - [outsiders.csv~csv]
+    s: http://data.nextprocurement.linkeddata.es/resource/lotawardoutcome/$(ID)
+    po:
+    - [a, epo:LotAwardOutcome]
+    - [epo:hasAwardStatus, http://data.nextprocurement.linkeddata.es/resource/winner-selection-status/$(TenderResult_ResultCode)~iri]
+    - [epo:comprisesTenderAwardOutcome, http://data.nextprocurement.linkeddata.es/resource/tenderawardoutcome/$(ID)~iri]
+  
+  triplesMapWinner-selection-status:
+    sources:
+    - [outsiders.csv~csv]
+    s: http://data.nextprocurement.linkeddata.es/resource/winner-selection-status/$(TenderResult_ResultCode)
+    po:
+    - [a, at-voc:winner-selection-status]
+
+  triplesMapSubmissionstatisticalinformation:
+    sources:
+    - [outsiders.csv~csv]
+    s: http://data.nextprocurement.linkeddata.es/resource/submissionstatisticalinformation/$(ID)
+    po:
+    - [a, epo:SubmissionStatisticalInformation]
+    - [epo:hasReceivedTenders, $(TenderResult_ReceivedTenderQuantity), xsd:integer]
+    - [epo:summarisesInformationForLotAwardOutcome, http://data.nextprocurement.linkeddata.es/resource/lotawardoutcome/$(ID)~iri]
+
+  triplesMapTenderawardoutcome:
+    sources:
+    - [outsiders.csv~csv]
+    s: http://data.nextprocurement.linkeddata.es/resource/tenderawardoutcome/$(ID)
+    po:
+    - [a, epo:TenderAwardOutcome]
+    - [epo:describesTender, http://data.nextprocurement.linkeddata.es/resource/tender/$(ContractFolder_ID)~iri]
+    - [epo:indicatesAwardOfLotToWinner, http://data.nextprocurement.linkeddata.es/resource/winner/$(ID)~iri]
+
+  triplesMapWinner:
+    sources:
+    - [outsiders.csv~csv]
+    s: http://data.nextprocurement.linkeddata.es/resource/winner/$(ID)
+    po:
+    - [a, epo:Winner]
+    - [epo:dependsOnTenderer, http://data.nextprocurement.linkeddata.es/resource/tenderer/$(TenderResult_WinningParty_ID)~iri]
+
+  triplesMapTenderer:
+    sources:
+    - [outsiders.csv~csv]
+    s: http://data.nextprocurement.linkeddata.es/resource/tenderer/$(TenderResult_WinningParty_ID)
+    po:
+    - [a, epo:Tenderer]
+    - [epo:playedBy, http://data.nextprocurement.linkeddata.es/resource/organization/$(TenderResult_WinningParty_Name)~iri] 
