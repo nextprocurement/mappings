@@ -28,8 +28,6 @@ mappings:
     - [rdfs:subClassOf, epo:ProcurementElement]
     - [epo:hasID, http://data.nextprocurement.linkeddata.es/resource/identifier/$(ContractFolder_ID)~iri]
     - [epo:hasFinancialOfferValue, http://data.nextprocurement.linkeddata.es/resource/monetaryvalue/$(ID)~iri]
-    # - [epo:hasFinancialOfferValue, http://data.nextprocurement.linkeddata.es/resource/monetaryvalue/$(ProcurementProject_EstimatedOverallContractAmount)~iri]
-    # - [epo:hasFinancialOfferValue, http://data.nextprocurement.linkeddata.es/resource/monetaryvalue/$(ProcurementProject_TaxExclusiveAmount)~iri]
   
   triplesMapIdentifier:
     sources:
@@ -47,13 +45,13 @@ mappings:
     - [a, epo:Identifier]
     - [epo:hasIdentifierValue, $(ID)]
 
-  triplesMapIdentifier3:
-    sources:
-    - [outsiders.csv~csv]
-    s: http://data.nextprocurement.linkeddata.es/resource/identifier/$(TenderResult_WinningParty_ID)
-    po:
-    - [a, epo:Identifier]
-    - [epo:hasIdentifierValue, $(ID)]
+  # triplesMapIdentifier3:
+  #   sources:
+  #   - [outsiders.csv~csv]
+  #   s: http://data.nextprocurement.linkeddata.es/resource/identifier/$(TenderResult_WinningParty_ID)
+  #   po:
+  #   - [a, epo:Identifier]
+  #   - [epo:hasIdentifierValue, $(ID)]
 
   triplesMapIdentifier4:
     sources:
@@ -82,8 +80,6 @@ mappings:
     - [epo:hasEntryIntoForceDate, $(ProcurementProject_StartDate), xsd:date]
     - [rdfs:subClassOf, epo:ProcurementElement]
     - [epo:hasContractValue, http://data.nextprocurement.linkeddata.es/resource/monetaryvalue/$(ID)~iri]
-    # - [epo:hasContractValue, http://data.nextprocurement.linkeddata.es/resource/monetaryvalue/$(ProcurementProject_EstimatedOverallContractAmount)~iri]
-    # - [epo:hasContractValue, http://data.nextprocurement.linkeddata.es/resource/monetaryvalue/$(ProcurementProject_TaxExclusiveAmount)~iri]
     - [epo:includesTender, http://data.nextprocurement.linkeddata.es/resource/tender/$(ContractFolder_ID)~iri]
     - [epo:hasEstimatedDuration, http://data.nextprocurement.linkeddata.es/resource/duration/$(ProcurementProject_DurationMeasure)~iri]
     - [epo:bindsBuyer, http://data.nextprocurement.linkeddata.es/resource/buyer/$(LocatedContractingParty_ID)~iri]
@@ -95,12 +91,12 @@ mappings:
     po:
     - [a, epo:Buyer]
     - [epo:hasBuyerProfile, $(LocatedContractingParty_BuyerProfile), xsd:anyURI]
-    - [epo:playedBy, http://data.nextprocurement.linkeddata.es/resource/organization/$(LocatedContractingParty_Name)~iri]
+    - [epo:playedBy, http://data.nextprocurement.linkeddata.es/resource/organization/$(LocatedContractingParty_Name_URI)~iri]
   
   triplesMapOrganization:
     sources:
     - [outsiders.csv~csv]
-    s: http://data.nextprocurement.linkeddata.es/resource/organization/$(LocatedContractingParty_Name)
+    s: http://data.nextprocurement.linkeddata.es/resource/organization/$(LocatedContractingParty_Name_URI)
     po:
     - [a, org:Organization]
     - [epo:hasLegalName, $(LocatedContractingParty_Name)]
@@ -110,14 +106,17 @@ mappings:
     - [epo:hasOrganisationUnit, $(LocatedContractingParty_Parent_Parent_Parent_Parent_PartyName)]
     - [epo:hasID, http://data.nextprocurement.linkeddata.es/resource/identifier/$(LocatedContractingParty_ID)~iri]
 
-  triplesMapOrganization2:
-    sources:
-    - [outsiders.csv~csv]
-    s: http://data.nextprocurement.linkeddata.es/resource/organization/$(TenderResult_WinningParty_Name)
-    po:
-    - [a, org:Organization]
-    - [epo:hasLegalName, $(TenderResult_WinningParty_Name)]
-    - [epo:hasID, http://data.nextprocurement.linkeddata.es/resource/identifier/$(TenderResult_WinningParty_ID)~iri]
+  # DUPLICAR COLUMNA "TenderResult_WinningParty_Name" PARA QUE UNA POSEA EL ID ("TenderResult_WinningParty_Name_URI") Y OTRA EL NOMBRE ("TenderResult_WinningParty_Name")
+  # FIJARSE EN EL CASO DE ARRIBA
+
+  # triplesMapOrganization2:
+  #   sources:
+  #   - [outsiders.csv~csv]
+  #   s: http://data.nextprocurement.linkeddata.es/resource/organization/$(TenderResult_WinningParty_Name)
+  #   po:
+  #   - [a, org:Organization]
+  #   - [epo:hasLegalName, $(TenderResult_WinningParty_Name)]
+  #   - [epo:hasID, http://data.nextprocurement.linkeddata.es/resource/identifier/$(TenderResult_WinningParty_ID)~iri]
 
   triplesMapContractterm:
     sources:
@@ -128,6 +127,14 @@ mappings:
     - [rdfs:subClassOf, epo:ContractSpecificTerm]
     - [epo:definesSpecificPlaceOfPerformance, http://data.nextprocurement.linkeddata.es/resource/location/$(ID)~iri]
     - [epo:definesContractPeriod, http://data.nextprocurement.linkeddata.es/resource/period/$(ProcurementProject_EndDate)~iri]
+
+  triplesMapPeriod:
+    sources:
+    - [outsiders.csv~csv]
+    s: http://data.nextprocurement.linkeddata.es/resource/period/$(ProcurementProject_EndDate)
+    po:
+    - [a, epo:Period]
+    - [epo:hasEnd, $(ProcurementProject_EndDate), xsd:date]
 
   triplesMapLocation:
     sources:
@@ -167,8 +174,9 @@ mappings:
     s: http://data.nextprocurement.linkeddata.es/resource/monetaryvalue/$(ID)
     po:
     - [a, epo:MonetaryValue]
-    - [epo:hasAmountValue, $(ProcurementProject_EstimatedOverallContractAmount), xsd:float]
-    - [epo:hasAmountValue, $(ProcurementProject_TaxExclusiveAmount), xsd:float]
+    - [nextproc:hasAmountValueEstimated, $(ProcurementProject_EstimatedOverallContractAmount), xsd:float]
+    - [nextproc:hasAmountValueWithoutTaxes, $(ProcurementProject_TaxExclusiveAmount), xsd:float]
+    # - [nextproc:hasAmountValueTenderWithoutTaxes, $(TenderResult_AwardedTenderedProject_TaxExclusiveAmount), xsd:float]
 
   triplesMapProcurementelement:
     sources:
@@ -176,14 +184,6 @@ mappings:
     s: http://data.nextprocurement.linkeddata.es/resource/procurementelement/$(ID)
     po:
     - [a, epo:ProcurementElement]
-
-  triplesMapPeriod:
-    sources:
-    - [outsiders.csv~csv]
-    s: http://data.nextprocurement.linkeddata.es/resource/period/$(ProcurementProject_EndDate)
-    po:
-    - [a, epo:Period]
-    - [epo:hasEnd, $(ProcurementProject_EndDate), xsd:date]
 
   triplesMapDuration:
     sources:
@@ -240,9 +240,9 @@ mappings:
     s: http://data.nextprocurement.linkeddata.es/resource/noticedescription/$(ID)
     po:
     - [a, epo:NoticeDescription]
-    - [nextproc:noticeTypeCode, $(ValidNoticeInfo_NoticeTypeCode)]
-    - [nextproc:publicationMediaName, $(ValidNoticeInfo_PublicationMediaName)]
-    - [epo:hasPreferredPublicationDate, $(ValidNoticeInfo_IssueDate), xsd:date]
+    # - [nextproc:noticeTypeCode, $(ValidNoticeInfo_NoticeTypeCode)]
+    # - [nextproc:publicationMediaName, $(ValidNoticeInfo_PublicationMediaName)]
+    # - [epo:hasPreferredPublicationDate, $(ValidNoticeInfo_IssueDate), xsd:date]
     - [epo:describesNotice, http://data.nextprocurement.linkeddata.es/resource/notice/$(ID)~iri]
 
   triplesMapNotice:
@@ -261,7 +261,6 @@ mappings:
     po:
     - [a, epo:Document]
     - [epo:hasAccessURL, $(LegalDocumentReference_URI), xsd:anyURI]
-    - [epo:hasAccessURL, $(TechnicalDocumentReference_URI), xsd:anyURI]
     - [epo:hasID, http://data.nextprocurement.linkeddata.es/resource/identifier/$(LegalDocumentReference_ID)~iri]
   
   triplesMapDocument2:
@@ -270,7 +269,6 @@ mappings:
     s: http://data.nextprocurement.linkeddata.es/resource/document/$(TechnicalDocumentReference_ID)
     po:
     - [a, epo:Document]
-    - [epo:hasAccessURL, $(LegalDocumentReference_URI), xsd:anyURI]
     - [epo:hasAccessURL, $(TechnicalDocumentReference_URI), xsd:anyURI]
     - [epo:hasID, http://data.nextprocurement.linkeddata.es/resource/identifier/$(TechnicalDocumentReference_ID)~iri]
 
@@ -280,15 +278,15 @@ mappings:
     s: http://data.nextprocurement.linkeddata.es/resource/lotawardoutcome/$(ID)
     po:
     - [a, epo:LotAwardOutcome]
-    - [epo:hasAwardStatus, http://data.nextprocurement.linkeddata.es/resource/winner-selection-status/$(TenderResult_ResultCode)~iri]
+    # - [epo:hasAwardStatus, http://data.nextprocurement.linkeddata.es/resource/winner-selection-status/$(TenderResult_ResultCode)~iri]
     - [epo:comprisesTenderAwardOutcome, http://data.nextprocurement.linkeddata.es/resource/tenderawardoutcome/$(ID)~iri]
   
-  triplesMapWinner-selection-status:
-    sources:
-    - [outsiders.csv~csv]
-    s: http://data.nextprocurement.linkeddata.es/resource/winner-selection-status/$(TenderResult_ResultCode)
-    po:
-    - [a, at-voc:winner-selection-status]
+  # triplesMapWinner-selection-status:
+  #   sources:
+  #   - [outsiders.csv~csv]
+  #   s: http://data.nextprocurement.linkeddata.es/resource/winner-selection-status/$(TenderResult_ResultCode)
+  #   po:
+  #   - [a, at-voc:winner-selection-status]
 
   triplesMapSubmissionstatisticalinformation:
     sources:
@@ -296,7 +294,7 @@ mappings:
     s: http://data.nextprocurement.linkeddata.es/resource/submissionstatisticalinformation/$(ID)
     po:
     - [a, epo:SubmissionStatisticalInformation]
-    - [epo:hasReceivedTenders, $(TenderResult_ReceivedTenderQuantity), xsd:integer]
+    # - [epo:hasReceivedTenders, $(TenderResult_ReceivedTenderQuantity), xsd:integer]
     - [epo:summarisesInformationForLotAwardOutcome, http://data.nextprocurement.linkeddata.es/resource/lotawardoutcome/$(ID)~iri]
 
   triplesMapTenderawardoutcome:
@@ -314,12 +312,12 @@ mappings:
     s: http://data.nextprocurement.linkeddata.es/resource/winner/$(ID)
     po:
     - [a, epo:Winner]
-    - [epo:dependsOnTenderer, http://data.nextprocurement.linkeddata.es/resource/tenderer/$(TenderResult_WinningParty_ID)~iri]
+    # - [epo:dependsOnTenderer, http://data.nextprocurement.linkeddata.es/resource/tenderer/$(TenderResult_WinningParty_ID)~iri]
 
-  triplesMapTenderer:
-    sources:
-    - [outsiders.csv~csv]
-    s: http://data.nextprocurement.linkeddata.es/resource/tenderer/$(TenderResult_WinningParty_ID)
-    po:
-    - [a, epo:Tenderer]
-    - [epo:playedBy, http://data.nextprocurement.linkeddata.es/resource/organization/$(TenderResult_WinningParty_Name)~iri] 
+  # triplesMapTenderer:
+  #   sources:
+  #   - [outsiders.csv~csv]
+  #   s: http://data.nextprocurement.linkeddata.es/resource/tenderer/$(TenderResult_WinningParty_ID)
+  #   po:
+  #   - [a, epo:Tenderer]
+  #   - [epo:playedBy, http://data.nextprocurement.linkeddata.es/resource/organization/$(TenderResult_WinningParty_Name)~iri] 
