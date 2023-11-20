@@ -456,7 +456,7 @@ mappings:
     - [locn:adminUnitL1, $(ProcurementProjectLot_CountryName)]
     - [locn:adminUnitL1, $(TenderResult_WinningParty_CountryCode)]
 
-  triplesMapContactPoint:
+  triplesMapContactpoint:
     sources:
     - [insiders.csv~csv]
     s: http://data.nextprocurement.linkeddata.es/resource/contactpoint/$(LocatedContractingParty_ID)
@@ -504,26 +504,12 @@ mappings:
     s: http://data.nextprocurement.linkeddata.es/resource/location/$(ID)
     po:
     - [a, dct:Location]
-    - [epo:hasCountryCode, http://data.nextprocurement.linkeddata.es/resource/country/$(ProcurementProject_CountrySubentity)~iri]
-    - [epo:hasCountryCode, http://data.nextprocurement.linkeddata.es/resource/country/$(ProcurementProjectLot_CountrySubentity)~iri]
+    - [epo:hasNutsCode, http://data.nextprocurement.linkeddata.es/resource/nuts/$(ProcurementProject_CountrySubentity)~iri]
+    - [epo:hasNutsCode, http://data.nextprocurement.linkeddata.es/resource/nuts/$(ProcurementProjectLot_CountrySubentity)~iri]
     - [epo:hasNutsCode, http://data.nextprocurement.linkeddata.es/resource/nuts/$(ProcurementProject_CountrySubentityCode)~iri]
     - [epo:hasNutsCode, http://data.nextprocurement.linkeddata.es/resource/nuts/$(ProcurementProjectLot_CountrySubentityCode)~iri]
     - [epo:hasNutsCode, http://data.nextprocurement.linkeddata.es/resource/nuts/$(TenderResult_WinningParty_CountrySubentityCode)~iri]
     - [locn:address, http://data.nextprocurement.linkeddata.es/resource/address/$(LocatedContractingParty_ID)~iri]
-
-  triplesMapCountry:
-    sources:
-    - [insiders.csv~csv]
-    s: http://data.nextprocurement.linkeddata.es/resource/country/$(ProcurementProject_CountrySubentity)
-    po:
-    - [a, at-voc:country]
-
-  triplesMapCountryLot:
-    sources:
-    - [insiders.csv~csv]
-    s: http://data.nextprocurement.linkeddata.es/resource/country/$(ProcurementProjectLot_CountrySubentity)
-    po:
-    - [a, at-voc:country]
 
   triplesMapNuts:
     sources:
@@ -532,10 +518,31 @@ mappings:
     po:
     - [a, at-voc:nuts]
 
-  triplesMapNutsLot:
+  triplesMapNuts2:
+    sources:
+    - [insiders.csv~csv]
+    s: http://data.nextprocurement.linkeddata.es/resource/nuts/$(ProcurementProject_CountrySubentity)
+    po:
+    - [a, at-voc:nuts]
+
+  triplesMapNutslot:
     sources:
     - [insiders.csv~csv]
     s: http://data.nextprocurement.linkeddata.es/resource/nuts/$(ProcurementProjectLot_CountrySubentityCode)
+    po:
+    - [a, at-voc:nuts]
+
+  triplesMapNutslot2:
+    sources:
+    - [insiders.csv~csv]
+    s: http://data.nextprocurement.linkeddata.es/resource/nuts/$(ProcurementProjectLot_CountrySubentity)
+    po:
+    - [a, at-voc:nuts]
+
+  triplesMapNutswinningparty:
+    sources:
+    - [insiders.csv~csv]
+    s: http://data.nextprocurement.linkeddata.es/resource/nuts/$(TenderResult_WinningParty_CountrySubentityCode)
     po:
     - [a, at-voc:nuts]
 
@@ -621,7 +628,7 @@ mappings:
     - [a, epo:Purpose]
     - [epo:hasMainClassification, http://data.nextprocurement.linkeddata.es/resource/cpysuppl/$(ProcurementProject_ItemClassificationCode)~iri]
 
-  triplesMapPurposeLot:
+  triplesMapPurposelot:
     sources:
     - [insiders.csv~csv]
     s: http://data.nextprocurement.linkeddata.es/resource/purpose/$(ProcurementProjectLot_ItemClassificationCode)
@@ -636,7 +643,7 @@ mappings:
     po:
     - [a, at-voc:cpysuppl]
 
-  triplesMapCpysupplLot:
+  triplesMapCpysuppllot:
     sources:
     - [insiders.csv~csv]
     s: http://data.nextprocurement.linkeddata.es/resource/cpysuppl/$(ProcurementProjectLot_ItemClassificationCode)
