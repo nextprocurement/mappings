@@ -100,16 +100,66 @@ mappings:
     po:
     - [a, org:Organization]
     - [epo:hasLegalName, $(LocatedContractingParty_Name)]
-    - [epo:hasOrganisationUnit, $(LocatedContractingParty_Parent_PartyName)]
-    - [epo:hasOrganisationUnit, $(LocatedContractingParty_Parent_Parent_PartyName)]
-    - [epo:hasOrganisationUnit, $(LocatedContractingParty_Parent_Parent_Parent_PartyName)]
-    - [epo:hasOrganisationUnit, $(LocatedContractingParty_Parent_Parent_Parent_Parent_PartyName)]
+    - [nextproc:isRelatedTo, http://data.nextprocurement.linkeddata.es/resource/organization/$(LocatedContractingParty_Parent_PartyName_URI)~iri]
+    - [nextproc:isRelatedTo, http://data.nextprocurement.linkeddata.es/resource/organization/$(LocatedContractingParty_Parent_Parent_PartyName_URI)~iri]
+    - [nextproc:isRelatedTo, http://data.nextprocurement.linkeddata.es/resource/organization/$(LocatedContractingParty_Parent_Parent_Parent_PartyName_URI)~iri]
+    - [nextproc:isRelatedTo, http://data.nextprocurement.linkeddata.es/resource/organization/$(LocatedContractingParty_Parent_Parent_Parent_Parent_PartyName_URI)~iri]
+    - [schema:parentOrganization, http://data.nextprocurement.linkeddata.es/resource/organization/$(LocatedContractingParty_Parent_PartyName_URI)~iri]
     - [epo:hasID, http://data.nextprocurement.linkeddata.es/resource/identifier/$(LocatedContractingParty_ID)~iri]
 
-  # DUPLICAR COLUMNA "TenderResult_WinningParty_Name" PARA QUE UNA POSEA EL ID ("TenderResult_WinningParty_Name_URI") Y OTRA EL NOMBRE ("TenderResult_WinningParty_Name")
-  # FIJARSE EN EL CASO DE ARRIBA
+  triplesMapOrganization2:
+    sources:
+    - [outsiders.csv~csv]
+    s: http://data.nextprocurement.linkeddata.es/resource/organization/$(LocatedContractingParty_Parent_PartyName_URI)
+    po:
+    - [a, org:Organization]
+    - [epo:hasLegalName, $(LocatedContractingParty_Parent_PartyName)]
+    - [nextproc:isRelatedTo, http://data.nextprocurement.linkeddata.es/resource/organization/$(LocatedContractingParty_Name_URI)~iri]
+    - [nextproc:isRelatedTo, http://data.nextprocurement.linkeddata.es/resource/organization/$(LocatedContractingParty_Parent_Parent_PartyName_URI)~iri]
+    - [nextproc:isRelatedTo, http://data.nextprocurement.linkeddata.es/resource/organization/$(LocatedContractingParty_Parent_Parent_Parent_PartyName_URI)~iri]
+    - [nextproc:isRelatedTo, http://data.nextprocurement.linkeddata.es/resource/organization/$(LocatedContractingParty_Parent_Parent_Parent_Parent_PartyName_URI)~iri]
+    - [schema:parentOrganization, http://data.nextprocurement.linkeddata.es/resource/organization/$(LocatedContractingParty_Parent_Parent_PartyName_URI)~iri]
 
-  # triplesMapOrganization2:
+  triplesMapOrganization3:
+    sources:
+    - [outsiders.csv~csv]
+    s: http://data.nextprocurement.linkeddata.es/resource/organization/$(LocatedContractingParty_Parent_Parent_PartyName_URI)
+    po:
+    - [a, org:Organization]
+    - [epo:hasLegalName, $(LocatedContractingParty_Parent_Parent_PartyName)]
+    - [nextproc:isRelatedTo, http://data.nextprocurement.linkeddata.es/resource/organization/$(LocatedContractingParty_Name_URI)~iri]
+    - [nextproc:isRelatedTo, http://data.nextprocurement.linkeddata.es/resource/organization/$(LocatedContractingParty_Parent_PartyName_URI)~iri]
+    - [nextproc:isRelatedTo, http://data.nextprocurement.linkeddata.es/resource/organization/$(LocatedContractingParty_Parent_Parent_Parent_PartyName_URI)~iri]
+    - [nextproc:isRelatedTo, http://data.nextprocurement.linkeddata.es/resource/organization/$(LocatedContractingParty_Parent_Parent_Parent_Parent_PartyName_URI)~iri]
+    - [schema:parentOrganization, http://data.nextprocurement.linkeddata.es/resource/organization/$(LocatedContractingParty_Parent_Parent_Parent_PartyName_URI)~iri]
+
+  triplesMapOrganization4:
+    sources:
+    - [outsiders.csv~csv]
+    s: http://data.nextprocurement.linkeddata.es/resource/organization/$(LocatedContractingParty_Parent_Parent_Parent_PartyName_URI)
+    po:
+    - [a, org:Organization]
+    - [epo:hasLegalName, $(LocatedContractingParty_Parent_Parent_Parent_PartyName)]
+    - [nextproc:isRelatedTo, http://data.nextprocurement.linkeddata.es/resource/organization/$(LocatedContractingParty_Name_URI)~iri]
+    - [nextproc:isRelatedTo, http://data.nextprocurement.linkeddata.es/resource/organization/$(LocatedContractingParty_Parent_PartyName_URI)~iri]
+    - [nextproc:isRelatedTo, http://data.nextprocurement.linkeddata.es/resource/organization/$(LocatedContractingParty_Parent_Parent_PartyName_URI)~iri]
+    - [nextproc:isRelatedTo, http://data.nextprocurement.linkeddata.es/resource/organization/$(LocatedContractingParty_Parent_Parent_Parent_Parent_PartyName_URI)~iri]
+    - [schema:parentOrganization, http://data.nextprocurement.linkeddata.es/resource/organization/$(LocatedContractingParty_Parent_Parent_Parent_Parent_PartyName_URI)~iri]
+
+  triplesMapOrganization5:
+    sources:
+    - [outsiders.csv~csv]
+    s: http://data.nextprocurement.linkeddata.es/resource/organization/$(LocatedContractingParty_Parent_Parent_Parent_Parent_PartyName_URI)
+    po:
+    - [a, org:Organization]
+    - [epo:hasLegalName, $(LocatedContractingParty_Parent_Parent_Parent_Parent_PartyName)]
+    - [nextproc:isRelatedTo, http://data.nextprocurement.linkeddata.es/resource/organization/$(LocatedContractingParty_Name_URI)~iri]
+    - [nextproc:isRelatedTo, http://data.nextprocurement.linkeddata.es/resource/organization/$(LocatedContractingParty_Parent_PartyName_URI)~iri]
+    - [nextproc:isRelatedTo, http://data.nextprocurement.linkeddata.es/resource/organization/$(LocatedContractingParty_Parent_Parent_PartyName_URI)~iri]
+    - [nextproc:isRelatedTo, http://data.nextprocurement.linkeddata.es/resource/organization/$(LocatedContractingParty_Parent_Parent_Parent_PartyName_URI)~iri]
+
+  # DUPLICAR COLUMNA "TenderResult_WinningParty_Name" PARA QUE UNA POSEA EL ID ("TenderResult_WinningParty_Name_URI") Y OTRA EL NOMBRE ("TenderResult_WinningParty_Name")
+  # triplesMapOrganization6:
   #   sources:
   #   - [outsiders.csv~csv]
   #   s: http://data.nextprocurement.linkeddata.es/resource/organization/$(TenderResult_WinningParty_Name)
