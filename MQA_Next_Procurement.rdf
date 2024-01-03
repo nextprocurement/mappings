@@ -1,0 +1,339 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:dcat="http://www.w3.org/ns/dcat#"
+         xmlns:dct="http://purl.org/dc/terms/"
+         xmlns:foaf="http://xmlns.com/foaf/0.1/"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+
+  <dcat:Catalog rdf:about="http://data.nextprocurement.linkeddata.es/catalog/">
+    <dct:identifier>http://data.nextprocurement.linkeddata.es/catalog/</dct:identifier>
+    <dct:title xml:lang="en">Next Procurement Open Data Catalog</dct:title>
+    <dct:description xml:lang="en">From Public Procurement metadata to a unified Knowledge Graph</dct:description>
+    <dct:publisher rdf:resource="https://oeg.fi.upm.es"/>
+    <dct:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2023-12-31</dct:issued>
+    <dct:language>en</dct:language>
+    <dcat:themeTaxonomy rdf:resource="http://data.europa.eu/a4g/ontology#"/>
+    <foaf:homepage rdf:resource="http://data.nextprocurement.linkeddata.es/"/>
+
+    <dcat:dataset>
+      <dcat:Dataset rdf:about="http://data.nextprocurement.linkeddata.es/dataset/outsiders">
+        <dct:identifier>http://data.nextprocurement.linkeddata.es/dataset/outsiders</dct:identifier>
+        <dct:title xml:lang="en">Outsiders</dct:title>
+        <dct:description xml:lang="en">Next Procurement: Outsiders Dataset</dct:description>
+        <dcat:keyword>outsiders</dcat:keyword>
+        <dct:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2023-12-31</dct:issued>
+        <dct:language>en</dct:language>
+        <dct:publisher rdf:resource="https://oeg.fi.upm.es"/>
+
+        <dcat:distribution>
+          <dcat:Distribution>
+            <dct:identifier>http://data.nextprocurement.linkeddata.es/dataset/outsiders/outsiders.csv</dct:identifier>
+            <dct:title xml:lang="en">Outsiders Dataset</dct:title>
+            <dcat:accessURL rdf:resource="http://data.nextprocurement.linkeddata.es/dataset/outsiders/outsiders.csv"/>
+            <dct:format>
+              <dct:IMT>
+                <rdf:value>text/csv</rdf:value>
+                <rdfs:label>CSV</rdfs:label>
+              </dct:IMT>
+            </dct:format>
+          </dcat:Distribution>
+        </dcat:distribution>
+
+        <dcat:distribution>
+          <dcat:Distribution>
+            <dct:identifier>http://data.nextprocurement.linkeddata.es/dataset/outsiders/NextProcurement_Outsiders_KG.nt</dct:identifier>
+            <dct:title xml:lang="en">Outsiders Knowledge Graph</dct:title>
+            <dcat:accessURL rdf:resource="http://data.nextprocurement.linkeddata.es/dataset/outsiders/NextProcurement_Outsiders_KG.nt"/>
+            <dct:format>
+              <dct:IMT>
+                <rdf:value>text/n-triples</rdf:value>
+                <rdfs:label>rdf-ntriples</rdfs:label>
+              </dct:IMT>
+            </dct:format>
+          </dcat:Distribution>
+        </dcat:distribution>
+
+      </dcat:Dataset>
+    </dcat:dataset>
+
+    <dcat:dataset>
+      <dcat:Dataset rdf:about="http://data.nextprocurement.linkeddata.es/dataset/insiders">
+        <dct:identifier>http://data.nextprocurement.linkeddata.es/dataset/insiders</dct:identifier>
+        <dct:title xml:lang="en">Insiders</dct:title>
+        <dct:description xml:lang="en">Next Procurement: Insiders Dataset</dct:description>
+        <dcat:keyword>insiders</dcat:keyword>
+        <dct:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2023-12-31</dct:issued>
+        <dct:language>en</dct:language>
+        <dct:publisher rdf:resource="https://oeg.fi.upm.es"/>
+		
+        <dcat:distribution>
+          <dcat:Distribution>
+            <dct:identifier>http://data.nextprocurement.linkeddata.es/dataset/insiders/insiders1.csv</dct:identifier>
+            <dct:title xml:lang="en">Insiders Dataset 1</dct:title>
+            <dcat:accessURL rdf:resource="http://data.nextprocurement.linkeddata.es/dataset/insiders/insiders1.csv"/>
+            <dct:format>
+              <dct:IMT>
+                <rdf:value>text/csv</rdf:value>
+                <rdfs:label>CSV</rdfs:label>
+              </dct:IMT>
+            </dct:format>
+          </dcat:Distribution>
+        </dcat:distribution>
+
+        <dcat:distribution>
+          <dcat:Distribution>
+            <dct:identifier>http://data.nextprocurement.linkeddata.es/dataset/insiders/insiders2.csv</dct:identifier>
+            <dct:title xml:lang="en">Insiders Dataset 2</dct:title>
+            <dcat:accessURL rdf:resource="http://data.nextprocurement.linkeddata.es/dataset/insiders/insiders2.csv"/>
+            <dct:format>
+              <dct:IMT>
+                <rdf:value>text/csv</rdf:value>
+                <rdfs:label>CSV</rdfs:label>
+              </dct:IMT>
+            </dct:format>
+          </dcat:Distribution>
+        </dcat:distribution>
+
+        <dcat:distribution>
+          <dcat:Distribution>
+            <dct:identifier>http://data.nextprocurement.linkeddata.es/dataset/insiders/insiders3.csv</dct:identifier>
+            <dct:title xml:lang="en">Insiders Dataset 3</dct:title>
+            <dcat:accessURL rdf:resource="http://data.nextprocurement.linkeddata.es/dataset/insiders/insiders3.csv"/>
+            <dct:format>
+              <dct:IMT>
+                <rdf:value>text/csv</rdf:value>
+                <rdfs:label>CSV</rdfs:label>
+              </dct:IMT>
+            </dct:format>
+          </dcat:Distribution>
+        </dcat:distribution>
+
+        <dcat:distribution>
+          <dcat:Distribution>
+            <dct:identifier>http://data.nextprocurement.linkeddata.es/dataset/insiders/insiders4.csv</dct:identifier>
+            <dct:title xml:lang="en">Insiders Dataset 4</dct:title>
+            <dcat:accessURL rdf:resource="http://data.nextprocurement.linkeddata.es/dataset/insiders/insiders4.csv"/>
+            <dct:format>
+              <dct:IMT>
+                <rdf:value>text/csv</rdf:value>
+                <rdfs:label>CSV</rdfs:label>
+              </dct:IMT>
+            </dct:format>
+          </dcat:Distribution>
+        </dcat:distribution>
+
+        <dcat:distribution>
+          <dcat:Distribution>
+            <dct:identifier>http://data.nextprocurement.linkeddata.es/dataset/insiders/insiders5.csv</dct:identifier>
+            <dct:title xml:lang="en">Insiders Dataset 5</dct:title>
+            <dcat:accessURL rdf:resource="http://data.nextprocurement.linkeddata.es/dataset/insiders/insiders5.csv"/>
+            <dct:format>
+              <dct:IMT>
+                <rdf:value>text/csv</rdf:value>
+                <rdfs:label>CSV</rdfs:label>
+              </dct:IMT>
+            </dct:format>
+          </dcat:Distribution>
+        </dcat:distribution>
+
+        <dcat:distribution>
+          <dcat:Distribution>
+            <dct:identifier>http://data.nextprocurement.linkeddata.es/dataset/insiders/insiders6.csv</dct:identifier>
+            <dct:title xml:lang="en">Insiders Dataset 6</dct:title>
+            <dcat:accessURL rdf:resource="http://data.nextprocurement.linkeddata.es/dataset/insiders/insiders6.csv"/>
+            <dct:format>
+              <dct:IMT>
+                <rdf:value>text/csv</rdf:value>
+                <rdfs:label>CSV</rdfs:label>
+              </dct:IMT>
+            </dct:format>
+          </dcat:Distribution>
+        </dcat:distribution>
+
+        <dcat:distribution>
+          <dcat:Distribution>
+            <dct:identifier>http://data.nextprocurement.linkeddata.es/dataset/insiders/insiders7.csv</dct:identifier>
+            <dct:title xml:lang="en">Insiders Dataset 7</dct:title>
+            <dcat:accessURL rdf:resource="http://data.nextprocurement.linkeddata.es/dataset/insiders/insiders7.csv"/>
+            <dct:format>
+              <dct:IMT>
+                <rdf:value>text/csv</rdf:value>
+                <rdfs:label>CSV</rdfs:label>
+              </dct:IMT>
+            </dct:format>
+          </dcat:Distribution>
+        </dcat:distribution>
+
+        <dcat:distribution>
+          <dcat:Distribution>
+            <dct:identifier>http://data.nextprocurement.linkeddata.es/dataset/insiders/insiders8.csv</dct:identifier>
+            <dct:title xml:lang="en">Insiders Dataset 8</dct:title>
+            <dcat:accessURL rdf:resource="http://data.nextprocurement.linkeddata.es/dataset/insiders/insiders8.csv"/>
+            <dct:format>
+              <dct:IMT>
+                <rdf:value>text/csv</rdf:value>
+                <rdfs:label>CSV</rdfs:label>
+              </dct:IMT>
+            </dct:format>
+          </dcat:Distribution>
+        </dcat:distribution>
+
+        <dcat:distribution>
+          <dcat:Distribution>
+            <dct:identifier>http://data.nextprocurement.linkeddata.es/dataset/insiders/NextProcurement_Insiders_KG.nt</dct:identifier>
+            <dct:title xml:lang="en">Insiders Knowledge Graph</dct:title>
+            <dcat:accessURL rdf:resource="http://data.nextprocurement.linkeddata.es/dataset/insiders/NextProcurement_Insiders_KG.nt"/>
+            <dct:format>
+              <dct:IMT>
+                <rdf:value>text/n-triples</rdf:value>
+                <rdfs:label>rdf-ntriples</rdfs:label>
+              </dct:IMT>
+            </dct:format>
+          </dcat:Distribution>
+        </dcat:distribution>
+
+      </dcat:Dataset>
+    </dcat:dataset>
+
+    <dcat:dataset>
+      <dcat:Dataset rdf:about="http://data.nextprocurement.linkeddata.es/dataset/minors">
+        <dct:identifier>http://data.nextprocurement.linkeddata.es/dataset/minors</dct:identifier>
+        <dct:title xml:lang="en">Minors</dct:title>
+        <dct:description xml:lang="en">Next Procurement: Minors Dataset</dct:description>
+        <dcat:keyword>minors</dcat:keyword>
+        <dct:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2023-12-31</dct:issued>
+        <dct:language>en</dct:language>
+        <dct:publisher rdf:resource="https://oeg.fi.upm.es"/>
+
+        <dcat:distribution>
+          <dcat:Distribution>
+            <dct:identifier>http://data.nextprocurement.linkeddata.es/dataset/minors/minors1.csv</dct:identifier>
+            <dct:title xml:lang="en">Minors Dataset 1</dct:title>
+            <dcat:accessURL rdf:resource="http://data.nextprocurement.linkeddata.es/dataset/minors/minors1.csv"/>
+            <dct:format>
+              <dct:IMT>
+                <rdf:value>text/csv</rdf:value>
+                <rdfs:label>CSV</rdfs:label>
+              </dct:IMT>
+            </dct:format>
+          </dcat:Distribution>
+        </dcat:distribution>
+
+        <dcat:distribution>
+          <dcat:Distribution>
+            <dct:identifier>http://data.nextprocurement.linkeddata.es/dataset/minors/minors2.csv</dct:identifier>
+            <dct:title xml:lang="en">Minors Dataset 2</dct:title>
+            <dcat:accessURL rdf:resource="http://data.nextprocurement.linkeddata.es/dataset/minors/minors2.csv"/>
+            <dct:format>
+              <dct:IMT>
+                <rdf:value>text/csv</rdf:value>
+                <rdfs:label>CSV</rdfs:label>
+              </dct:IMT>
+            </dct:format>
+          </dcat:Distribution>
+        </dcat:distribution>
+
+        <dcat:distribution>
+          <dcat:Distribution>
+            <dct:identifier>http://data.nextprocurement.linkeddata.es/dataset/minors/minors3.csv</dct:identifier>
+            <dct:title xml:lang="en">Minors Dataset 3</dct:title>
+            <dcat:accessURL rdf:resource="http://data.nextprocurement.linkeddata.es/dataset/minors/minors3.csv"/>
+            <dct:format>
+              <dct:IMT>
+                <rdf:value>text/csv</rdf:value>
+                <rdfs:label>CSV</rdfs:label>
+              </dct:IMT>
+            </dct:format>
+          </dcat:Distribution>
+        </dcat:distribution>
+
+        <dcat:distribution>
+          <dcat:Distribution>
+            <dct:identifier>http://data.nextprocurement.linkeddata.es/dataset/minors/minors4.csv</dct:identifier>
+            <dct:title xml:lang="en">Minors Dataset 4</dct:title>
+            <dcat:accessURL rdf:resource="http://data.nextprocurement.linkeddata.es/dataset/minors/minors4.csv"/>
+            <dct:format>
+              <dct:IMT>
+                <rdf:value>text/csv</rdf:value>
+                <rdfs:label>CSV</rdfs:label>
+              </dct:IMT>
+            </dct:format>
+          </dcat:Distribution>
+        </dcat:distribution>
+
+        <dcat:distribution>
+          <dcat:Distribution>
+            <dct:identifier>http://data.nextprocurement.linkeddata.es/dataset/minors/minors5.csv</dct:identifier>
+            <dct:title xml:lang="en">Minors Dataset 5</dct:title>
+            <dcat:accessURL rdf:resource="http://data.nextprocurement.linkeddata.es/dataset/minors/minors5.csv"/>
+            <dct:format>
+              <dct:IMT>
+                <rdf:value>text/csv</rdf:value>
+                <rdfs:label>CSV</rdfs:label>
+              </dct:IMT>
+            </dct:format>
+          </dcat:Distribution>
+        </dcat:distribution>
+
+        <dcat:distribution>
+          <dcat:Distribution>
+            <dct:identifier>http://data.nextprocurement.linkeddata.es/dataset/minors/minors6.csv</dct:identifier>
+            <dct:title xml:lang="en">Minors Dataset 6</dct:title>
+            <dcat:accessURL rdf:resource="http://data.nextprocurement.linkeddata.es/dataset/minors/minors6.csv"/>
+            <dct:format>
+              <dct:IMT>
+                <rdf:value>text/csv</rdf:value>
+                <rdfs:label>CSV</rdfs:label>
+              </dct:IMT>
+            </dct:format>
+          </dcat:Distribution>
+        </dcat:distribution>
+
+        <dcat:distribution>
+          <dcat:Distribution>
+            <dct:identifier>http://data.nextprocurement.linkeddata.es/dataset/minors/minors7.csv</dct:identifier>
+            <dct:title xml:lang="en">Minors Dataset 7</dct:title>
+            <dcat:accessURL rdf:resource="http://data.nextprocurement.linkeddata.es/dataset/minors/minors7.csv"/>
+            <dct:format>
+              <dct:IMT>
+                <rdf:value>text/csv</rdf:value>
+                <rdfs:label>CSV</rdfs:label>
+              </dct:IMT>
+            </dct:format>
+          </dcat:Distribution>
+        </dcat:distribution>
+
+        <dcat:distribution>
+          <dcat:Distribution>
+            <dct:identifier>http://data.nextprocurement.linkeddata.es/dataset/minors/minors8.csv</dct:identifier>
+            <dct:title xml:lang="en">Minors Dataset 8</dct:title>
+            <dcat:accessURL rdf:resource="http://data.nextprocurement.linkeddata.es/dataset/minors/minors8.csv"/>
+            <dct:format>
+              <dct:IMT>
+                <rdf:value>text/csv</rdf:value>
+                <rdfs:label>CSV</rdfs:label>
+              </dct:IMT>
+            </dct:format>
+          </dcat:Distribution>
+        </dcat:distribution>
+
+        <dcat:distribution>
+          <dcat:Distribution>
+            <dct:identifier>http://data.nextprocurement.linkeddata.es/dataset/minors/NextProcurement_Minors_KG.nt</dct:identifier>
+            <dct:title xml:lang="en">Minors Knowledge Graph</dct:title>
+            <dcat:accessURL rdf:resource="http://data.nextprocurement.linkeddata.es/dataset/minors/NextProcurement_Minors_KG.nt"/>
+            <dct:format>
+              <dct:IMT>
+                <rdf:value>text/n-triples</rdf:value>
+                <rdfs:label>rdf-ntriples</rdfs:label>
+              </dct:IMT>
+            </dct:format>
+          </dcat:Distribution>
+        </dcat:distribution>
+
+      </dcat:Dataset>
+    </dcat:dataset>
+
+  </dcat:Catalog>
+
+</rdf:RDF>
