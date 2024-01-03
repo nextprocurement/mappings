@@ -1,0 +1,839 @@
+[
+  {
+    "op": "core/column-removal",
+    "columnName": "TenderingProcess_TenderSubmission_EndDate",
+    "description": "Remove column TenderingProcess_TenderSubmission_EndDate"
+  },
+  {
+    "op": "core/column-removal",
+    "columnName": "TenderingProcess_TenderSubmission_EndTime",
+    "description": "Remove column TenderingProcess_TenderSubmission_EndTime"
+  },
+  {
+    "op": "core/column-move",
+    "columnName": "TenderingProcess_ParticipationRequestReceptionPeriod",
+    "index": 26,
+    "description": "Move column TenderingProcess_ParticipationRequestReceptionPeriod to position 26"
+  },
+  {
+    "op": "core/column-removal",
+    "columnName": "TenderingProcess_ParticipationRequest_EndTime",
+    "description": "Remove column TenderingProcess_ParticipationRequest_EndTime"
+  },
+  {
+    "op": "core/column-removal",
+    "columnName": "TenderingProcess_ParticipationRequest_EndDate",
+    "description": "Remove column TenderingProcess_ParticipationRequest_EndDate"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "ID",
+    "expression": "grel:value.replace(\"https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/\", \"\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column ID using expression grel:value.replace(\"https://contrataciondelestado.es/sindicacion/PlataformasAgregadasSinMenores/\", \"\")"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "ContractFolder_ID",
+    "expression": "grel:value.replace(/[^A-Za-z0-9\\-._~]/, \"\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column ContractFolder_ID using expression grel:value.replace(/[^A-Za-z0-9\\-._~]/, \"\")"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "record-based"
+    },
+    "columnName": "LegalDocumentReference_ID",
+    "expression": "value.replace(/[\\p{Zs}\\s]+/,' ')",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column LegalDocumentReference_ID using expression value.replace(/[\\p{Zs}\\s]+/,' ')"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "record-based"
+    },
+    "columnName": "LegalDocumentReference_ID",
+    "expression": "grel:value.replace(\" \", \"_\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column LegalDocumentReference_ID using expression grel:value.replace(\" \", \"_\")"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "record-based"
+    },
+    "columnName": "LegalDocumentReference_ID",
+    "expression": "grel:value.replace(\"á\",\"a\")\n.replace(\"é\",\"e\")\n.replace(\"í\",\"i\")\n.replace(\"ó\",\"o\")\n.replace(\"ú\",\"u\")\n.replace(\"Á\",\"A\")\n.replace(\"É\",\"E\")\n.replace(\"Í\",\"I\")\n.replace(\"Ó\",\"O\")\n.replace(\"Ú\",\"U\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column LegalDocumentReference_ID using expression grel:value.replace(\"á\",\"a\")\n.replace(\"é\",\"e\")\n.replace(\"í\",\"i\")\n.replace(\"ó\",\"o\")\n.replace(\"ú\",\"u\")\n.replace(\"Á\",\"A\")\n.replace(\"É\",\"E\")\n.replace(\"Í\",\"I\")\n.replace(\"Ó\",\"O\")\n.replace(\"Ú\",\"U\")"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "record-based"
+    },
+    "columnName": "TechnicalDocumentReference_ID",
+    "expression": "value.trim()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column TechnicalDocumentReference_ID using expression value.trim()"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "record-based"
+    },
+    "columnName": "TechnicalDocumentReference_ID",
+    "expression": "value.replace(/[\\p{Zs}\\s]+/,' ')",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column TechnicalDocumentReference_ID using expression value.replace(/[\\p{Zs}\\s]+/,' ')"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "record-based"
+    },
+    "columnName": "TechnicalDocumentReference_ID",
+    "expression": "grel:value.replace(\" \", \"_\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column TechnicalDocumentReference_ID using expression grel:value.replace(\" \", \"_\")"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "record-based"
+    },
+    "columnName": "TechnicalDocumentReference_ID",
+    "expression": "grel:value.replace(\"á\",\"a\")\n.replace(\"é\",\"e\")\n.replace(\"í\",\"i\")\n.replace(\"ó\",\"o\")\n.replace(\"ú\",\"u\")\n.replace(\"Á\",\"A\")\n.replace(\"É\",\"E\")\n.replace(\"Í\",\"I\")\n.replace(\"Ó\",\"O\")\n.replace(\"Ú\",\"U\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column TechnicalDocumentReference_ID using expression grel:value.replace(\"á\",\"a\")\n.replace(\"é\",\"e\")\n.replace(\"í\",\"i\")\n.replace(\"ó\",\"o\")\n.replace(\"ú\",\"u\")\n.replace(\"Á\",\"A\")\n.replace(\"É\",\"E\")\n.replace(\"Í\",\"I\")\n.replace(\"Ó\",\"O\")\n.replace(\"Ú\",\"U\")"
+  },
+  {
+    "op": "core/column-addition",
+    "engineConfig": {
+      "facets": [],
+      "mode": "record-based"
+    },
+    "baseColumnName": "LocatedContractingParty_Name",
+    "expression": "grel:value",
+    "onError": "set-to-blank",
+    "newColumnName": "LocatedContractingParty_Name_URI",
+    "columnInsertIndex": 7,
+    "description": "Create column LocatedContractingParty_Name_URI at index 7 based on column LocatedContractingParty_Name using expression grel:value"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "record-based"
+    },
+    "columnName": "LocatedContractingParty_Name_URI",
+    "expression": "grel:value\n.replace(\"á\",\"a\")\n.replace(\"é\",\"e\")\n.replace(\"í\",\"i\")\n.replace(\"ó\",\"o\")\n.replace(\"ú\",\"u\")\n.replace(\"Á\",\"A\")\n.replace(\"É\",\"E\")\n.replace(\"Í\",\"I\")\n.replace(\"Ó\",\"O\")\n.replace(\"Ú\",\"U\")\n.replace(\"à\",\"a\")\n.replace(\"è\",\"e\")\n.replace(\"ì\",\"i\")\n.replace(\"ò\",\"o\")\n.replace(\"ù\",\"u\")\n.replace(\"À\",\"A\")\n.replace(\"È\",\"E\")\n.replace(\"Ì\",\"I\")\n.replace(\"Ò\",\"O\")\n.replace(\"Ù\",\"U\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column LocatedContractingParty_Name_URI using expression grel:value\n.replace(\"á\",\"a\")\n.replace(\"é\",\"e\")\n.replace(\"í\",\"i\")\n.replace(\"ó\",\"o\")\n.replace(\"ú\",\"u\")\n.replace(\"Á\",\"A\")\n.replace(\"É\",\"E\")\n.replace(\"Í\",\"I\")\n.replace(\"Ó\",\"O\")\n.replace(\"Ú\",\"U\")\n.replace(\"à\",\"a\")\n.replace(\"è\",\"e\")\n.replace(\"ì\",\"i\")\n.replace(\"ò\",\"o\")\n.replace(\"ù\",\"u\")\n.replace(\"À\",\"A\")\n.replace(\"È\",\"E\")\n.replace(\"Ì\",\"I\")\n.replace(\"Ò\",\"O\")\n.replace(\"Ù\",\"U\")"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "record-based"
+    },
+    "columnName": "LegalDocumentReference_ID",
+    "expression": "grel:value.replace(\"á\",\"a\").replace(\"é\",\"e\").replace(\"í\",\"i\").replace(\"ó\",\"o\").replace(\"ú\",\"u\").replace(\"Á\",\"A\").replace(\"É\",\"E\").replace(\"Í\",\"I\").replace(\"Ó\",\"O\").replace(\"Ú\",\"U\").replace(\"à\",\"a\").replace(\"è\",\"e\").replace(\"ì\",\"i\").replace(\"ò\",\"o\").replace(\"ù\",\"u\").replace(\"À\",\"A\").replace(\"È\",\"E\").replace(\"Ì\",\"I\").replace(\"Ò\",\"O\").replace(\"Ù\",\"U\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column LegalDocumentReference_ID using expression grel:value.replace(\"á\",\"a\").replace(\"é\",\"e\").replace(\"í\",\"i\").replace(\"ó\",\"o\").replace(\"ú\",\"u\").replace(\"Á\",\"A\").replace(\"É\",\"E\").replace(\"Í\",\"I\").replace(\"Ó\",\"O\").replace(\"Ú\",\"U\").replace(\"à\",\"a\").replace(\"è\",\"e\").replace(\"ì\",\"i\").replace(\"ò\",\"o\").replace(\"ù\",\"u\").replace(\"À\",\"A\").replace(\"È\",\"E\").replace(\"Ì\",\"I\").replace(\"Ò\",\"O\").replace(\"Ù\",\"U\")"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "record-based"
+    },
+    "columnName": "TechnicalDocumentReference_ID",
+    "expression": "grel:value.replace(\"á\",\"a\").replace(\"é\",\"e\").replace(\"í\",\"i\").replace(\"ó\",\"o\").replace(\"ú\",\"u\").replace(\"Á\",\"A\").replace(\"É\",\"E\").replace(\"Í\",\"I\").replace(\"Ó\",\"O\").replace(\"Ú\",\"U\").replace(\"à\",\"a\").replace(\"è\",\"e\").replace(\"ì\",\"i\").replace(\"ò\",\"o\").replace(\"ù\",\"u\").replace(\"À\",\"A\").replace(\"È\",\"E\").replace(\"Ì\",\"I\").replace(\"Ò\",\"O\").replace(\"Ù\",\"U\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column TechnicalDocumentReference_ID using expression grel:value.replace(\"á\",\"a\").replace(\"é\",\"e\").replace(\"í\",\"i\").replace(\"ó\",\"o\").replace(\"ú\",\"u\").replace(\"Á\",\"A\").replace(\"É\",\"E\").replace(\"Í\",\"I\").replace(\"Ó\",\"O\").replace(\"Ú\",\"U\").replace(\"à\",\"a\").replace(\"è\",\"e\").replace(\"ì\",\"i\").replace(\"ò\",\"o\").replace(\"ù\",\"u\").replace(\"À\",\"A\").replace(\"È\",\"E\").replace(\"Ì\",\"I\").replace(\"Ò\",\"O\").replace(\"Ù\",\"U\")"
+  },
+  {
+    "op": "core/column-removal",
+    "columnName": "Summary",
+    "description": "Remove column Summary"
+  },
+  {
+    "op": "core/column-addition",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "baseColumnName": "LocatedContractingParty_Parent_PartyName",
+    "expression": "grel:value",
+    "onError": "set-to-blank",
+    "newColumnName": "LocatedContractingParty_Parent_PartyName_URI",
+    "columnInsertIndex": 26,
+    "description": "Create column LocatedContractingParty_Parent_PartyName_URI at index 26 based on column LocatedContractingParty_Parent_PartyName using expression grel:value"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "LocatedContractingParty_Parent_PartyName_URI",
+    "expression": "grel:value.replace(\"á\",\"a\").replace(\"é\",\"e\").replace(\"í\",\"i\").replace(\"ó\",\"o\").replace(\"ú\",\"u\").replace(\"Á\",\"A\").replace(\"É\",\"E\").replace(\"Í\",\"I\").replace(\"Ó\",\"O\").replace(\"Ú\",\"U\").replace(\"à\",\"a\").replace(\"è\",\"e\").replace(\"ì\",\"i\").replace(\"ò\",\"o\").replace(\"ù\",\"u\").replace(\"À\",\"A\").replace(\"È\",\"E\").replace(\"Ì\",\"I\").replace(\"Ò\",\"O\").replace(\"Ù\",\"U\").replace(\" \", \"-\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column LocatedContractingParty_Parent_PartyName_URI using expression grel:value.replace(\"á\",\"a\").replace(\"é\",\"e\").replace(\"í\",\"i\").replace(\"ó\",\"o\").replace(\"ú\",\"u\").replace(\"Á\",\"A\").replace(\"É\",\"E\").replace(\"Í\",\"I\").replace(\"Ó\",\"O\").replace(\"Ú\",\"U\").replace(\"à\",\"a\").replace(\"è\",\"e\").replace(\"ì\",\"i\").replace(\"ò\",\"o\").replace(\"ù\",\"u\").replace(\"À\",\"A\").replace(\"È\",\"E\").replace(\"Ì\",\"I\").replace(\"Ò\",\"O\").replace(\"Ù\",\"U\").replace(\" \", \"-\")"
+  },
+  {
+    "op": "core/column-addition",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "baseColumnName": "LocatedContractingParty_Parent_Parent_PartyName",
+    "expression": "grel:value",
+    "onError": "set-to-blank",
+    "newColumnName": "LocatedContractingParty_Parent_Parent_PartyName_URI",
+    "columnInsertIndex": 31,
+    "description": "Create column LocatedContractingParty_Parent_Parent_PartyName_URI at index 31 based on column LocatedContractingParty_Parent_Parent_PartyName using expression grel:value"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "LocatedContractingParty_Parent_Parent_PartyName_URI",
+    "expression": "grel:value.replace(\"á\",\"a\").replace(\"é\",\"e\").replace(\"í\",\"i\").replace(\"ó\",\"o\").replace(\"ú\",\"u\").replace(\"Á\",\"A\").replace(\"É\",\"E\").replace(\"Í\",\"I\").replace(\"Ó\",\"O\").replace(\"Ú\",\"U\").replace(\"à\",\"a\").replace(\"è\",\"e\").replace(\"ì\",\"i\").replace(\"ò\",\"o\").replace(\"ù\",\"u\").replace(\"À\",\"A\").replace(\"È\",\"E\").replace(\"Ì\",\"I\").replace(\"Ò\",\"O\").replace(\"Ù\",\"U\").replace(\" \", \"-\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column LocatedContractingParty_Parent_Parent_PartyName_URI using expression grel:value.replace(\"á\",\"a\").replace(\"é\",\"e\").replace(\"í\",\"i\").replace(\"ó\",\"o\").replace(\"ú\",\"u\").replace(\"Á\",\"A\").replace(\"É\",\"E\").replace(\"Í\",\"I\").replace(\"Ó\",\"O\").replace(\"Ú\",\"U\").replace(\"à\",\"a\").replace(\"è\",\"e\").replace(\"ì\",\"i\").replace(\"ò\",\"o\").replace(\"ù\",\"u\").replace(\"À\",\"A\").replace(\"È\",\"E\").replace(\"Ì\",\"I\").replace(\"Ò\",\"O\").replace(\"Ù\",\"U\").replace(\" \", \"-\")"
+  },
+  {
+    "op": "core/column-addition",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "baseColumnName": "LocatedContractingParty_Parent_Parent_Parent_PartyName",
+    "expression": "grel:value",
+    "onError": "set-to-blank",
+    "newColumnName": "LocatedContractingParty_Parent_Parent_Parent_PartyName_URI",
+    "columnInsertIndex": 37,
+    "description": "Create column LocatedContractingParty_Parent_Parent_Parent_PartyName_URI at index 37 based on column LocatedContractingParty_Parent_Parent_Parent_PartyName using expression grel:value"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "LocatedContractingParty_Parent_Parent_Parent_PartyName_URI",
+    "expression": "grel:value.replace(\"á\",\"a\").replace(\"é\",\"e\").replace(\"í\",\"i\").replace(\"ó\",\"o\").replace(\"ú\",\"u\").replace(\"Á\",\"A\").replace(\"É\",\"E\").replace(\"Í\",\"I\").replace(\"Ó\",\"O\").replace(\"Ú\",\"U\").replace(\"à\",\"a\").replace(\"è\",\"e\").replace(\"ì\",\"i\").replace(\"ò\",\"o\").replace(\"ù\",\"u\").replace(\"À\",\"A\").replace(\"È\",\"E\").replace(\"Ì\",\"I\").replace(\"Ò\",\"O\").replace(\"Ù\",\"U\").replace(\" \", \"-\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column LocatedContractingParty_Parent_Parent_Parent_PartyName_URI using expression grel:value.replace(\"á\",\"a\").replace(\"é\",\"e\").replace(\"í\",\"i\").replace(\"ó\",\"o\").replace(\"ú\",\"u\").replace(\"Á\",\"A\").replace(\"É\",\"E\").replace(\"Í\",\"I\").replace(\"Ó\",\"O\").replace(\"Ú\",\"U\").replace(\"à\",\"a\").replace(\"è\",\"e\").replace(\"ì\",\"i\").replace(\"ò\",\"o\").replace(\"ù\",\"u\").replace(\"À\",\"A\").replace(\"È\",\"E\").replace(\"Ì\",\"I\").replace(\"Ò\",\"O\").replace(\"Ù\",\"U\").replace(\" \", \"-\")"
+  },
+  {
+    "op": "core/column-addition",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "baseColumnName": "LocatedContractingParty_Parent_Parent_Parent_Parent_PartyName",
+    "expression": "grel:value",
+    "onError": "set-to-blank",
+    "newColumnName": "LocatedContractingParty_Parent_Parent_Parent_Parent_PartyName_URI",
+    "columnInsertIndex": 40,
+    "description": "Create column LocatedContractingParty_Parent_Parent_Parent_Parent_PartyName_URI at index 40 based on column LocatedContractingParty_Parent_Parent_Parent_Parent_PartyName using expression grel:value"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "LocatedContractingParty_Parent_Parent_Parent_Parent_PartyName_URI",
+    "expression": "grel:value.replace(\"á\",\"a\").replace(\"é\",\"e\").replace(\"í\",\"i\").replace(\"ó\",\"o\").replace(\"ú\",\"u\").replace(\"Á\",\"A\").replace(\"É\",\"E\").replace(\"Í\",\"I\").replace(\"Ó\",\"O\").replace(\"Ú\",\"U\").replace(\"à\",\"a\").replace(\"è\",\"e\").replace(\"ì\",\"i\").replace(\"ò\",\"o\").replace(\"ù\",\"u\").replace(\"À\",\"A\").replace(\"È\",\"E\").replace(\"Ì\",\"I\").replace(\"Ò\",\"O\").replace(\"Ù\",\"U\").replace(\" \", \"-\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column LocatedContractingParty_Parent_Parent_Parent_Parent_PartyName_URI using expression grel:value.replace(\"á\",\"a\").replace(\"é\",\"e\").replace(\"í\",\"i\").replace(\"ó\",\"o\").replace(\"ú\",\"u\").replace(\"Á\",\"A\").replace(\"É\",\"E\").replace(\"Í\",\"I\").replace(\"Ó\",\"O\").replace(\"Ú\",\"U\").replace(\"à\",\"a\").replace(\"è\",\"e\").replace(\"ì\",\"i\").replace(\"ò\",\"o\").replace(\"ù\",\"u\").replace(\"À\",\"A\").replace(\"È\",\"E\").replace(\"Ì\",\"I\").replace(\"Ò\",\"O\").replace(\"Ù\",\"U\").replace(\" \", \"-\")"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "LocatedContractingParty_Name_URI",
+    "expression": "grel:value.replace(/[^A-Za-z0-9\\-._~]/, \"-\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column LocatedContractingParty_Name_URI using expression grel:value.replace(/[^A-Za-z0-9\\-._~]/, \"-\")"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "ProcurementProject_ItemClassificationCode",
+    "expression": "grel:if(value.contains(\",\"), \"\", value)",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column ProcurementProject_ItemClassificationCode using expression grel:if(value.contains(\",\"), \"\", value)"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "ProcurementProject_ItemClassificationCode",
+    "expression": "grel:value.replace(\"[\", \"\").replace(\"]\", \"\").replace(\"'\", \"\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column ProcurementProject_ItemClassificationCode using expression grel:value.replace(\"[\", \"\").replace(\"]\", \"\").replace(\"'\", \"\")"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "TenderResult_ResultCode",
+    "expression": "grel:if(value.contains(\",\"), \"\", value)",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column TenderResult_ResultCode using expression grel:if(value.contains(\",\"), \"\", value)"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "TenderResult_ResultCode",
+    "expression": "grel:value.replace(\"[\", \"\").replace(\"]\", \"\").replace(\"'\", \"\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column TenderResult_ResultCode using expression grel:value.replace(\"[\", \"\").replace(\"]\", \"\").replace(\"'\", \"\")"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "TenderResult_ReceivedTenderQuantity",
+    "expression": "grel:if(value.contains(\",\"), \"\", value)",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column TenderResult_ReceivedTenderQuantity using expression grel:if(value.contains(\",\"), \"\", value)"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "TenderResult_ReceivedTenderQuantity",
+    "expression": "grel:value.replace(\"[\", \"\").replace(\"]\", \"\").replace(\"'\", \"\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column TenderResult_ReceivedTenderQuantity using expression grel:value.replace(\"[\", \"\").replace(\"]\", \"\").replace(\"'\", \"\")"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "TenderResult_WinningParty_ID",
+    "expression": "grel:if(value.startsWith(\"['\"), value.replace(\",\", \"\"), value)",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column TenderResult_WinningParty_ID using expression grel:if(value.startsWith(\"['\"), value.replace(\",\", \"\"), value)"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "TenderResult_WinningParty_ID",
+    "expression": "grel:if(value.contains(\",\"), \"\", value)",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column TenderResult_WinningParty_ID using expression grel:if(value.contains(\",\"), \"\", value)"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "TenderResult_WinningParty_ID",
+    "expression": "grel:value.replace(\"[\", \"\").replace(\"]\", \"\").replace(\"'\", \"\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column TenderResult_WinningParty_ID using expression grel:value.replace(\"[\", \"\").replace(\"]\", \"\").replace(\"'\", \"\")"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "TenderResult_WinningParty_Name",
+    "expression": "grel:if(value.startsWith(\"['[\\\\'\"), \"\", value)",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column TenderResult_WinningParty_Name using expression grel:if(value.startsWith(\"['[\\\\'\"), \"\", value)"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "TenderResult_WinningParty_Name",
+    "expression": "grel:if(value.startsWith(\"['\"), value.replace(\",\", \"\"), value)",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column TenderResult_WinningParty_Name using expression grel:if(value.startsWith(\"['\"), value.replace(\",\", \"\"), value)"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "TenderResult_WinningParty_Name",
+    "expression": "grel:if(value.contains(\",\"), \"\", value)",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column TenderResult_WinningParty_Name using expression grel:if(value.contains(\",\"), \"\", value)"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "TenderResult_WinningParty_Name",
+    "expression": "grel:value.replace(\"[\", \"\").replace(\"]\", \"\").replace(\"'\", \"\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column TenderResult_WinningParty_Name using expression grel:value.replace(\"[\", \"\").replace(\"]\", \"\").replace(\"'\", \"\")"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "TenderResult_AwardedTenderedProject_TaxExclusiveAmount",
+    "expression": "grel:if(value.contains(\",\"), \"\", value)",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column TenderResult_AwardedTenderedProject_TaxExclusiveAmount using expression grel:if(value.contains(\",\"), \"\", value)"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "TenderResult_AwardedTenderedProject_TaxExclusiveAmount",
+    "expression": "grel:value.replace(\"[\", \"\").replace(\"]\", \"\").replace(\"'\", \"\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column TenderResult_AwardedTenderedProject_TaxExclusiveAmount using expression grel:value.replace(\"[\", \"\").replace(\"]\", \"\").replace(\"'\", \"\")"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "ValidNoticeInfo_NoticeTypeCode",
+    "expression": "grel:if(value.contains(\",\"), \"\", value)",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column ValidNoticeInfo_NoticeTypeCode using expression grel:if(value.contains(\",\"), \"\", value)"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "ValidNoticeInfo_NoticeTypeCode",
+    "expression": "grel:value.replace(\"[\", \"\").replace(\"]\", \"\").replace(\"'\", \"\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column ValidNoticeInfo_NoticeTypeCode using expression grel:value.replace(\"[\", \"\").replace(\"]\", \"\").replace(\"'\", \"\")"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "ValidNoticeInfo_PublicationMediaName",
+    "expression": "grel:if(value.startsWith(\"['\"), value.replace(\",\", \"\"), value)",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column ValidNoticeInfo_PublicationMediaName using expression grel:if(value.startsWith(\"['\"), value.replace(\",\", \"\"), value)"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "ValidNoticeInfo_PublicationMediaName",
+    "expression": "grel:if(value.contains(\",\"), \"\", value)",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column ValidNoticeInfo_PublicationMediaName using expression grel:if(value.contains(\",\"), \"\", value)"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "ValidNoticeInfo_PublicationMediaName",
+    "expression": "grel:value.replace(\"[\", \"\").replace(\"]\", \"\").replace(\"'\", \"\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column ValidNoticeInfo_PublicationMediaName using expression grel:value.replace(\"[\", \"\").replace(\"]\", \"\").replace(\"'\", \"\")"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "ValidNoticeInfo_IssueDate",
+    "expression": "grel:if(value.contains(\",\"), \"\", value)",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column ValidNoticeInfo_IssueDate using expression grel:if(value.contains(\",\"), \"\", value)"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "ValidNoticeInfo_IssueDate",
+    "expression": "grel:value.replace(\"[\", \"\").replace(\"]\", \"\").replace(\"'\", \"\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column ValidNoticeInfo_IssueDate using expression grel:value.replace(\"[\", \"\").replace(\"]\", \"\").replace(\"'\", \"\")"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "TenderResult_AwardedTenderedProject_ProcurementProjectLotID",
+    "expression": "grel:if(value.contains(\",\"), \"\", value)",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column TenderResult_AwardedTenderedProject_ProcurementProjectLotID using expression grel:if(value.contains(\",\"), \"\", value)"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "TenderResult_AwardedTenderedProject_ProcurementProjectLotID",
+    "expression": "grel:value.replace(\"[\", \"\").replace(\"]\", \"\").replace(\"'\", \"\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column TenderResult_AwardedTenderedProject_ProcurementProjectLotID using expression grel:value.replace(\"[\", \"\").replace(\"]\", \"\").replace(\"'\", \"\")"
+  },
+  {
+    "op": "core/column-addition",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "baseColumnName": "TenderResult_WinningParty_Name",
+    "expression": "grel:value",
+    "onError": "set-to-blank",
+    "newColumnName": "TenderResult_WinningParty_Name_URI",
+    "columnInsertIndex": 38,
+    "description": "Create column TenderResult_WinningParty_Name_URI at index 38 based on column TenderResult_WinningParty_Name using expression grel:value"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "TenderResult_WinningParty_Name_URI",
+    "expression": "grel:value.replace(\"á\",\"a\").replace(\"é\",\"e\").replace(\"í\",\"i\").replace(\"ó\",\"o\").replace(\"ú\",\"u\").replace(\"Á\",\"A\").replace(\"É\",\"E\").replace(\"Í\",\"I\").replace(\"Ó\",\"O\").replace(\"Ú\",\"U\").replace(\"à\",\"a\").replace(\"è\",\"e\").replace(\"ì\",\"i\").replace(\"ò\",\"o\").replace(\"ù\",\"u\").replace(\"À\",\"A\").replace(\"È\",\"E\").replace(\"Ì\",\"I\").replace(\"Ò\",\"O\").replace(\"Ù\",\"U\").replace(\" \", \"_\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column TenderResult_WinningParty_Name_URI using expression grel:value.replace(\"á\",\"a\").replace(\"é\",\"e\").replace(\"í\",\"i\").replace(\"ó\",\"o\").replace(\"ú\",\"u\").replace(\"Á\",\"A\").replace(\"É\",\"E\").replace(\"Í\",\"I\").replace(\"Ó\",\"O\").replace(\"Ú\",\"U\").replace(\"à\",\"a\").replace(\"è\",\"e\").replace(\"ì\",\"i\").replace(\"ò\",\"o\").replace(\"ù\",\"u\").replace(\"À\",\"A\").replace(\"È\",\"E\").replace(\"Ì\",\"I\").replace(\"Ò\",\"O\").replace(\"Ù\",\"U\").replace(\" \", \"_\")"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "TenderResult_WinningParty_Name_URI",
+    "expression": "grel:value.replace(\"Ñ\", \"N\").replace(/[^A-Za-z0-9\\-._~]/, \"\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column TenderResult_WinningParty_Name_URI using expression grel:value.replace(\"Ñ\", \"N\").replace(/[^A-Za-z0-9\\-._~]/, \"\")"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "TenderResult_WinningParty_ID",
+    "expression": "grel:value.replace(\"á\",\"a\").replace(\"é\",\"e\").replace(\"í\",\"i\").replace(\"ó\",\"o\").replace(\"ú\",\"u\").replace(\"Á\",\"A\").replace(\"É\",\"E\").replace(\"Í\",\"I\").replace(\"Ó\",\"O\").replace(\"Ú\",\"U\").replace(\"à\",\"a\").replace(\"è\",\"e\").replace(\"ì\",\"i\").replace(\"ò\",\"o\").replace(\"ù\",\"u\").replace(\"À\",\"A\").replace(\"È\",\"E\").replace(\"Ì\",\"I\").replace(\"Ò\",\"O\").replace(\"Ù\",\"U\").replace(\" \", \"_\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column TenderResult_WinningParty_ID using expression grel:value.replace(\"á\",\"a\").replace(\"é\",\"e\").replace(\"í\",\"i\").replace(\"ó\",\"o\").replace(\"ú\",\"u\").replace(\"Á\",\"A\").replace(\"É\",\"E\").replace(\"Í\",\"I\").replace(\"Ó\",\"O\").replace(\"Ú\",\"U\").replace(\"à\",\"a\").replace(\"è\",\"e\").replace(\"ì\",\"i\").replace(\"ò\",\"o\").replace(\"ù\",\"u\").replace(\"À\",\"A\").replace(\"È\",\"E\").replace(\"Ì\",\"I\").replace(\"Ò\",\"O\").replace(\"Ù\",\"U\").replace(\" \", \"_\")"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "TenderResult_WinningParty_ID",
+    "expression": "grel:value.replace(/[^A-Za-z0-9\\-._~]/, \"\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column TenderResult_WinningParty_ID using expression grel:value.replace(/[^A-Za-z0-9\\-._~]/, \"\")"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "ID",
+    "expression": "grel:value.replace(\"á\",\"a\").replace(\"é\",\"e\").replace(\"í\",\"i\").replace(\"ó\",\"o\").replace(\"ú\",\"u\").replace(\"Á\",\"A\").replace(\"É\",\"E\").replace(\"Í\",\"I\").replace(\"Ó\",\"O\").replace(\"Ú\",\"U\").replace(\"à\",\"a\").replace(\"è\",\"e\").replace(\"ì\",\"i\").replace(\"ò\",\"o\").replace(\"ù\",\"u\").replace(\"À\",\"A\").replace(\"È\",\"E\").replace(\"Ì\",\"I\").replace(\"Ò\",\"O\").replace(\"Ù\",\"U\").replace(\" \", \"_\").replace(/[^A-Za-z0-9\\-._~]/, \"\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column ID using expression grel:value.replace(\"á\",\"a\").replace(\"é\",\"e\").replace(\"í\",\"i\").replace(\"ó\",\"o\").replace(\"ú\",\"u\").replace(\"Á\",\"A\").replace(\"É\",\"E\").replace(\"Í\",\"I\").replace(\"Ó\",\"O\").replace(\"Ú\",\"U\").replace(\"à\",\"a\").replace(\"è\",\"e\").replace(\"ì\",\"i\").replace(\"ò\",\"o\").replace(\"ù\",\"u\").replace(\"À\",\"A\").replace(\"È\",\"E\").replace(\"Ì\",\"I\").replace(\"Ò\",\"O\").replace(\"Ù\",\"U\").replace(\" \", \"_\").replace(/[^A-Za-z0-9\\-._~]/, \"\")"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "ContractFolder_ID",
+    "expression": "grel:value.replace(\"á\",\"a\").replace(\"é\",\"e\").replace(\"í\",\"i\").replace(\"ó\",\"o\").replace(\"ú\",\"u\").replace(\"Á\",\"A\").replace(\"É\",\"E\").replace(\"Í\",\"I\").replace(\"Ó\",\"O\").replace(\"Ú\",\"U\").replace(\"à\",\"a\").replace(\"è\",\"e\").replace(\"ì\",\"i\").replace(\"ò\",\"o\").replace(\"ù\",\"u\").replace(\"À\",\"A\").replace(\"È\",\"E\").replace(\"Ì\",\"I\").replace(\"Ò\",\"O\").replace(\"Ù\",\"U\").replace(\" \", \"_\").replace(/[^A-Za-z0-9\\-._~]/, \"\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column ContractFolder_ID using expression grel:value.replace(\"á\",\"a\").replace(\"é\",\"e\").replace(\"í\",\"i\").replace(\"ó\",\"o\").replace(\"ú\",\"u\").replace(\"Á\",\"A\").replace(\"É\",\"E\").replace(\"Í\",\"I\").replace(\"Ó\",\"O\").replace(\"Ú\",\"U\").replace(\"à\",\"a\").replace(\"è\",\"e\").replace(\"ì\",\"i\").replace(\"ò\",\"o\").replace(\"ù\",\"u\").replace(\"À\",\"A\").replace(\"È\",\"E\").replace(\"Ì\",\"I\").replace(\"Ò\",\"O\").replace(\"Ù\",\"U\").replace(\" \", \"_\").replace(/[^A-Za-z0-9\\-._~]/, \"\")"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "LocatedContractingParty_Name_URI",
+    "expression": "grel:value.replace(\"á\",\"a\").replace(\"é\",\"e\").replace(\"í\",\"i\").replace(\"ó\",\"o\").replace(\"ú\",\"u\").replace(\"Á\",\"A\").replace(\"É\",\"E\").replace(\"Í\",\"I\").replace(\"Ó\",\"O\").replace(\"Ú\",\"U\").replace(\"à\",\"a\").replace(\"è\",\"e\").replace(\"ì\",\"i\").replace(\"ò\",\"o\").replace(\"ù\",\"u\").replace(\"À\",\"A\").replace(\"È\",\"E\").replace(\"Ì\",\"I\").replace(\"Ò\",\"O\").replace(\"Ù\",\"U\").replace(\" \", \"_\").replace(/[^A-Za-z0-9\\-._~]/, \"\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column LocatedContractingParty_Name_URI using expression grel:value.replace(\"á\",\"a\").replace(\"é\",\"e\").replace(\"í\",\"i\").replace(\"ó\",\"o\").replace(\"ú\",\"u\").replace(\"Á\",\"A\").replace(\"É\",\"E\").replace(\"Í\",\"I\").replace(\"Ó\",\"O\").replace(\"Ú\",\"U\").replace(\"à\",\"a\").replace(\"è\",\"e\").replace(\"ì\",\"i\").replace(\"ò\",\"o\").replace(\"ù\",\"u\").replace(\"À\",\"A\").replace(\"È\",\"E\").replace(\"Ì\",\"I\").replace(\"Ò\",\"O\").replace(\"Ù\",\"U\").replace(\" \", \"_\").replace(/[^A-Za-z0-9\\-._~]/, \"\")"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "ProcurementProject_CountrySubentityCode",
+    "expression": "grel:value.replace(\"á\",\"a\").replace(\"é\",\"e\").replace(\"í\",\"i\").replace(\"ó\",\"o\").replace(\"ú\",\"u\").replace(\"Á\",\"A\").replace(\"É\",\"E\").replace(\"Í\",\"I\").replace(\"Ó\",\"O\").replace(\"Ú\",\"U\").replace(\"à\",\"a\").replace(\"è\",\"e\").replace(\"ì\",\"i\").replace(\"ò\",\"o\").replace(\"ù\",\"u\").replace(\"À\",\"A\").replace(\"È\",\"E\").replace(\"Ì\",\"I\").replace(\"Ò\",\"O\").replace(\"Ù\",\"U\").replace(\" \", \"_\").replace(/[^A-Za-z0-9\\-._~]/, \"\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column ProcurementProject_CountrySubentityCode using expression grel:value.replace(\"á\",\"a\").replace(\"é\",\"e\").replace(\"í\",\"i\").replace(\"ó\",\"o\").replace(\"ú\",\"u\").replace(\"Á\",\"A\").replace(\"É\",\"E\").replace(\"Í\",\"I\").replace(\"Ó\",\"O\").replace(\"Ú\",\"U\").replace(\"à\",\"a\").replace(\"è\",\"e\").replace(\"ì\",\"i\").replace(\"ò\",\"o\").replace(\"ù\",\"u\").replace(\"À\",\"A\").replace(\"È\",\"E\").replace(\"Ì\",\"I\").replace(\"Ò\",\"O\").replace(\"Ù\",\"U\").replace(\" \", \"_\").replace(/[^A-Za-z0-9\\-._~]/, \"\")"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "ProcurementProject_DurationMeasure",
+    "expression": "grel:value.replace(\"á\",\"a\").replace(\"é\",\"e\").replace(\"í\",\"i\").replace(\"ó\",\"o\").replace(\"ú\",\"u\").replace(\"Á\",\"A\").replace(\"É\",\"E\").replace(\"Í\",\"I\").replace(\"Ó\",\"O\").replace(\"Ú\",\"U\").replace(\"à\",\"a\").replace(\"è\",\"e\").replace(\"ì\",\"i\").replace(\"ò\",\"o\").replace(\"ù\",\"u\").replace(\"À\",\"A\").replace(\"È\",\"E\").replace(\"Ì\",\"I\").replace(\"Ò\",\"O\").replace(\"Ù\",\"U\").replace(\" \", \"_\").replace(/[^A-Za-z0-9\\-._~]/, \"\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column ProcurementProject_DurationMeasure using expression grel:value.replace(\"á\",\"a\").replace(\"é\",\"e\").replace(\"í\",\"i\").replace(\"ó\",\"o\").replace(\"ú\",\"u\").replace(\"Á\",\"A\").replace(\"É\",\"E\").replace(\"Í\",\"I\").replace(\"Ó\",\"O\").replace(\"Ú\",\"U\").replace(\"à\",\"a\").replace(\"è\",\"e\").replace(\"ì\",\"i\").replace(\"ò\",\"o\").replace(\"ù\",\"u\").replace(\"À\",\"A\").replace(\"È\",\"E\").replace(\"Ì\",\"I\").replace(\"Ò\",\"O\").replace(\"Ù\",\"U\").replace(\" \", \"_\").replace(/[^A-Za-z0-9\\-._~]/, \"\")"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "LocatedContractingParty_Parent_PartyName_URI",
+    "expression": "grel:value.replace(\"á\",\"a\").replace(\"é\",\"e\").replace(\"í\",\"i\").replace(\"ó\",\"o\").replace(\"ú\",\"u\").replace(\"Á\",\"A\").replace(\"É\",\"E\").replace(\"Í\",\"I\").replace(\"Ó\",\"O\").replace(\"Ú\",\"U\").replace(\"à\",\"a\").replace(\"è\",\"e\").replace(\"ì\",\"i\").replace(\"ò\",\"o\").replace(\"ù\",\"u\").replace(\"À\",\"A\").replace(\"È\",\"E\").replace(\"Ì\",\"I\").replace(\"Ò\",\"O\").replace(\"Ù\",\"U\").replace(\" \", \"_\").replace(/[^A-Za-z0-9\\-._~]/, \"\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column LocatedContractingParty_Parent_PartyName_URI using expression grel:value.replace(\"á\",\"a\").replace(\"é\",\"e\").replace(\"í\",\"i\").replace(\"ó\",\"o\").replace(\"ú\",\"u\").replace(\"Á\",\"A\").replace(\"É\",\"E\").replace(\"Í\",\"I\").replace(\"Ó\",\"O\").replace(\"Ú\",\"U\").replace(\"à\",\"a\").replace(\"è\",\"e\").replace(\"ì\",\"i\").replace(\"ò\",\"o\").replace(\"ù\",\"u\").replace(\"À\",\"A\").replace(\"È\",\"E\").replace(\"Ì\",\"I\").replace(\"Ò\",\"O\").replace(\"Ù\",\"U\").replace(\" \", \"_\").replace(/[^A-Za-z0-9\\-._~]/, \"\")"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "LocatedContractingParty_Parent_Parent_PartyName_URI",
+    "expression": "grel:value.replace(\"á\",\"a\").replace(\"é\",\"e\").replace(\"í\",\"i\").replace(\"ó\",\"o\").replace(\"ú\",\"u\").replace(\"Á\",\"A\").replace(\"É\",\"E\").replace(\"Í\",\"I\").replace(\"Ó\",\"O\").replace(\"Ú\",\"U\").replace(\"à\",\"a\").replace(\"è\",\"e\").replace(\"ì\",\"i\").replace(\"ò\",\"o\").replace(\"ù\",\"u\").replace(\"À\",\"A\").replace(\"È\",\"E\").replace(\"Ì\",\"I\").replace(\"Ò\",\"O\").replace(\"Ù\",\"U\").replace(\" \", \"_\").replace(/[^A-Za-z0-9\\-._~]/, \"\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column LocatedContractingParty_Parent_Parent_PartyName_URI using expression grel:value.replace(\"á\",\"a\").replace(\"é\",\"e\").replace(\"í\",\"i\").replace(\"ó\",\"o\").replace(\"ú\",\"u\").replace(\"Á\",\"A\").replace(\"É\",\"E\").replace(\"Í\",\"I\").replace(\"Ó\",\"O\").replace(\"Ú\",\"U\").replace(\"à\",\"a\").replace(\"è\",\"e\").replace(\"ì\",\"i\").replace(\"ò\",\"o\").replace(\"ù\",\"u\").replace(\"À\",\"A\").replace(\"È\",\"E\").replace(\"Ì\",\"I\").replace(\"Ò\",\"O\").replace(\"Ù\",\"U\").replace(\" \", \"_\").replace(/[^A-Za-z0-9\\-._~]/, \"\")"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "LocatedContractingParty_ID",
+    "expression": "grel:value.replace(\"á\",\"a\").replace(\"é\",\"e\").replace(\"í\",\"i\").replace(\"ó\",\"o\").replace(\"ú\",\"u\").replace(\"Á\",\"A\").replace(\"É\",\"E\").replace(\"Í\",\"I\").replace(\"Ó\",\"O\").replace(\"Ú\",\"U\").replace(\"à\",\"a\").replace(\"è\",\"e\").replace(\"ì\",\"i\").replace(\"ò\",\"o\").replace(\"ù\",\"u\").replace(\"À\",\"A\").replace(\"È\",\"E\").replace(\"Ì\",\"I\").replace(\"Ò\",\"O\").replace(\"Ù\",\"U\").replace(\" \", \"_\").replace(/[^A-Za-z0-9\\-._~]/, \"\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column LocatedContractingParty_ID using expression grel:value.replace(\"á\",\"a\").replace(\"é\",\"e\").replace(\"í\",\"i\").replace(\"ó\",\"o\").replace(\"ú\",\"u\").replace(\"Á\",\"A\").replace(\"É\",\"E\").replace(\"Í\",\"I\").replace(\"Ó\",\"O\").replace(\"Ú\",\"U\").replace(\"à\",\"a\").replace(\"è\",\"e\").replace(\"ì\",\"i\").replace(\"ò\",\"o\").replace(\"ù\",\"u\").replace(\"À\",\"A\").replace(\"È\",\"E\").replace(\"Ì\",\"I\").replace(\"Ò\",\"O\").replace(\"Ù\",\"U\").replace(\" \", \"_\").replace(/[^A-Za-z0-9\\-._~]/, \"\")"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "LocatedContractingParty_Parent_Parent_Parent_PartyName_URI",
+    "expression": "grel:value.replace(\"á\",\"a\").replace(\"é\",\"e\").replace(\"í\",\"i\").replace(\"ó\",\"o\").replace(\"ú\",\"u\").replace(\"Á\",\"A\").replace(\"É\",\"E\").replace(\"Í\",\"I\").replace(\"Ó\",\"O\").replace(\"Ú\",\"U\").replace(\"à\",\"a\").replace(\"è\",\"e\").replace(\"ì\",\"i\").replace(\"ò\",\"o\").replace(\"ù\",\"u\").replace(\"À\",\"A\").replace(\"È\",\"E\").replace(\"Ì\",\"I\").replace(\"Ò\",\"O\").replace(\"Ù\",\"U\").replace(\" \", \"_\").replace(/[^A-Za-z0-9\\-._~]/, \"\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column LocatedContractingParty_Parent_Parent_Parent_PartyName_URI using expression grel:value.replace(\"á\",\"a\").replace(\"é\",\"e\").replace(\"í\",\"i\").replace(\"ó\",\"o\").replace(\"ú\",\"u\").replace(\"Á\",\"A\").replace(\"É\",\"E\").replace(\"Í\",\"I\").replace(\"Ó\",\"O\").replace(\"Ú\",\"U\").replace(\"à\",\"a\").replace(\"è\",\"e\").replace(\"ì\",\"i\").replace(\"ò\",\"o\").replace(\"ù\",\"u\").replace(\"À\",\"A\").replace(\"È\",\"E\").replace(\"Ì\",\"I\").replace(\"Ò\",\"O\").replace(\"Ù\",\"U\").replace(\" \", \"_\").replace(/[^A-Za-z0-9\\-._~]/, \"\")"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "TenderResult_WinningParty_Name_URI",
+    "expression": "grel:value.replace(\"á\",\"a\").replace(\"é\",\"e\").replace(\"í\",\"i\").replace(\"ó\",\"o\").replace(\"ú\",\"u\").replace(\"Á\",\"A\").replace(\"É\",\"E\").replace(\"Í\",\"I\").replace(\"Ó\",\"O\").replace(\"Ú\",\"U\").replace(\"à\",\"a\").replace(\"è\",\"e\").replace(\"ì\",\"i\").replace(\"ò\",\"o\").replace(\"ù\",\"u\").replace(\"À\",\"A\").replace(\"È\",\"E\").replace(\"Ì\",\"I\").replace(\"Ò\",\"O\").replace(\"Ù\",\"U\").replace(\" \", \"_\").replace(/[^A-Za-z0-9\\-._~]/, \"\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column TenderResult_WinningParty_Name_URI using expression grel:value.replace(\"á\",\"a\").replace(\"é\",\"e\").replace(\"í\",\"i\").replace(\"ó\",\"o\").replace(\"ú\",\"u\").replace(\"Á\",\"A\").replace(\"É\",\"E\").replace(\"Í\",\"I\").replace(\"Ó\",\"O\").replace(\"Ú\",\"U\").replace(\"à\",\"a\").replace(\"è\",\"e\").replace(\"ì\",\"i\").replace(\"ò\",\"o\").replace(\"ù\",\"u\").replace(\"À\",\"A\").replace(\"È\",\"E\").replace(\"Ì\",\"I\").replace(\"Ò\",\"O\").replace(\"Ù\",\"U\").replace(\" \", \"_\").replace(/[^A-Za-z0-9\\-._~]/, \"\")"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "LocatedContractingParty_Parent_Parent_Parent_Parent_PartyName_URI",
+    "expression": "grel:value.replace(\"á\",\"a\").replace(\"é\",\"e\").replace(\"í\",\"i\").replace(\"ó\",\"o\").replace(\"ú\",\"u\").replace(\"Á\",\"A\").replace(\"É\",\"E\").replace(\"Í\",\"I\").replace(\"Ó\",\"O\").replace(\"Ú\",\"U\").replace(\"à\",\"a\").replace(\"è\",\"e\").replace(\"ì\",\"i\").replace(\"ò\",\"o\").replace(\"ù\",\"u\").replace(\"À\",\"A\").replace(\"È\",\"E\").replace(\"Ì\",\"I\").replace(\"Ò\",\"O\").replace(\"Ù\",\"U\").replace(\" \", \"_\").replace(/[^A-Za-z0-9\\-._~]/, \"\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column LocatedContractingParty_Parent_Parent_Parent_Parent_PartyName_URI using expression grel:value.replace(\"á\",\"a\").replace(\"é\",\"e\").replace(\"í\",\"i\").replace(\"ó\",\"o\").replace(\"ú\",\"u\").replace(\"Á\",\"A\").replace(\"É\",\"E\").replace(\"Í\",\"I\").replace(\"Ó\",\"O\").replace(\"Ú\",\"U\").replace(\"à\",\"a\").replace(\"è\",\"e\").replace(\"ì\",\"i\").replace(\"ò\",\"o\").replace(\"ù\",\"u\").replace(\"À\",\"A\").replace(\"È\",\"E\").replace(\"Ì\",\"I\").replace(\"Ò\",\"O\").replace(\"Ù\",\"U\").replace(\" \", \"_\").replace(/[^A-Za-z0-9\\-._~]/, \"\")"
+  }
+]
